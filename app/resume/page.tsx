@@ -41,22 +41,35 @@ export default function ResumePage() {
     window.print();
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     const isDark = mode === "modern";
     const targetFileName = layout === "single"
       ? (isDark ? "Sonu_Kumar_Resume_1Page_Dark.pdf" : "Sonu_Kumar_Resume_1Page.pdf")
       : (isDark ? "Sonu_Kumar_Resume_Dark.pdf" : "Sonu_Kumar_Resume.pdf");
 
-    setDownloading(true);
-    const link = document.createElement("a");
-    link.href = `/api/download-resume?layout=${layout}&mode=${mode}`;
-    link.setAttribute("download", targetFileName);
-    document.body.appendChild(link);
-    link.click();
-    setTimeout(() => {
-      document.body.removeChild(link);
-      setDownloading(false);
-    }, 800);
+    const pdfUrl = `/${targetFileName}`;
+
+    try {
+      setDownloading(true);
+      const res = await fetch(pdfUrl);
+      if (!res.ok) throw new Error("Download request failed");
+      const blob = await res.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = blobUrl;
+      a.download = targetFileName;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(blobUrl);
+      }, 500);
+    } catch {
+      window.open(pdfUrl, "_blank");
+    } finally {
+      setTimeout(() => setDownloading(false), 800);
+    }
   };
 
   const copyPlainTextResume = () => {
