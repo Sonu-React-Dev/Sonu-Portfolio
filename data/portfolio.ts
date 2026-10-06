@@ -128,23 +128,6 @@ export const projects = [
     result: "98/100 PageSpeed · +40% engagement",
     accent: "from-lime-300/10 via-transparent to-emerald-400/10",
     url: "https://www.nutrinestventures.com/"
-  },
-  {
-    number: "07",
-    title: "CyberStrike 3D",
-    category: "Game Development & 3D Simulation",
-    resumeDesc: "Built immersive 3D interactive game and physics simulation using Unity Engine and C# with custom mechanics and WebGL deployment.",
-    description: "Immersive 3D interactive game and physics simulation engineered with Unity Engine and C#. Features custom third-person character movement controllers, dynamic rigid-body physics interactions, procedural obstacle generation, and multi-platform optimization for desktop and WebGL browser play.",
-    bullets: [
-      "Architected modular C# gameplay systems using finite state machines (FSM), custom event buses, and responsive player input handlers.",
-      "Engineered dynamic RigidBody physics, custom raycasting collision detection, and smooth camera tracking algorithms with Cinemachine.",
-      "Configured Universal Render Pipeline (URP), custom shaders, dynamic lighting, and particle effects for realistic visual fidelity at 60+ FPS.",
-      "Implemented asset bundling, occlusion culling, and cross-platform build pipelines targeting WebGL, Windows, and Mac desktop executables."
-    ],
-    stack: ["Unity 3D", "C#", "Universal Render Pipeline (URP)", "Cinemachine", "Game Physics", "WebGL"],
-    result: "Smooth 60 FPS interactive 3D gameplay",
-    accent: "from-amber-400/15 via-transparent to-violet-500/10",
-    url: ""
   }
 ];
 
