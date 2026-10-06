@@ -42,7 +42,7 @@ export const projects = [
     stack: ["React.js", "Next.js", "React Native", "Redux Toolkit", "Node.js", "Express.js", "Firebase Auth & FCM", "Google Maps API"],
     result: "4 production apps · 99.8% crash-free",
     accent: "from-violet-500/20 via-transparent to-cyan-400/10",
-    url: ""
+    url: "https://pickapro.co.nz/"
   },
   {
     number: "02",
@@ -59,7 +59,7 @@ export const projects = [
     stack: ["React.js", "Web3 Integration", "RESTful APIs", "Chart.js", "Tailwind CSS", "WebSocket Feeds", "TypeScript"],
     result: "Real-time network visibility · <80ms search",
     accent: "from-cyan-400/15 via-transparent to-violet-500/10",
-    url: ""
+    url: "https://upbscan.com/"
   },
   {
     number: "03",
@@ -76,7 +76,7 @@ export const projects = [
     stack: ["React.js", "Firebase Auth", "REST APIs", "Redux Toolkit", "Tailwind CSS", "Payment Gateway"],
     result: "+28% order conversion · 1.1s load time",
     accent: "from-orange-400/15 via-transparent to-pink-400/10",
-    url: ""
+    url: "https://hemaunty.org/"
   },
   {
     number: "04",
@@ -93,7 +93,7 @@ export const projects = [
     stack: ["Angular", "ASP.NET Core", "C#", "MySQL", "REST APIs", "JWT Auth", "Bootstrap"],
     result: "15,000+ verified members · 99.9% uptime",
     accent: "from-emerald-400/15 via-transparent to-cyan-400/10",
-    url: ""
+    url: "https://www.radhiadda.com/login"
   },
   {
     number: "05",
@@ -127,7 +127,7 @@ export const projects = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Web Performance", "SEO & Schema"],
     result: "98/100 PageSpeed · +40% engagement",
     accent: "from-lime-300/10 via-transparent to-emerald-400/10",
-    url: ""
+    url: "https://www.nutrinestventures.com/"
   },
   {
     number: "07",

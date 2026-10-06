@@ -69,17 +69,18 @@ export default function Projects() {
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 transition group-hover:bg-white group-hover:text-black"
-                        title="View project"
+                        className="group/btn flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-black transition hover:bg-zinc-200 hover:scale-[1.03] shadow-lg shadow-white/10"
+                        title={`Visit ${project.title} live website`}
                       >
-                        <ArrowUpRight size={18} />
+                        <span>Visit Live Site</span>
+                        <ArrowUpRight size={15} className="transition group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                       </a>
                     ) : (
                       <div
-                        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/10 text-zinc-700 cursor-not-allowed"
-                        title="No demo link available"
+                        className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-500 cursor-default"
+                        title="Desktop Enterprise / Internal Software"
                       >
-                        <ArrowUpRight size={18} />
+                        <span>Enterprise Software</span>
                       </div>
                     )}
                   </div>

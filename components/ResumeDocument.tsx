@@ -284,7 +284,14 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
               <div key={idx} className="break-inside-avoid">
                 <div className="flex justify-between items-baseline mb-[2px] flex-wrap gap-1">
                   <span className={`text-[12.8px] font-bold ${isModern ? "text-white" : "text-slate-900"}`}>
-                    {proj.title} <span className={`${isModern ? "text-zinc-400" : "text-slate-500"} font-normal`}>– {proj.result}</span>
+                    {proj.url ? (
+                      <a href={proj.url} target="_blank" rel="noreferrer" className="hover:underline inline-flex items-center gap-1">
+                        {proj.title}
+                        <span className={`text-[10px] font-semibold ${isModern ? "text-violet-400" : "text-blue-700"}`}>[Live ↗]</span>
+                      </a>
+                    ) : (
+                      proj.title
+                    )} <span className={`${isModern ? "text-zinc-400" : "text-slate-500"} font-normal`}>– {proj.result}</span>
                   </span>
                 </div>
                 <div className={`font-mono text-[9.8px] ${isModern ? "bg-sky-950/40 text-sky-300 border-sky-800/50" : "bg-sky-50 text-sky-700 border-sky-200"} border px-1.5 py-[1px] rounded-[3px] inline-block mb-[2px]`}>
