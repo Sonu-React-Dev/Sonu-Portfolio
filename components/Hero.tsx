@@ -6,11 +6,12 @@ import { profile } from "@/data/portfolio";
 import sonuPhoto from "@/public/sonu-profile.jpg";
 
 const floatingBadges = [
-  { label: "React", color: "text-cyan-300 border-cyan-400/30 bg-cyan-400/10", top: "10%", left: "-4%" },
-  { label: "Next.js", color: "text-white border-white/20 bg-white/10", top: "16%", right: "-4%" },
-  { label: "Node.js", color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10", bottom: "30%", left: "-6%" },
-  { label: "TypeScript", color: "text-blue-300 border-blue-400/30 bg-blue-400/10", bottom: "16%", right: "-4%" },
-  { label: "React Native", color: "text-violet-300 border-violet-400/30 bg-violet-400/10", top: "52%", right: "-8%" },
+  { label: "React", color: "text-cyan-300 border-cyan-400/30 bg-cyan-400/10", top: "8%", left: "-4%" },
+  { label: "Next.js", color: "text-white border-white/20 bg-white/10", top: "14%", right: "-4%" },
+  { label: "Node.js", color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10", bottom: "34%", left: "-6%" },
+  { label: "Unity 3D", color: "text-amber-300 border-amber-400/30 bg-amber-400/10", bottom: "14%", left: "-4%" },
+  { label: "TypeScript", color: "text-blue-300 border-blue-400/30 bg-blue-400/10", bottom: "14%", right: "-4%" },
+  { label: "React Native", color: "text-violet-300 border-violet-400/30 bg-violet-400/10", top: "48%", right: "-8%" },
 ];
 
 export default function Hero() {

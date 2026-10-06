@@ -35,9 +35,30 @@ export default function Projects() {
                 </div>
                 <div className="flex flex-col justify-between">
                   <div>
-                    <p className="text-xs uppercase tracking-[.2em] text-zinc-500">{project.category}</p>
-                    <h3 className="mt-4 text-4xl font-semibold tracking-tight sm:text-6xl">{project.title}</h3>
-                    <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400">{project.description}</p>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <p className="text-xs uppercase tracking-[.2em] text-violet-300 font-semibold">{project.category}</p>
+                      <span className="hidden sm:inline-block h-1 w-1 rounded-full bg-zinc-600" />
+                      <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-emerald-300 sm:hidden">
+                        {project.result}
+                      </span>
+                    </div>
+                    <h3 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">{project.title}</h3>
+                    <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300">{project.description}</p>
+
+                    {/* Key Technical Highlights & Deliverables */}
+                    {project.bullets && project.bullets.length > 0 && (
+                      <div className="mt-6 border-t border-white/10 pt-5">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">Key Technical Highlights & Impact</p>
+                        <ul className="grid gap-2.5 md:grid-cols-2">
+                          {project.bullets.map((bullet, i) => (
+                            <li key={i} className="flex items-start gap-2.5 text-xs leading-5 text-zinc-300">
+                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" />
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                   <div className="mt-12 flex flex-wrap items-end justify-between gap-6">
                     <div className="flex max-w-xl flex-wrap gap-2">

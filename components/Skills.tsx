@@ -7,6 +7,7 @@ const labels: Record<string, string> = {
   languages: "Languages & Styling",
   frontend: "Frontend Development",
   backend: "Backend & APIs",
+  gameAnd3d: "Game Development & 3D (Unity)",
   databases: "Databases",
   other: "Cloud, Services & Tools",
   toolsAndConcepts: "Engineering Practices & Concepts"

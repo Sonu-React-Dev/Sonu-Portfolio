@@ -193,6 +193,30 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
               </div>
             </div>
             <div className="flex text-[10.8px] items-baseline gap-2">
+              <span className={`w-[130px] shrink-0 font-bold ${isModern ? "text-zinc-200" : "text-slate-900"}`}>Game & 3D (Unity):</span>
+              <div className={`flex-1 ${isModern ? "text-zinc-300" : "text-slate-700"}`}>
+                {(skills.gameAnd3d || []).map(s => {
+                  const isHighlight = ['Unity 3D / 2D', 'C# Scripting'].includes(s);
+                  return (
+                    <span
+                      key={s}
+                      className={`px-[5px] py-0 rounded-[3px] text-[10.5px] font-medium whitespace-nowrap inline-block my-[1px] mx-[2px] border ${
+                        isHighlight
+                          ? isModern
+                            ? "bg-amber-950/40 border-amber-800/60 text-amber-300 font-semibold"
+                            : "bg-amber-50 border-amber-200 text-amber-700 font-semibold"
+                          : isModern
+                            ? "bg-white/[0.04] border-zinc-800 text-zinc-300"
+                            : "bg-slate-50 border-slate-200 text-slate-700"
+                      }`}
+                    >
+                      {s}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="flex text-[10.8px] items-baseline gap-2">
               <span className={`w-[130px] shrink-0 font-bold ${isModern ? "text-zinc-200" : "text-slate-900"}`}>Databases & Other:</span>
               <div className={`flex-1 ${isModern ? "text-zinc-300" : "text-slate-700"}`}>
                 {skills.databases.concat(skills.other).concat(skills.toolsAndConcepts).map(s => (
@@ -267,7 +291,17 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
                   {proj.stack.join(" · ")}
                 </div>
                 <ul className="custom-bullets">
-                  <li>{proj.description}</li>
+                  {isSingle ? (
+                    <li>{proj.resumeDesc || proj.description}</li>
+                  ) : (
+                    proj.bullets && proj.bullets.length > 0 ? (
+                      proj.bullets.map((b, i) => (
+                        <li key={i} dangerouslySetInnerHTML={{ __html: highlightTech(b) }} />
+                      ))
+                    ) : (
+                      <li>{proj.description}</li>
+                    )
+                  )}
                 </ul>
               </div>
             ))}
