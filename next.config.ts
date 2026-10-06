@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let repo = "";
 if (isGithubActions) {
-  repo = process.env.GITHUB_REPOSITORY?.replace(/^.*?\//, "") || "";
+  const repoName = process.env.GITHUB_REPOSITORY?.replace(/^.*?\//, "") || "";
+  if (!repoName.toLowerCase().endsWith(".github.io")) {
+    repo = repoName;
+  }
 }
 
 const nextConfig: NextConfig = {
