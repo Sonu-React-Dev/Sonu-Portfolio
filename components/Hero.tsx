@@ -1,14 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight, Sparkles, FileText } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import sonuPhoto from "@/public/sonu-profile.jpg";
 
 const floatingBadges = [
-  { label: "React", color: "text-cyan-300 border-cyan-400/30 bg-cyan-400/5", top: "14%", left: "8%" },
-  { label: "Next.js", color: "text-white border-white/20 bg-white/5", top: "22%", right: "10%" },
-  { label: "Node.js", color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/5", bottom: "28%", left: "6%" },
-  { label: "TypeScript", color: "text-blue-300 border-blue-400/30 bg-blue-400/5", bottom: "18%", right: "8%" },
-  { label: "React Native", color: "text-violet-300 border-violet-400/30 bg-violet-400/5", top: "50%", right: "4%" },
+  { label: "React", color: "text-cyan-300 border-cyan-400/30 bg-cyan-400/10", top: "10%", left: "-4%" },
+  { label: "Next.js", color: "text-white border-white/20 bg-white/10", top: "16%", right: "-4%" },
+  { label: "Node.js", color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10", bottom: "30%", left: "-6%" },
+  { label: "TypeScript", color: "text-blue-300 border-blue-400/30 bg-blue-400/10", bottom: "16%", right: "-4%" },
+  { label: "React Native", color: "text-violet-300 border-violet-400/30 bg-violet-400/10", top: "52%", right: "-8%" },
 ];
 
 export default function Hero() {
@@ -44,25 +46,39 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right panel — tech stack orb with floating badges */}
+          {/* Right panel — Sonu's professional photo with floating badges */}
           <motion.div
-            initial={{ opacity: 0, scale: .9, rotate: 3 }}
+            initial={{ opacity: 0, scale: .92, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ delay: .25, duration: 1 }}
-            className="relative mx-auto aspect-square w-full max-w-[440px]"
+            transition={{ delay: .25, duration: 0.9 }}
+            className="relative mx-auto w-full max-w-[390px]"
           >
-            {/* Glow blob */}
-            <div className="absolute inset-8 rounded-full bg-violet-500/10 blur-3xl" />
+            {/* Ambient backlight glow */}
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-violet-600/25 via-fuchsia-500/15 to-cyan-400/20 blur-3xl" />
 
-            {/* Central orb */}
-            <div className="glass absolute inset-0 overflow-hidden rounded-[38%_62%_55%_45%/45%_38%_62%_55%]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,.18),transparent_20%),radial-gradient(circle_at_70%_70%,rgba(124,92,255,.22),transparent_35%)]" />
-              <div className="absolute left-1/2 top-1/2 w-52 -translate-x-1/2 -translate-y-1/2 text-center">
-                <p className="text-xs uppercase tracking-[.28em] text-zinc-500">Product Engineering</p>
-                <p className="mt-2 text-xl font-semibold">Web · Mobile · Backend</p>
-                <p className="mt-3 text-xs text-zinc-600">4+ years experience</p>
+            {/* Framed portrait card */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/15 bg-zinc-900/60 shadow-2xl shadow-violet-950/40 backdrop-blur-sm">
+              <Image
+                src={sonuPhoto}
+                alt="Sonu Kumar - Full-Stack Developer"
+                priority
+                className="h-full w-full object-cover object-[center_22%] transition-transform duration-700 hover:scale-105"
+              />
+
+              {/* Gentle dark gradient overlay at bottom for card text readability */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
+
+              {/* Bottom executive tag */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/15 bg-black/60 px-4 py-3 backdrop-blur-md">
+                <div>
+                  <p className="text-sm font-semibold text-white tracking-wide">Sonu Kumar</p>
+                  <p className="text-xs text-zinc-400">Full-Stack Product Engineer</p>
+                </div>
+                <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-1 text-[11px] font-medium text-emerald-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Available</span>
+                </div>
               </div>
-              <Sparkles className="absolute right-[16%] top-[20%] h-5 w-5 text-cyan-200" />
             </div>
 
             {/* Floating tech badges */}
@@ -78,7 +94,7 @@ export default function Hero() {
                   opacity: { delay: 0.6 + i * 0.12, duration: 0.5 },
                   y: { delay: 0.6 + i * 0.12, duration: 3 + i * 0.4, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className={`absolute rounded-full border px-3 py-1.5 text-[11px] font-medium backdrop-blur-sm ${badge.color}`}
+                className={`absolute z-10 rounded-full border px-3 py-1.5 text-[11px] font-medium shadow-lg backdrop-blur-md ${badge.color}`}
                 style={{
                   top: badge.top,
                   bottom: badge.bottom,
