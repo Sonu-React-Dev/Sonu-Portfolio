@@ -10,7 +10,7 @@ export const profile = {
   email: "sonugupta6746@gmail.com",
   phone: "+91 9709834056",
   social: {
-    github: "Sonu-React-Dev",
+    github: "SonuKumarTech",
     linkedin: "sonu-kumar-3b7072237"
   }
 };
