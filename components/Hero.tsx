@@ -36,7 +36,7 @@ export default function Hero() {
                 View work <ArrowUpRight size={17} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a href="/resume" className="glass flex items-center gap-2 rounded-full px-5 py-3 font-medium transition hover:bg-white/10 text-white">
-                <FileText size={17} className="text-violet-300" /> Resume (ATS)
+                <FileText size={17} className="text-violet-300" /> Resume / CV
               </a>
               <a href="#contact" className="glass flex items-center gap-2 rounded-full px-5 py-3 font-medium transition hover:bg-white/10">
                 Let&apos;s talk <ArrowUpRight size={17} />

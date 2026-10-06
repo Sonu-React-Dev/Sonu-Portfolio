@@ -239,7 +239,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
             {/* ATS Badge */}
             <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
               <ShieldCheck size={14} />
-              <span>ATS-Friendly (100% Parsable Single-Column)</span>
+              <span>Verified Professional Format</span>
             </div>
 
             {/* View Mode Toggle */}
@@ -251,7 +251,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                   mode === "ats" ? "bg-white text-black font-semibold" : "text-zinc-400 hover:text-white"
                 }`}
               >
-                Clean ATS (White)
+                Classic White
               </button>
               <button
                 type="button"
@@ -281,7 +281,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                   }`}
                 >
                   <FileText size={14} />
-                  <span>Single Page (1-Page ATS)</span>
+                  <span>Single Page</span>
                   <span className="ml-1 rounded bg-white/20 px-1.5 py-0.2 text-[10px] text-white">Recommended</span>
                 </button>
                 <button
@@ -294,7 +294,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                   }`}
                 >
                   <Files size={14} />
-                  <span>Detailed (2-Page ATS)</span>
+                  <span>Detailed CV</span>
                 </button>
               </div>
             </div>
@@ -331,13 +331,13 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 <span>{copied ? "Copied Text!" : "Copy Text"}</span>
               </button>
 
-              {/* Direct Download Clean ATS PDF File */}
+              {/* Direct Download PDF File */}
               <button
                 type="button"
                 onClick={handleDownload}
                 disabled={downloading}
                 className="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-lg shadow-white/10 disabled:opacity-70 cursor-pointer"
-                title="Directly download clean pre-rendered ATS PDF"
+                title="Directly download high-resolution PDF"
               >
                 {downloading ? (
                   <>
@@ -357,7 +357,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 type="button"
                 onClick={handlePrint}
                 className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-300 transition hover:bg-white/10 hover:text-white"
-                title="Save as PDF via browser print (clean white layout)"
+                title="Save as PDF via browser print"
               >
                 <Printer size={14} />
                 <span>Print / Browser PDF</span>
@@ -370,8 +370,8 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-2 text-xs text-zinc-500">
           <p>
             {layout === "single"
-              ? "⚡ Single Page: Compact, high-density format engineered to fit exactly on 1 printed page. Perfect for fast screenings & tech startups."
-              : "📋 Detailed: Comprehensive 2-page format with all project details, bullet points, and full education history."}
+              ? "⚡ Single Page: Executive summary format engineered for quick executive reviews & high impact."
+              : "📋 Detailed CV: Comprehensive multi-page format highlighting complete project experience & technical skills."}
           </p>
           <p className="hidden md:block">
             Press <kbd className="rounded border border-white/10 bg-black/40 px-1 py-0.5 text-[10px] text-zinc-300">⌘ + P</kbd> anytime to save as PDF.
@@ -386,7 +386,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
 
       {/* FOOTER CALLOUT (HIDDEN IN PRINT) */}
       <div className="no-print container-x max-w-[900px] mt-12 text-center text-xs text-zinc-600">
-        <p>Built with Next.js & Tailwind CSS • 100% Code Generated • ATS Compliant</p>
+        <p>Sonu Kumar — Full-Stack Developer • Professional Curriculum Vitae</p>
       </div>
     </div>
   );
