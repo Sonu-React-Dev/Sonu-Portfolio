@@ -5,7 +5,7 @@ import "./globals.css";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sonukumartech.github.io/Sonu-Portfolio"),
+  metadataBase: new URL("https://sonubuilds.github.io/Sonu-Portfolio"),
   title: "Sonu Kumar — Full-Stack Developer",
   description: "Portfolio of Sonu Kumar — Full-Stack Developer specializing in React, React Native, Next.js, Node.js and product engineering.",
   keywords: ["Sonu Kumar", "Full-Stack Developer", "React Developer", "React Native Developer", "Next.js", "Node.js", "JavaScript", "TypeScript"],
