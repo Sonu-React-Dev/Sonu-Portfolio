@@ -65,25 +65,25 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+          className="mb-8 sm:mb-12 flex flex-col justify-between gap-4 sm:gap-6 md:flex-row md:items-end"
         >
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+            <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
               03 / Selected work
             </p>
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl text-white">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-white">
               Products, not just screens.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-6 text-zinc-400">
+          <p className="max-w-sm text-xs sm:text-sm leading-5 sm:leading-6 text-zinc-400">
             A curated showcase of shipped marketplace ecosystems, real estate platforms, Web3 explorers, and cloud media systems.
           </p>
         </motion.div>
 
         {/* Filter Toolbar & View Mode Switcher */}
-        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5">
+        <div className="mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5">
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             {categories.map((cat) => {
               const isActive = filter === cat.id;
               const count =
@@ -100,7 +100,7 @@ export default function Projects() {
                   key={cat.id}
                   type="button"
                   onClick={() => setFilter(cat.id)}
-                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium transition cursor-pointer ${
+                  className={`flex items-center gap-1.5 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium transition cursor-pointer ${
                     isActive
                       ? "bg-white text-black font-semibold shadow-md shadow-white/10"
                       : "glass text-zinc-400 hover:text-white hover:bg-white/10"
@@ -120,7 +120,7 @@ export default function Projects() {
           </div>
 
           {/* View Mode Toggle: Spotlight vs Grid */}
-          <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-black/40 p-1">
+          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-black/40 p-1 self-start sm:self-auto">
             <button
               type="button"
               onClick={() => setViewMode("spotlight")}
@@ -132,7 +132,7 @@ export default function Projects() {
               }`}
             >
               <Layers size={13} />
-              <span className="hidden sm:inline">Spotlight</span>
+              <span className="inline">Spotlight</span>
             </button>
             <button
               type="button"
@@ -145,7 +145,7 @@ export default function Projects() {
               }`}
             >
               <LayoutGrid size={13} />
-              <span className="hidden sm:inline">Grid View</span>
+              <span className="inline">Grid</span>
             </button>
           </div>
         </div>
@@ -160,13 +160,13 @@ export default function Projects() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35 }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
               {filteredProjects.map((project) => (
                 <motion.article
                   key={project.number}
                   whileHover={{ y: -3 }}
-                  className="group relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-[#0a0a0a] shadow-2xl transition duration-500"
+                  className="group relative overflow-hidden rounded-2xl sm:rounded-[2.2rem] border border-white/10 bg-[#0a0a0a] shadow-2xl transition duration-500"
                 >
                   {/* Accent ambient backlight glow */}
                   <div
@@ -174,42 +174,42 @@ export default function Projects() {
                   />
 
                   {/* SIMULATED BROWSER / APP WINDOW HEADER FRAME */}
-                  <div className="relative flex items-center justify-between border-b border-white/10 bg-black/60 px-6 py-3.5 backdrop-blur-md text-xs">
-                    <div className="flex items-center gap-2">
-                      <span className="h-3 w-3 rounded-full bg-red-500/80" />
-                      <span className="h-3 w-3 rounded-full bg-amber-500/80" />
-                      <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
-                      <span className="ml-3 hidden sm:inline-block font-mono text-[11px] text-zinc-400">
+                  <div className="relative flex items-center justify-between border-b border-white/10 bg-black/60 px-4 sm:px-6 py-2.5 sm:py-3.5 backdrop-blur-md text-xs">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-red-500/80" />
+                      <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-500/80" />
+                      <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500/80" />
+                      <span className="ml-2 sm:ml-3 hidden sm:inline-block font-mono text-[11px] text-zinc-400">
                         {project.url ? project.url.replace(/^https?:\/\//, "").replace(/\/$/, "") : "enterprise-system"}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2.5">
-                      <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-300">
+                    <div className="flex items-center gap-2">
+                      <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-medium text-emerald-300">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        <span>{project.url ? "Live Production" : "Enterprise Internal"}</span>
+                        <span>{project.url ? "Live Production" : "Enterprise"}</span>
                       </span>
-                      <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] text-zinc-300">
+                      <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] sm:text-[11px] text-zinc-300">
                         {project.number}
                       </span>
                     </div>
                   </div>
 
                   {/* CARD BODY CONTENT */}
-                  <div className="relative grid gap-8 p-7 sm:p-10 lg:grid-cols-[0.34fr_1fr] lg:p-12">
+                  <div className="relative grid gap-6 sm:gap-8 p-5 sm:p-8 lg:grid-cols-[0.34fr_1fr] lg:p-12">
                     {/* Left Column: Number, Category, Outcome Tag */}
-                    <div className="flex flex-col justify-between border-b border-white/10 pb-6 lg:border-b-0 lg:border-r lg:border-white/10 lg:pb-0 lg:pr-8">
+                    <div className="flex flex-col justify-between border-b border-white/10 pb-5 lg:border-b-0 lg:border-r lg:border-white/10 lg:pb-0 lg:pr-8">
                       <div>
-                        <div className="text-xs uppercase tracking-[.2em] text-violet-300 font-bold mb-2">
+                        <div className="text-xs uppercase tracking-[.2em] text-violet-300 font-bold mb-1.5 sm:mb-2">
                           {project.category}
                         </div>
-                        <h3 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                        <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
                           {project.title}
                         </h3>
                       </div>
 
-                      <div className="mt-6 lg:mt-0">
-                        <div className="mb-2 text-xs uppercase tracking-[.18em] text-zinc-400 font-medium">
+                      <div className="mt-5 lg:mt-0">
+                        <div className="mb-1.5 text-xs uppercase tracking-[.18em] text-zinc-400 font-medium">
                           Measurable Outcome
                         </div>
                         <div className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-xs font-semibold text-emerald-300">
@@ -222,21 +222,21 @@ export default function Projects() {
                     {/* Right Column: Overview, Bullets, Stack, Actions */}
                     <div className="flex flex-col justify-between">
                       <div>
-                        <p className="text-base leading-7 text-zinc-200">
+                        <p className="text-sm sm:text-base leading-6 sm:leading-7 text-zinc-200">
                           {project.description}
                         </p>
 
                         {/* Deliverables & Technical Highlights */}
                         {project.bullets && project.bullets.length > 0 && (
-                          <div className="mt-6 border-t border-white/10 pt-5">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
+                          <div className="mt-5 sm:mt-6 border-t border-white/10 pt-4 sm:pt-5">
+                            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2.5 sm:mb-3">
                               Key Technical Engineering & Deliverables
                             </p>
-                            <ul className="grid gap-2.5 sm:grid-cols-2">
+                            <ul className="grid gap-2 sm:gap-2.5 sm:grid-cols-2">
                               {project.bullets.map((bullet, i) => (
                                 <li
                                   key={i}
-                                  className="flex items-start gap-2.5 text-xs leading-5 text-zinc-300"
+                                  className="flex items-start gap-2 text-xs leading-5 text-zinc-300"
                                 >
                                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" />
                                   <span>{bullet}</span>
@@ -248,12 +248,12 @@ export default function Projects() {
                       </div>
 
                       {/* Footer: Tech Stack Badges + Action Buttons */}
-                      <div className="mt-8 flex flex-wrap items-end justify-between gap-5 border-t border-white/10 pt-5">
-                        <div className="flex max-w-xl flex-wrap gap-2">
+                      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-5 border-t border-white/10 pt-4 sm:pt-5">
+                        <div className="flex max-w-xl flex-wrap gap-1.5 sm:gap-2">
                           {project.stack.map((tech) => (
                             <span
                               key={tech}
-                              className="rounded-full border border-white/10 bg-black/40 px-3 py-1 text-xs text-zinc-300 font-medium"
+                              className="rounded-full border border-white/10 bg-black/40 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs text-zinc-300 font-medium"
                             >
                               {tech}
                             </span>
@@ -265,7 +265,7 @@ export default function Projects() {
                             href={project.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="group/btn flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-black transition hover:bg-zinc-200 hover:scale-[1.03] shadow-lg shadow-white/10 cursor-pointer"
+                            className="group/btn inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-black transition hover:bg-zinc-200 hover:scale-[1.02] shadow-lg shadow-white/10 cursor-pointer w-full sm:w-auto"
                             title={`Visit ${project.title} live platform`}
                           >
                             <span>Visit Live Site</span>
@@ -275,7 +275,7 @@ export default function Projects() {
                             />
                           </a>
                         ) : (
-                          <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-400 cursor-default">
+                          <div className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-400 cursor-default w-full sm:w-auto">
                             <span>Desktop Enterprise Software</span>
                           </div>
                         )}

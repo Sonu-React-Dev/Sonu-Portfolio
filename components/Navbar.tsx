@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50">
-      <nav className="container-x mt-4">
+      <nav className="container-x mt-3 sm:mt-4">
         <div className="glass flex h-14 items-center justify-between rounded-full px-4 md:px-5 shadow-lg shadow-black/40">
           {/* Brand & Sonu Photo */}
           <a
@@ -120,9 +120,9 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className="glass mt-2.5 rounded-3xl p-6 md:hidden shadow-2xl border border-white/15"
+              className="glass mt-2.5 max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-3xl p-5 sm:p-6 md:hidden shadow-2xl border border-white/15"
             >
-              <div className="flex flex-col space-y-3">
+              <div className="flex flex-col space-y-2.5 sm:space-y-3">
                 {links.map((link) => (
                   <a
                     key={link.name}
@@ -146,13 +146,14 @@ export default function Navbar() {
                   <ArrowUpRight size={15} />
                 </Link>
 
-                <div className="pt-4 mt-2 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400">
-                  <div className="flex items-center gap-3">
+                <div className="pt-4 mt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+                  <div className="flex items-center gap-2.5">
                     <a
                       href={`https://github.com/${profile.social.github}`}
                       target="_blank"
                       rel="noreferrer"
                       className="p-2 rounded-full border border-white/10 hover:text-white"
+                      title="GitHub"
                     >
                       <Github size={15} />
                     </a>
@@ -161,12 +162,14 @@ export default function Navbar() {
                       target="_blank"
                       rel="noreferrer"
                       className="p-2 rounded-full border border-white/10 hover:text-white"
+                      title="LinkedIn"
                     >
                       <Linkedin size={15} />
                     </a>
                     <a
                       href={`mailto:${profile.email}`}
                       className="p-2 rounded-full border border-white/10 hover:text-white"
+                      title="Email"
                     >
                       <Mail size={15} />
                     </a>

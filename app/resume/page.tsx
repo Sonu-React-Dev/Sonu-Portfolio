@@ -225,30 +225,30 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
   return (
     <div className="resume-page-wrapper min-h-screen bg-[#070708] py-6 sm:py-10 text-white selection:bg-violet-500/30 selection:text-white print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">
       {/* CONTROL TOOLBAR (HIDDEN IN PRINT) */}
-      <div className="no-print container-x max-w-[900px] mb-8">
-        <div className="glass rounded-3xl p-4 sm:p-5 flex flex-col gap-4">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5">
+      <div className="no-print container-x max-w-[900px] mb-6 sm:mb-8">
+        <div className="glass rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 flex flex-col gap-3.5 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3 sm:pb-3.5">
             {/* Back button */}
             <Link
               href="/"
-              className="flex items-center gap-2 text-sm text-zinc-300 transition hover:text-white"
+              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-zinc-300 transition hover:text-white"
             >
-              <ArrowLeft size={16} />
+              <ArrowLeft size={15} />
               <span>Back to Portfolio</span>
             </Link>
 
             {/* ATS Badge */}
-            <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
-              <ShieldCheck size={14} />
-              <span>Verified Professional Format</span>
+            <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-emerald-300">
+              <ShieldCheck size={13} />
+              <span>Verified Format</span>
             </div>
 
             {/* View Mode Toggle */}
-            <div className="flex rounded-full border border-white/10 bg-black/40 p-1 text-xs">
+            <div className="flex rounded-full border border-white/10 bg-black/40 p-1 text-[11px] sm:text-xs">
               <button
                 type="button"
                 onClick={() => setMode("ats")}
-                className={`rounded-full px-3 py-1 transition ${
+                className={`rounded-full px-2.5 sm:px-3 py-1 transition ${
                   mode === "ats" ? "bg-white text-black font-semibold" : "text-zinc-400 hover:text-white"
                 }`}
               >
@@ -257,7 +257,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
               <button
                 type="button"
                 onClick={() => setMode("modern")}
-                className={`rounded-full px-3 py-1 transition ${
+                className={`rounded-full px-2.5 sm:px-3 py-1 transition ${
                   mode === "modern" ? "bg-violet-600 text-white font-semibold" : "text-zinc-400 hover:text-white"
                 }`}
               >
@@ -267,34 +267,34 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
           </div>
 
           {/* SECOND BAR: LAYOUT SELECTOR & ACTIONS */}
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
             {/* 1-PAGE vs DETAILED TOGGLE */}
             <div className="flex items-center gap-2">
               <span className="text-xs text-zinc-400 font-medium hidden sm:inline">Format:</span>
-              <div className="flex rounded-full border border-white/15 bg-black/50 p-1 text-xs">
+              <div className="flex rounded-full border border-white/15 bg-black/50 p-1 text-[11px] sm:text-xs">
                 <button
                   type="button"
                   onClick={() => setLayout("single")}
-                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${
+                  className={`flex items-center gap-1.5 rounded-full px-3 sm:px-3.5 py-1 sm:py-1.5 transition ${
                     layout === "single"
                       ? "bg-violet-600 text-white font-bold shadow-sm shadow-violet-600/50"
                       : "text-zinc-400 hover:text-white"
                   }`}
                 >
-                  <FileText size={14} />
+                  <FileText size={13} />
                   <span>Single Page</span>
-                  <span className="ml-1 rounded bg-white/20 px-1.5 py-0.2 text-[10px] text-white">Recommended</span>
+                  <span className="ml-1 rounded bg-white/20 px-1.5 py-0.2 text-[9px] sm:text-[10px] text-white">Recommended</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setLayout("detailed")}
-                  className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${
+                  className={`flex items-center gap-1.5 rounded-full px-3 sm:px-3.5 py-1 sm:py-1.5 transition ${
                     layout === "detailed"
                       ? "bg-violet-600 text-white font-bold shadow-sm shadow-violet-600/50"
                       : "text-zinc-400 hover:text-white"
                   }`}
                 >
-                  <Files size={14} />
+                  <Files size={13} />
                   <span>Detailed CV</span>
                 </button>
               </div>
@@ -320,7 +320,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
             </div>
 
             {/* ACTION BUTTONS */}
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2">
               {/* Copy Plain Text */}
               <button
                 type="button"
@@ -329,7 +329,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 title="Copy plain text formatted for job application forms"
               >
                 {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
-                <span>{copied ? "Copied Text!" : "Copy Text"}</span>
+                <span>{copied ? "Copied!" : "Copy Text"}</span>
               </button>
 
               {/* Direct Download PDF File */}
@@ -337,7 +337,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 type="button"
                 onClick={handleDownload}
                 disabled={downloading}
-                className="flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-lg shadow-white/10 disabled:opacity-70 cursor-pointer"
+                className="flex items-center gap-1.5 rounded-full bg-white px-3.5 sm:px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-lg shadow-white/10 disabled:opacity-70 cursor-pointer"
                 title="Directly download high-resolution PDF"
               >
                 {downloading ? (
@@ -361,7 +361,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
                 title="Save as PDF via browser print"
               >
                 <Printer size={14} />
-                <span>Print / Browser PDF</span>
+                <span>Print</span>
               </button>
             </div>
           </div>
@@ -381,7 +381,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
       </div>
 
       {/* THE ACTUAL RESUME DOCUMENT */}
-      <main className="container-x max-w-[900px] print:max-w-none print:w-full print:m-0 print:p-0">
+      <main className="container-x max-w-[900px] overflow-x-auto pb-4 print:overflow-visible print:max-w-none print:w-full print:m-0 print:p-0">
         <ResumeDocument mode={mode} layout={layout} fontFamily={font} />
       </main>
 

@@ -14,7 +14,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: auto; background: var(--bg); }
+html { scroll-behavior: auto; background: var(--bg); overflow-x: hidden; }
 body {
   margin: 0;
   background:
@@ -69,6 +69,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 768px) {
   .container-x { width: min(100% - 28px, 680px); }
   .section-pad { padding-block: 84px; }
+}
+
+@media (max-width: 480px) {
+  .container-x { width: calc(100% - 24px); }
+  .section-pad { padding-block: 64px; }
 }
 
 @media print {

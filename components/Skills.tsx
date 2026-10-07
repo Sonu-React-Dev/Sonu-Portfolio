@@ -73,22 +73,22 @@ export default function Skills() {
   return (
     <section id="skills" className="section-pad border-y border-white/5 bg-[#070707]">
       <div className="container-x">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+            <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
               02 / Technology Stack
             </p>
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl text-white">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-white">
               Tools I use to turn ideas into products.
             </h2>
           </div>
-          <p className="max-w-md text-sm leading-6 text-zinc-400">
+          <p className="max-w-md text-xs sm:text-sm leading-5 sm:leading-6 text-zinc-400">
             A battle-tested stack centered on modern JavaScript ecosystems, high-performance UI frameworks, type safety, and production APIs.
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-white/10">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-7 sm:mb-10 pb-4 border-b border-white/10">
           {Object.entries(categoryMeta).map(([catKey, meta]) => {
             const Icon = meta.icon;
             const isActive = activeTab === catKey;
@@ -97,7 +97,7 @@ export default function Skills() {
                 key={catKey}
                 type="button"
                 onClick={() => setActiveTab(catKey)}
-                className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium transition cursor-pointer ${
+                className={`flex items-center gap-1.5 sm:gap-2 rounded-full px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-medium transition cursor-pointer ${
                   isActive
                     ? "bg-white text-black font-semibold shadow-md shadow-white/10"
                     : "glass text-zinc-400 hover:text-white hover:bg-white/10"
@@ -118,11 +118,11 @@ export default function Skills() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             {groups.map((group) => (
-              <div key={group.title} className="rounded-2xl border border-white/5 bg-[#0a0a0a]/70 p-6 sm:p-7">
-                <div className="mb-4 flex items-center justify-between">
+              <div key={group.title} className="rounded-2xl border border-white/5 bg-[#0a0a0a]/70 p-4 sm:p-6 lg:p-7">
+                <div className="mb-3 sm:mb-4 flex items-center justify-between">
                   <h3 className="text-xs uppercase tracking-[.2em] text-zinc-400 font-semibold">
                     {group.title}
                   </h3>
@@ -130,7 +130,7 @@ export default function Skills() {
                     {group.items.length} technologies
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-2.5">
+                <div className="flex flex-wrap gap-2 sm:gap-2.5">
                   {group.items.map((skill) => {
                     const isCore = topCoreSkills.has(skill);
                     return (

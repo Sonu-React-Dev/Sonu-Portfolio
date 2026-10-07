@@ -6,15 +6,6 @@ import { ArrowDownRight, ArrowUpRight, FileText, Github, Linkedin, Mail, MapPin,
 import { profile } from "@/data/portfolio";
 import sonuPhoto from "@/public/sonu-profile.png";
 
-const floatingBadges = [
-  { label: "React.js", color: "text-cyan-300 border-cyan-400/30 bg-cyan-400/10", pos: "top-4 -left-3 sm:-left-5" },
-  { label: "Next.js", color: "text-white border-white/20 bg-white/10", pos: "top-8 -right-3 sm:-right-5" },
-  { label: "React Native", color: "text-violet-300 border-violet-400/30 bg-violet-400/10", pos: "top-1/2 -right-4 sm:-right-7" },
-  { label: "Node.js", color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10", pos: "bottom-28 -left-3 sm:-left-6" },
-  { label: "TypeScript", color: "text-blue-300 border-blue-400/30 bg-blue-400/10", pos: "bottom-6 -right-2 sm:-right-4" },
-  { label: "Unity 3D", color: "text-amber-300 border-amber-400/30 bg-amber-400/10", pos: "bottom-8 -left-2 sm:-left-4" },
-];
-
 export default function Hero() {
   const [localTime, setLocalTime] = useState("");
 
@@ -36,27 +27,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden pt-28">
-      <div className="grid-bg absolute inset-0" />
-      <div className="container-x relative flex min-h-[calc(100vh-7rem)] items-center pb-20">
-        <div className="grid w-full gap-14 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
+    <section id="top" className="relative min-h-[100dvh] overflow-hidden pt-24 sm:pt-28">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
+      <div className="container-x relative flex min-h-[calc(100dvh-7rem)] items-center pb-16 sm:pb-20">
+        <div className="grid w-full gap-10 lg:gap-14 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
           <div>
             {/* Status & Location Pill */}
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[.22em] text-zinc-400"
+              className="mb-5 sm:mb-6 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs uppercase tracking-[.22em] text-zinc-400"
             >
-              <span className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300">
+              <span className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300 text-[11px] sm:text-xs">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
                 Available for opportunities
               </span>
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-zinc-400">
+              <span className="inline-flex items-center gap-1.5 text-zinc-400 text-[11px] sm:text-xs">
                 <MapPin size={13} className="text-violet-400" /> Delhi, India
               </span>
               {localTime && (
-                <span className="hidden md:inline-flex items-center gap-1.5 text-zinc-500">
+                <span className="hidden sm:inline-flex items-center gap-1.5 text-zinc-500 text-[11px] sm:text-xs">
                   <Clock size={13} className="text-zinc-500" /> {localTime} IST
                 </span>
               )}
@@ -67,17 +58,17 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
-              className="mb-4 text-sm font-semibold tracking-wide text-violet-300"
+              className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold tracking-wide text-violet-300 uppercase"
             >
               {profile.positioning}
             </motion.p>
 
             {/* Main Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.8 }}
-              className="max-w-5xl text-5xl font-semibold leading-[.94] tracking-[-.055em] sm:text-7xl lg:text-[6.4rem]"
+              className="max-w-5xl text-4xl sm:text-6xl md:text-7xl lg:text-[6.2rem] font-semibold leading-[1.04] sm:leading-[.94] tracking-[-0.04em] sm:tracking-[-.055em]"
             >
               Building digital products{" "}
               <span className="gradient-text">that feel as good as they perform.</span>
@@ -88,7 +79,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="mt-8 max-w-2xl text-lg leading-8 text-zinc-300"
+              className="mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-zinc-300"
             >
               {profile.subline}
             </motion.p>
@@ -98,30 +89,30 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.48 }}
-              className="mt-9 flex flex-wrap items-center gap-3"
+              className="mt-8 sm:mt-9 flex flex-wrap items-center gap-2.5 sm:gap-3"
             >
               <a
                 href="#work"
-                className="group flex items-center gap-2 rounded-full bg-white px-5 py-3 font-medium text-black transition hover:scale-[1.02] shadow-lg shadow-white/10"
+                className="group flex items-center gap-2 rounded-full bg-white px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-black transition hover:scale-[1.02] shadow-lg shadow-white/10"
               >
                 View selected work
                 <ArrowUpRight
-                  size={17}
+                  size={16}
                   className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
               <a
                 href="/resume"
-                className="glass flex items-center gap-2 rounded-full px-5 py-3 font-medium text-white transition hover:bg-white/10"
+                className="glass flex items-center gap-2 rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-white transition hover:bg-white/10"
               >
-                <FileText size={17} className="text-violet-300" />
+                <FileText size={16} className="text-violet-300" />
                 <span>Resume / CV</span>
               </a>
               <a
                 href="#contact"
-                className="glass flex items-center gap-2 rounded-full px-5 py-3 font-medium text-zinc-200 transition hover:bg-white/10 hover:text-white"
+                className="glass flex items-center gap-2 rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-zinc-200 transition hover:bg-white/10 hover:text-white"
               >
-                Let&apos;s talk <ArrowUpRight size={17} />
+                Let&apos;s talk <ArrowUpRight size={16} />
               </a>
             </motion.div>
 
@@ -130,7 +121,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-8 flex flex-wrap items-center gap-5 pt-4 text-xs text-zinc-400 border-t border-white/5"
+              className="mt-7 sm:mt-8 flex flex-wrap items-center gap-4 sm:gap-5 pt-4 text-xs text-zinc-400 border-t border-white/5"
             >
               <span className="uppercase tracking-widest text-[11px] text-zinc-400 font-medium">Connect:</span>
               <a
@@ -153,76 +144,80 @@ export default function Hero() {
               </a>
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-1.5 transition hover:text-white"
+                className="flex items-center gap-1.5 transition hover:text-white truncate max-w-[220px] sm:max-w-none"
                 title="Email Sonu"
               >
-                <Mail size={15} /> <span>{profile.email}</span>
+                <Mail size={15} className="shrink-0" /> <span className="truncate">{profile.email}</span>
               </a>
             </motion.div>
           </div>
 
-          {/* Right panel — Sonu's professional photo with floating badges */}
+          {/* Right panel — Sonu's professional photo with refined studio lighting */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, rotate: 2 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ delay: 0.25, duration: 0.9 }}
-            className="relative mx-auto w-full max-w-[390px]"
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[390px]"
           >
             {/* Ambient backlight glow */}
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-violet-600/25 via-fuchsia-500/15 to-cyan-400/20 blur-3xl pointer-events-none" />
+            <div className="absolute -inset-4 sm:-inset-6 rounded-[2.5rem] bg-gradient-to-tr from-violet-600/30 via-fuchsia-600/20 to-cyan-500/25 blur-3xl pointer-events-none opacity-80" />
+            <div className="absolute -inset-1 rounded-[2.2rem] bg-gradient-to-b from-violet-500/25 via-transparent to-cyan-500/15 blur-md pointer-events-none" />
 
             {/* Framed portrait card */}
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-b from-zinc-800/60 via-zinc-900/80 to-[#070709] shadow-2xl shadow-violet-950/40 backdrop-blur-sm">
-              {/* Inner ambient studio light behind Sonu */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-3/4 rounded-3xl bg-gradient-to-b from-violet-500/15 via-cyan-400/10 to-transparent" />
+            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-b from-zinc-900/95 via-[#0b0c13] to-[#050508] shadow-2xl shadow-violet-950/40 backdrop-blur-md">
+              {/* Radial studio halo centered behind portrait */}
+              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/30 via-cyan-400/20 to-transparent blur-2xl" />
 
-              <Image
-                src={sonuPhoto}
-                alt="Sonu Kumar - Full-Stack Developer"
-                priority
-                className="h-full w-full object-cover object-[center_top] transition-transform duration-700 hover:scale-105"
-              />
+              {/* Concentric aura orbital rings */}
+              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-52 w-52 rounded-full border border-violet-400/15" />
+              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-68 w-68 rounded-full border border-dashed border-cyan-400/10" />
 
-              {/* Gentle dark gradient overlay at bottom for card text readability */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              {/* Subtle tech background grid pattern */}
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_35%,#000_60%,transparent_100%)]" />
+
+              {/* Top subtle rim light highlight */}
+              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/60 to-transparent" />
+
+              {/* Corner crosshairs */}
+              <span className="pointer-events-none absolute left-3.5 top-3 font-mono text-[9px] text-violet-400/60 select-none">┌</span>
+              <span className="pointer-events-none absolute right-3.5 top-3 font-mono text-[9px] text-cyan-400/60 select-none">┐</span>
+
+              {/* Portrait image */}
+              <div className="relative h-full w-full flex items-end justify-center">
+                <Image
+                  src={sonuPhoto}
+                  alt="Sonu Kumar - Full-Stack Developer"
+                  priority
+                  className="relative z-10 h-full w-full object-cover object-[center_top] filter drop-shadow-[0_12px_28px_rgba(0,0,0,0.65)] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+
+              {/* Gentle dark gradient overlay at bottom for card text readability & grounding */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-2/5 bg-gradient-to-t from-[#050508] via-[#050508]/85 to-transparent" />
 
               {/* Bottom executive tag */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl border border-white/15 bg-black/70 px-4 py-3 backdrop-blur-md">
-                <div>
-                  <p className="text-sm font-semibold tracking-wide text-white">Sonu Kumar</p>
-                  <p className="text-xs text-zinc-400">Full-Stack Product Engineer</p>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-1 text-[11px] font-medium text-emerald-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Available</span>
+              <div className="absolute bottom-3 sm:bottom-4 left-3 right-3 sm:left-4 sm:right-4 z-30 rounded-2xl border border-white/15 bg-black/75 p-3 sm:p-3.5 backdrop-blur-xl shadow-xl transition-all duration-300 group-hover:border-violet-400/30">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5">
+                      <p className="truncate text-xs sm:text-sm font-bold tracking-wide text-white">Sonu Kumar</p>
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-violet-400" />
+                    </div>
+                    <p className="truncate text-[11px] sm:text-xs text-zinc-400">Full-Stack Product Engineer</p>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-1 text-[10px] sm:text-[11px] font-medium text-emerald-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Available</span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Floating tech badges */}
-            {floatingBadges.map((badge, i) => (
-              <motion.div
-                key={badge.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: [0, -6, 0],
-                }}
-                transition={{
-                  opacity: { delay: 0.6 + i * 0.12, duration: 0.5 },
-                  y: { delay: 0.6 + i * 0.12, duration: 3 + i * 0.4, repeat: Infinity, ease: "easeInOut" },
-                }}
-                className={`absolute z-10 rounded-full border px-3 py-1.5 text-[11px] font-medium shadow-lg backdrop-blur-md ${badge.pos} ${badge.color}`}
-              >
-                {badge.label}
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>
       <a
         href="#about"
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 text-zinc-500 transition hover:text-white"
+        className="absolute bottom-4 sm:bottom-7 left-1/2 -translate-x-1/2 text-zinc-500 transition hover:text-white hidden sm:block"
         aria-label="Scroll down to About section"
       >
         <ArrowDownRight className="animate-bounce" />
@@ -230,3 +225,4 @@ export default function Hero() {
     </section>
   );
 }
+

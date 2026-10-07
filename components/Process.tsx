@@ -21,31 +21,31 @@ export default function Process() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+          <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
             06 / Process
           </p>
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl text-white">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-white">
             Clear thinking. Clean execution.
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-6 shadow-2xl">
+        <div className="mt-8 sm:mt-14 grid gap-px overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-6 shadow-2xl">
           {steps.map((step, i) => (
             <motion.div
               key={step.name}
               whileHover={{ backgroundColor: "rgba(255,255,255,.08)" }}
-              className="group bg-[#0a0a0a] p-6 sm:p-7 transition flex flex-col justify-between"
+              className="group bg-[#0a0a0a] p-5 sm:p-6 lg:p-7 transition flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-zinc-500">
                   <span>0{i + 1}</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-400 opacity-60 group-hover:opacity-100 transition" />
                 </div>
-                <div className="mt-8 text-xl font-bold text-white group-hover:text-violet-300 transition">
+                <div className="mt-5 sm:mt-8 text-lg sm:text-xl font-bold text-white group-hover:text-violet-300 transition">
                   {step.name}
                 </div>
               </div>
-              <p className="mt-4 text-xs leading-5 text-zinc-400">
+              <p className="mt-3 sm:mt-4 text-xs leading-5 text-zinc-400">
                 {step.desc}
               </p>
             </motion.div>
