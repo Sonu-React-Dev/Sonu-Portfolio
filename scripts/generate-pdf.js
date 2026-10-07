@@ -238,7 +238,7 @@ function buildSinglePageHtml(isDark) {
 <body>
   <header>
     <h1>Sonu Kumar</h1>
-    <div class="headline">Full-Stack Developer • React.js | React Native | Next.js | Node.js | Unity 3D</div>
+    <div class="headline">Full-Stack Developer • React.js | React Native | Next.js | Node.js | TypeScript</div>
     <div class="contact-row">
       <span>Delhi, India</span>
       <span class="sep">•</span>
@@ -257,7 +257,7 @@ function buildSinglePageHtml(isDark) {
   <section>
     <h2>Profile Summary</h2>
     <p>
-      <strong>Full-Stack Developer</strong> with <strong>4+ years of experience</strong> engineering scalable, high-performance web and mobile applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>Unity (C#)</strong>. Proven track record of delivering production-ready applications with modular component architecture, robust <strong>REST API integration</strong>, state management via <strong>Redux Toolkit</strong>, and real-time cloud services. Experienced in Firebase Auth, FCM, Google Maps integration, and end-to-end performance optimization.
+      <strong>Full-Stack Developer</strong> with <strong>4+ years of experience</strong> engineering scalable, high-performance web and mobile applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>. Proven track record of delivering production-ready applications with modular component architecture, robust <strong>REST API integration</strong>, state management via <strong>Redux Toolkit</strong>, and real-time cloud services. Experienced in Supabase, Cloudflare R2, Firebase Auth, FCM, Google Maps integration, and end-to-end performance optimization.
     </p>
   </section>
 
@@ -288,16 +288,6 @@ function buildSinglePageHtml(isDark) {
           <span class="skill-pill">Microservices</span>
           <span class="skill-pill">Third-Party API Integration</span>
           <span class="skill-pill">JWT Auth</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Game & 3D (Unity):</span>
-        <div class="skill-tags">
-          <span class="skill-pill">Unity 3D / 2D</span>
-          <span class="skill-pill">C# Scripting</span>
-          <span class="skill-pill">Game Physics</span>
-          <span class="skill-pill">Cinemachine & URP</span>
-          <span class="skill-pill">Interactive 3D / WebGL</span>
         </div>
       </div>
       <div class="skill-row">
@@ -344,7 +334,8 @@ function buildSinglePageHtml(isDark) {
         <span class="exp-date">06/2025 — 08/2025 | Delhi, India</span>
       </div>
       <ul>
-        <li>Managed independent project modules end-to-end; integrated third-party APIs to significantly elevate functionality and user experience.</li>
+        <li>Managed independent project modules end-to-end from architectural design to deployment ahead of business milestones.</li>
+        <li>Integrated complex third-party REST APIs to extend product capabilities, elevate functionality, and streamline data exchange.</li>
       </ul>
     </div>
 
@@ -356,7 +347,8 @@ function buildSinglePageHtml(isDark) {
         <span class="exp-date">02/2025 — 06/2025 | Delhi, India</span>
       </div>
       <ul>
-        <li>Collaborated with cross-functional teams to engineer scalable, maintainable code ensuring high software reliability and uptime.</li>
+        <li>Collaborated with cross-functional engineering teams to engineer scalable, maintainable code ensuring high software reliability.</li>
+        <li>Applied clean coding standards, structured debugging, and comprehensive code reviews to maintain production stability.</li>
       </ul>
     </div>
 
@@ -369,6 +361,7 @@ function buildSinglePageHtml(isDark) {
       </div>
       <ul>
         <li>Developed user-friendly web interfaces for enterprise clients including Educomp Solutions Limited, EbixCash, and Hem Aunty Publications.</li>
+        <li>Elevated user satisfaction and retention by delivering accessible, responsive UI/UX designs and low-latency API integrations.</li>
       </ul>
     </div>
 
@@ -380,7 +373,8 @@ function buildSinglePageHtml(isDark) {
         <span class="exp-date">04/2021 — 10/2023 | Delhi, India</span>
       </div>
       <ul>
-        <li>Reduced defects by 20% through systematic debugging in Angular/React apps; trained students in Python and modern web development.</li>
+        <li>Reduced defects by 20% through systematic debugging in Angular/React apps; conducted performance audits and structured testing.</li>
+        <li>Mentored students and junior developers in Python programming fundamentals, modern JavaScript, and web development best practices.</li>
       </ul>
     </div>
   </section>
@@ -397,7 +391,7 @@ function buildSinglePageHtml(isDark) {
         </div>
         <span class="project-outcome">4 apps • 99.8% crash-free</span>
       </div>
-      <p style="font-size: 7.8pt;">Multi-platform marketplace spanning customer web, mobile apps, partner app, and operations dashboard with Firebase RBAC, Google Maps geolocation, and Redux Toolkit.</p>
+      <p style="font-size: 7.7pt;">Multi-platform marketplace spanning customer web, mobile apps, partner app, and operations dashboard with Firebase RBAC, Google Maps geolocation, and Redux Toolkit.</p>
       <div class="project-stack"><strong>Tech Stack:</strong> React.js, Next.js, React Native, Redux Toolkit, Node.js, Express, Firebase, Google Maps API</div>
     </div>
 
@@ -410,8 +404,21 @@ function buildSinglePageHtml(isDark) {
         </div>
         <span class="project-outcome">Full-Stack Advisory • OTP Admin</span>
       </div>
-      <p style="font-size: 7.8pt;">Full-stack property advisory platform with dedicated Admin Panel for managing listings, leads, OTP workflows, blogs, and SEO optimization using Next.js & REST APIs.</p>
+      <p style="font-size: 7.7pt;">Full-stack property advisory platform with dedicated Admin Panel for managing listings, leads, OTP workflows, blogs, and SEO optimization using Next.js & REST APIs.</p>
       <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Node.js, REST APIs, Lead Management, SEO</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <span class="project-title">Grasberg International</span>
+          <a class="project-link" href="https://grasberginternational.com/" target="_blank">[Live Site ↗]</a>
+          <span>– Forex Platform & Role-Based CRM</span>
+        </div>
+        <span class="project-outcome">Multi-Role CRM • MT5 Trading</span>
+      </div>
+      <p style="font-size: 7.7pt;">Enterprise forex platform combining brand portal with multi-tenant role-based CRM for User, Partner, and Admin roles integrating MetaTrader 5 (MT5) APIs.</p>
+      <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React.js, TypeScript, Tailwind CSS, REST APIs, MetaTrader 5 (MT5), Role-Based CRM</div>
     </div>
 
     <div class="project-item">
@@ -423,7 +430,7 @@ function buildSinglePageHtml(isDark) {
         </div>
         <span class="project-outcome">End-to-End • Secure R2 Streaming</span>
       </div>
-      <p style="font-size: 7.8pt;">QR-based media platform with private video streaming architecture via Cloudflare R2, short-lived tokens, HTTP Range delivery, and Supabase using Next.js & TypeScript.</p>
+      <p style="font-size: 7.7pt;">QR-based media platform with private video streaming architecture via Cloudflare R2, short-lived tokens, HTTP Range delivery, and Supabase using Next.js & TypeScript.</p>
       <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Supabase, Cloudflare R2, Video Streaming, QR Routing</div>
     </div>
   </section>
@@ -477,7 +484,7 @@ function buildDetailedHtml(isDark) {
 <body>
   <header>
     <h1>Sonu Kumar</h1>
-    <div class="headline">Full-Stack Developer • React.js | React Native | Next.js | Node.js | Unity 3D</div>
+    <div class="headline">Full-Stack Developer • React.js | React Native | Next.js | Node.js | TypeScript</div>
     <div class="contact-row">
       <span>Delhi, India</span>
       <span class="sep">•</span>
@@ -496,7 +503,7 @@ function buildDetailedHtml(isDark) {
   <section>
     <h2>Profile Summary</h2>
     <p>
-      <strong>Full-Stack Developer</strong> with <strong>4+ years of professional experience</strong> architecting and shipping scalable, high-performance web, mobile, and interactive applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>Unity (C#)</strong>. Strong expertise in cross-platform modular component systems, RESTful API design, state management (Redux Toolkit), and real-time cloud services. Proven track record of optimizing application performance, delivering 99.8% crash-free mobile sessions, and leading features across multi-tier software ecosystems.
+      <strong>Full-Stack Developer</strong> with <strong>4+ years of professional experience</strong> architecting and shipping scalable, high-performance web, mobile, and cloud-native applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>. Strong expertise in cross-platform modular component systems, RESTful API design, state management (Redux Toolkit), and real-time cloud services. Proven track record of optimizing application performance, delivering 99.8% crash-free mobile sessions, and leading features across multi-tier software ecosystems.
     </p>
   </section>
 
@@ -527,16 +534,6 @@ function buildDetailedHtml(isDark) {
           <span class="skill-pill">API Architecture</span>
           <span class="skill-pill">Third-Party Integrations</span>
           <span class="skill-pill">JWT & Role-Based Auth</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Game & 3D (Unity):</span>
-        <div class="skill-tags">
-          <span class="skill-pill">Unity 3D / 2D</span>
-          <span class="skill-pill">C# Scripting</span>
-          <span class="skill-pill">Game Physics & Collisions</span>
-          <span class="skill-pill">Cinemachine & URP</span>
-          <span class="skill-pill">Interactive 3D / WebGL</span>
         </div>
       </div>
       <div class="skill-row">
@@ -697,7 +694,23 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">04. UPBScan</span>
+          <span class="project-title">04. Grasberg International</span>
+          <a class="project-link" href="https://grasberginternational.com/" target="_blank">[Live Site ↗]</a>
+          <span>– Forex Platform & Role-Based CRM</span>
+        </div>
+        <span class="project-outcome">Multi-Role CRM • MT5 Trading</span>
+      </div>
+      <ul>
+        <li>Built frontend for a global forex platform combining an informational website with a multi-tenant role-based CRM using Next.js.</li>
+        <li>Delivered dedicated portal modules for User, Partner, Super Admin, and Sub Admin roles; integrated MetaTrader 5 (MT5) APIs.</li>
+      </ul>
+      <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React.js, TypeScript, Tailwind CSS, REST APIs, MetaTrader 5 (MT5), Role-Based CRM</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <span class="project-title">05. UPBScan</span>
           <a class="project-link" href="https://upbscan.com/" target="_blank">[Live Site ↗]</a>
           <span>– Blockchain Network Explorer</span>
         </div>
@@ -713,7 +726,7 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">05. Hem Aunty Publications</span>
+          <span class="project-title">06. Hem Aunty Publications</span>
           <a class="project-link" href="https://hemaunty.org/" target="_blank">[Live Site ↗]</a>
           <span>– E-Commerce Publishing Platform</span>
         </div>
@@ -728,7 +741,7 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">06. SOCIETY — RADHEADDA</span>
+          <span class="project-title">07. SOCIETY — RADHEADDA</span>
           <a class="project-link" href="https://www.radhiadda.com/login" target="_blank">[Live Site ↗]</a>
           <span>– Community & Matrimonial Platform</span>
         </div>
@@ -743,7 +756,7 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">07. SmartClass — Educomp</span>
+          <span class="project-title">08. SmartClass — Educomp</span>
           <span>– Enterprise Educational Software</span>
         </div>
         <span class="project-outcome">10,000+ schools • 2M+ daily students</span>
@@ -757,7 +770,7 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">08. Nutrinest Ventures</span>
+          <span class="project-title">09. Nutrinest Ventures</span>
           <a class="project-link" href="https://www.nutrinestventures.com/" target="_blank">[Live Site ↗]</a>
           <span>– D2C Brand Commerce Platform</span>
         </div>

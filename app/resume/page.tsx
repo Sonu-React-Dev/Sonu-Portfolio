@@ -141,6 +141,10 @@ KEY PROJECTS
   Stack: Next.js, React, TypeScript, Tailwind CSS, Supabase, Cloudflare R2, Video Streaming, QR Routing
   Summary: End-to-end QR keepsake platform with private video streaming via Cloudflare R2, short-lived tokens, and Supabase.
 
+• Grasberg International (Forex Platform & Role-Based CRM) - Multi-Role CRM · MT5 Trading Integration
+  Stack: Next.js, React.js, TypeScript, Tailwind CSS, REST APIs, MetaTrader 5 (MT5), Role-Based CRM
+  Summary: Enterprise forex platform with informational portal and multi-tenant CRM for User, Partner, and Admin roles integrating MT5 trading APIs.
+
 ==================================================
 EDUCATION & ACHIEVEMENTS
 ==================================================

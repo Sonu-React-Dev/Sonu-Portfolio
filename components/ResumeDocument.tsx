@@ -16,38 +16,43 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
     {
       ...experience[0], // SPODS Technologies
       bullets: [
-        "Developing and maintaining the Pick A Pro marketplace ecosystem across web platform, React Native mobile apps, admin dashboard, and Partner app.",
-        "Built cross-platform architecture with React, Next.js, and React Native using Redux Toolkit (RTK) and secure role-based access control (RBAC).",
-        "Integrated REST APIs, Google Maps geolocation, and Firebase push notifications; optimized rendering performance across web and mobile."
+        "Developing and maintaining the Pick A Pro ecosystem across customer web platform, React Native mobile apps, admin dashboard, and Partner app.",
+        "Implemented secure role-based access control (RBAC) and authorization workflows managing permissions for customers, service partners, and admins.",
+        "Architected cross-platform apps with React, Next.js, and React Native using Redux Toolkit (RTK), Google Maps geolocation, and Firebase FCM.",
+        "Optimized web and mobile application performance, reducing redundant re-renders and improving responsiveness across mobile viewports."
       ]
     },
     {
       ...experience[1], // NOYT INDIA
       bullets: [
-        "Managed independent project modules end-to-end; integrated third-party APIs to significantly elevate functionality and user experience."
+        "Managed independent project modules end-to-end from architectural design to deployment ahead of business milestones.",
+        "Integrated complex third-party REST APIs to extend product capabilities, elevate functionality, and streamline data exchange."
       ]
     },
     {
       ...experience[2], // 3FITECH
       bullets: [
-        "Collaborated with cross-functional teams to engineer scalable, maintainable code ensuring high software reliability and uptime."
+        "Collaborated with cross-functional engineering teams to build scalable, maintainable code ensuring high software reliability and uptime.",
+        "Applied clean coding standards, structured debugging, and comprehensive code reviews to maintain production stability."
       ]
     },
     {
       ...experience[3], // EDUMITRAM
       bullets: [
-        "Developed user-friendly web interfaces for enterprise clients including Educomp Solutions Limited, EbixCash, and Hem Aunty Publications."
+        "Developed user-friendly web interfaces for enterprise clients including Educomp Solutions Limited, EbixCash, and Hem Aunty Publications.",
+        "Elevated user satisfaction and retention by delivering accessible, responsive UI/UX designs and low-latency API integrations."
       ]
     },
     {
       ...experience[4], // SLOG Solutions
       bullets: [
-        "Reduced defects by 20% through systematic debugging in Angular/React apps; trained students in Python and modern web development."
+        "Reduced defects by 20% through systematic debugging in Angular/React apps; conducted performance audits and structured testing.",
+        "Mentored students and junior developers in Python programming fundamentals, modern JavaScript, and web development best practices."
       ]
     }
   ];
 
-  const singlePageProjects = projects.slice(0, 3); // Pick A Pro, UPBScan, Hem Aunty Publications
+  const singlePageProjects = projects.slice(0, 4); // Pick A Pro, PropertyWorks, Memory Caravan, Grasberg International
   const displayExp = isSingle ? singlePageExperience : experience;
   const displayProj = isSingle ? singlePageProjects : projects;
   const displayEdu = isSingle ? education.slice(0, 1) : education;
@@ -193,31 +198,7 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
               </div>
             </div>
             <div className="flex text-[10.8px] items-baseline gap-2">
-              <span className={`w-[130px] shrink-0 font-bold ${isModern ? "text-zinc-200" : "text-slate-900"}`}>Game & 3D (Unity):</span>
-              <div className={`flex-1 ${isModern ? "text-zinc-300" : "text-slate-700"}`}>
-                {(skills.gameAnd3d || []).map(s => {
-                  const isHighlight = ['Unity 3D / 2D', 'C# Scripting'].includes(s);
-                  return (
-                    <span
-                      key={s}
-                      className={`px-[5px] py-0 rounded-[3px] text-[10.5px] font-medium whitespace-nowrap inline-block my-[1px] mx-[2px] border ${
-                        isHighlight
-                          ? isModern
-                            ? "bg-amber-950/40 border-amber-800/60 text-amber-300 font-semibold"
-                            : "bg-amber-50 border-amber-200 text-amber-700 font-semibold"
-                          : isModern
-                            ? "bg-white/[0.04] border-zinc-800 text-zinc-300"
-                            : "bg-slate-50 border-slate-200 text-slate-700"
-                      }`}
-                    >
-                      {s}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="flex text-[10.8px] items-baseline gap-2">
-              <span className={`w-[130px] shrink-0 font-bold ${isModern ? "text-zinc-200" : "text-slate-900"}`}>Databases & Other:</span>
+              <span className={`w-[130px] shrink-0 font-bold ${isModern ? "text-zinc-200" : "text-slate-900"}`}>Databases & Cloud:</span>
               <div className={`flex-1 ${isModern ? "text-zinc-300" : "text-slate-700"}`}>
                 {skills.databases.concat(skills.other).concat(skills.toolsAndConcepts).map(s => (
                   <span
@@ -343,18 +324,16 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
         </section>
 
         {/* KEY ACHIEVEMENTS */}
-        {!isSingle && (
-          <section className="mb-0">
-            <h2 className={`${isSingle ? "text-[11.5px] pb-[1px] mb-1" : "text-[12px] pb-[2px] mb-1.5"} font-extrabold uppercase tracking-[1.1px] ${isModern ? "text-zinc-100 border-zinc-800" : "text-slate-900 border-slate-200"} border-b-[1.5px]`}>
-              Key Achievements
-            </h2>
-            <ul className="custom-bullets">
-              {keyAchievements.map((ach, i) => (
-                <li key={i}>{ach}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <section className="mb-0">
+          <h2 className={`${isSingle ? "text-[11.5px] pb-[1px] mb-1" : "text-[12px] pb-[2px] mb-1.5"} font-extrabold uppercase tracking-[1.1px] ${isModern ? "text-zinc-100 border-zinc-800" : "text-slate-900 border-slate-200"} border-b-[1.5px]`}>
+            Key Achievements
+          </h2>
+          <ul className="custom-bullets">
+            {keyAchievements.slice(0, isSingle ? 3 : 4).map((ach, i) => (
+              <li key={i}>{ach}</li>
+            ))}
+          </ul>
+        </section>
 
       </article>
     </>

@@ -80,6 +80,23 @@ export const projects = [
   },
   {
     number: "04",
+    title: "Grasberg International",
+    category: "Forex Platform & Role-Based CRM",
+    resumeDesc: "Built Next.js frontend combining an informational website with a role-based CRM for User, Partner, and Admin roles, integrating MetaTrader 5 (MT5) APIs.",
+    description: "Enterprise forex brokerage platform combining an informational brand portal with a comprehensive role-based CRM. Engineered dedicated modules for User, Partner, Super Admin, and Sub Admin roles, integrating REST APIs and MetaTrader 5 (MT5) backend trading workflows.",
+    bullets: [
+      "Built frontend for a global forex platform combining an informational website with a multi-tenant role-based CRM using Next.js.",
+      "Delivered SEO-friendly website pages and dedicated portal modules for User, Partner, Super Admin, and Sub Admin roles.",
+      "Integrated REST APIs and worked with MetaTrader 5 (MT5) backend APIs for trading workflows and account management.",
+      "Implemented responsive UI with Tailwind CSS, role authorization controls, and high-performance server-rendered pages."
+    ],
+    stack: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "REST APIs", "MetaTrader 5 (MT5)", "Role-Based CRM"],
+    result: "Multi-Role CRM · MT5 Trading Integration",
+    accent: "from-amber-400/15 via-transparent to-emerald-500/10",
+    url: "https://grasberginternational.com/"
+  },
+  {
+    number: "05",
     title: "UPBScan",
     category: "Blockchain Network Explorer",
     resumeDesc: "Developed real-time blockchain explorer for the UPB network to track live blocks, transactions, tokens (UPB, USDT, UPBP), and validator nodes.",
@@ -96,7 +113,7 @@ export const projects = [
     url: "https://upbscan.com/"
   },
   {
-    number: "05",
+    number: "06",
     title: "Hem Aunty Publications",
     category: "E-Commerce Publishing Storefront",
     resumeDesc: "Built scalable React e-commerce bookstore with product catalog, cart, Firebase Auth, and secure payment processing via REST APIs.",
@@ -113,7 +130,7 @@ export const projects = [
     url: "https://hemaunty.org/"
   },
   {
-    number: "06",
+    number: "07",
     title: "SOCIETY — RADHEADDA",
     category: "Community & Matrimonial Platform",
     resumeDesc: "Built full-stack matrimonial platform with verified profiles, private chat, consultations, and events using Angular, ASP.NET Core, and MySQL.",
@@ -130,7 +147,7 @@ export const projects = [
     url: "https://www.radhiadda.com/login"
   },
   {
-    number: "07",
+    number: "08",
     title: "SmartClass — Educomp",
     category: "Enterprise Educational Software",
     resumeDesc: "Modernized JavaFX classroom software across 10,000+ schools; implemented NEP-2020 competency-based evaluation and interactive grading tools.",
@@ -147,7 +164,7 @@ export const projects = [
     url: ""
   },
   {
-    number: "08",
+    number: "09",
     title: "Nutrinest Ventures",
     category: "D2C Brand Commerce Platform",
     resumeDesc: "Developed high-performance brand platform with responsive UI, ingredient transparency explorer, and sub-second page loads.",
