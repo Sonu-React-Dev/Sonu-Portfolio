@@ -283,7 +283,7 @@ function buildSinglePageHtml(isDark) {
   <section>
     <h2>Profile Summary</h2>
     <p>
-      <strong>Full-Stack Developer</strong> with <strong>4+ years of experience</strong> engineering scalable, high-performance web and mobile applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>. Proven track record of delivering production-ready applications with modular component architecture, robust <strong>REST API integration</strong>, state management via <strong>Redux Toolkit</strong>, and real-time cloud services. Experienced in Supabase, Cloudflare R2, Firebase Auth, FCM, Google Maps integration, and end-to-end performance optimization.
+      <strong>Full-Stack Developer</strong> with <strong>5+ years of experience</strong> engineering scalable, high-performance web and mobile applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>. Proven track record of delivering production-ready applications with modular component architecture, robust <strong>REST API integration</strong>, state management via <strong>Redux Toolkit</strong>, and real-time cloud services. Experienced in Supabase, Cloudflare R2, Firebase Auth, FCM, Google Maps integration, and end-to-end performance optimization.
     </p>
   </section>
 
@@ -530,7 +530,7 @@ function buildDetailedHtml(isDark) {
   <section>
     <h2>Profile Summary</h2>
     <p>
-      <strong>Full-Stack Developer</strong> with <strong>4+ years of professional experience</strong> architecting and shipping scalable, high-performance web, mobile, and cloud-native applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>. Strong expertise in cross-platform modular component systems, RESTful API design, state management (Redux Toolkit), and real-time cloud services. Proven track record of optimizing application performance, delivering 99.8% crash-free mobile sessions, and leading features across multi-tier software ecosystems.
+      <strong>Full-Stack Developer</strong> with <strong>5+ years of professional experience</strong> architecting and shipping scalable, high-performance web, mobile, and cloud-native applications using <strong>React.js</strong>, <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>. Strong expertise in cross-platform modular component systems, RESTful API design, state management (Redux Toolkit), and real-time cloud services. Proven track record of optimizing application performance, delivering 99.8% crash-free mobile sessions, and leading features across multi-tier software ecosystems.
     </p>
   </section>
 

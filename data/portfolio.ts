@@ -4,7 +4,7 @@ export const profile = {
   role: "Full-Stack Developer",
   positioning: "Full-Stack Developer → AI Developer",
   summary:
-    "Full-Stack Developer with 4+ years of experience building scalable, high-performance web and mobile applications using React.js, React Native, Next.js and Node.js. Strong expertise in modern JavaScript ecosystems, REST API integration, state management, and performance optimization. Proven track record of delivering production-ready applications with clean, maintainable, and modular architecture. Experienced in Firebase services and Google Maps integration.",
+    "Full-Stack Developer with 5+ years of experience building scalable, high-performance web and mobile applications using React.js, React Native, Next.js and Node.js. Strong expertise in modern JavaScript ecosystems, REST API integration, state management, and performance optimization. Proven track record of delivering production-ready applications with clean, maintainable, and modular architecture. Experienced in Firebase services and Google Maps integration.",
   subline:
     "I build production-ready digital products with clean architecture, thoughtful UX and strong performance.",
   email: "sonugupta6746@gmail.com",
@@ -276,7 +276,7 @@ export const achievements = [
   ["30%", "Web load-time optimization"],
   ["20%", "Frontend defect reduction"],
   ["10k+", "Users across shipped products"],
-  ["4+", "Years building real products"]
+  ["5+", "Years building real products"]
 ];
 
 export const services = [

@@ -95,45 +95,57 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
         aria-label={`Sonu Kumar ${isSingle ? "1-Page" : "Detailed"} Professional Resume`}
       >
         {/* HEADER SECTION */}
-        <header className={`border-b-[2px] ${isModern ? "border-violet-500/30" : "border-slate-900"} ${isSingle ? "pb-1.5 mb-2" : "pb-2 mb-2.5"} flex justify-between items-end flex-wrap gap-3`}>
-          <div>
-            <h1 className={`${isSingle ? "text-[23px]" : "text-[26px]"} font-extrabold ${isModern ? "text-white" : "text-slate-900"} tracking-[-0.5px] leading-[1.1] uppercase`}>
-              {profile.name}
-            </h1>
-            <div className="flex items-center gap-2 mt-[3px]">
-              <span className={`text-[13px] font-bold ${isModern ? "text-violet-400" : "text-blue-700"}`}>{profile.role}</span>
-              <span className={`${isModern ? "bg-violet-950/50 text-violet-300 border-violet-800/60" : "bg-blue-50 text-blue-700 border-blue-200"} border text-[10.5px] font-bold px-1.5 py-[1px] rounded`}>
-                4+ Years Experience
-              </span>
-            </div>
+        <header className={`text-center border-b-[2px] ${isModern ? "border-violet-500/30" : "border-slate-900"} ${isSingle ? "pb-2 mb-2" : "pb-2.5 mb-3"}`}>
+          <h1 className={`${isSingle ? "text-[24px]" : "text-[27px]"} font-extrabold ${isModern ? "text-white" : "text-slate-900"} tracking-[-0.5px] leading-[1.1] uppercase`}>
+            {profile.name}
+          </h1>
+          <div className="flex items-center justify-center flex-wrap gap-2 mt-1">
+            <span className={`text-[13px] font-bold ${isModern ? "text-violet-400" : "text-blue-700"}`}>
+              {profile.role}
+            </span>
+            <span className={`${isModern ? "text-zinc-600" : "text-slate-400"} font-bold select-none`}>•</span>
+            <span className={`${isModern ? "bg-violet-950/60 text-violet-300 border-violet-800/60" : "bg-blue-50 text-blue-700 border-blue-200"} border text-[10.5px] font-bold px-2 py-[0.5px] rounded-full`}>
+              5+ Years Experience
+            </span>
+            <span className={`${isModern ? "text-zinc-600" : "text-slate-400"} font-bold select-none`}>•</span>
+            <span className={`text-[11.5px] font-semibold ${isModern ? "text-zinc-400" : "text-slate-600"}`}>
+              React.js | React Native | Next.js | Node.js | TypeScript
+            </span>
           </div>
-          
-          <div className="flex flex-col gap-[3px] text-[11px] items-end">
-            <div className="flex items-center gap-3 flex-wrap justify-end">
-              <span className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300" : "text-slate-800"}`}>
-                <MapPin className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+
+          <div className="flex flex-col items-center gap-1 mt-2 text-[11.2px]">
+            {/* Direct Contact: Location, Mobile, Email */}
+            <div className={`flex items-center justify-center flex-wrap gap-x-3 gap-y-1 ${isModern ? "text-zinc-300" : "text-slate-700"}`}>
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-600"} shrink-0`} />
                 {profile.location}
               </span>
-              <a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-                <Phone className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+              <span className={`${isModern ? "text-zinc-600" : "text-slate-300"} select-none`}>•</span>
+              <a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className={`inline-flex items-center gap-1.5 font-medium ${isModern ? "text-violet-300 hover:text-violet-200" : "text-blue-700 hover:text-blue-800"} hover:underline`}>
+                <Phone className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-600"} shrink-0`} />
                 {profile.phone}
               </a>
-              <a href={`mailto:${profile.email}`} className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-                <Mail className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+              <span className={`${isModern ? "text-zinc-600" : "text-slate-300"} select-none`}>•</span>
+              <a href={`mailto:${profile.email}`} className={`inline-flex items-center gap-1.5 font-medium ${isModern ? "text-violet-300 hover:text-violet-200" : "text-blue-700 hover:text-blue-800"} hover:underline`}>
+                <Mail className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-600"} shrink-0`} />
                 {profile.email}
               </a>
             </div>
-            <div className="flex items-center gap-3 flex-wrap justify-end">
-              <a href={`https://linkedin.com/in/${profile.social.linkedin}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-                <Linkedin className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+
+            {/* Online Presence: LinkedIn, GitHub, Portfolio */}
+            <div className={`flex items-center justify-center flex-wrap gap-x-3 gap-y-1 ${isModern ? "text-zinc-300" : "text-slate-700"}`}>
+              <a href={`https://linkedin.com/in/${profile.social.linkedin}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 font-medium ${isModern ? "text-violet-300 hover:text-violet-200" : "text-blue-700 hover:text-blue-800"} hover:underline`}>
+                <Linkedin className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-600"} shrink-0`} />
                 linkedin.com/in/{profile.social.linkedin}
               </a>
-              <a href={`https://github.com/${profile.social.github}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-                <Github className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+              <span className={`${isModern ? "text-zinc-600" : "text-slate-300"} select-none`}>•</span>
+              <a href={`https://github.com/${profile.social.github}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 font-medium ${isModern ? "text-violet-300 hover:text-violet-200" : "text-blue-700 hover:text-blue-800"} hover:underline`}>
+                <Github className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-600"} shrink-0`} />
                 github.com/{profile.social.github}
               </a>
-              <a href="https://sonubuilds.github.io/" target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-                <Globe className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+              <span className={`${isModern ? "text-zinc-600" : "text-slate-300"} select-none`}>•</span>
+              <a href="https://sonubuilds.github.io/" target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 font-medium ${isModern ? "text-violet-300 hover:text-violet-200" : "text-blue-700 hover:text-blue-800"} hover:underline`}>
+                <Globe className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-600"} shrink-0`} />
                 sonubuilds.github.io
               </a>
             </div>
