@@ -1,11 +1,12 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { services } from "@/data/portfolio";
 
 export default function Services() {
   return (
-    <section className="section-pad">
+    <section id="services" className="section-pad">
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
           <motion.div
@@ -14,19 +15,45 @@ export default function Services() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
           >
-            <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300">05 / What I build</p>
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">From interface to product.</h2>
+            <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+              05 / What I build
+            </p>
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl text-white">
+              From interface to product.
+            </h2>
+            <p className="mt-6 max-w-md text-sm leading-6 text-zinc-400">
+              Whether you need an MVP built from scratch, cross-platform mobile apps, or enterprise web refactoring, I partner end-to-end to deliver production-ready software.
+            </p>
           </motion.div>
+
           <div className="divide-y divide-white/10 border-y border-white/10">
             {services.map((s, i) => (
-              <motion.div key={s.title} whileHover={{ x: 8 }} className="group flex items-center justify-between gap-5 py-7">
+              <motion.a
+                key={s.title}
+                href={`#contact?service=${encodeURIComponent(s.title)}`}
+                whileHover={{ x: 6 }}
+                className="group flex items-center justify-between gap-5 py-7 transition cursor-pointer"
+                title={`Discuss ${s.title}`}
+              >
                 <div>
-                  <div className="mb-2 text-xs text-zinc-600">0{i+1}</div>
-                  <h3 className="text-2xl font-medium">{s.title}</h3>
-                  <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-500">{s.text}</p>
+                  <div className="mb-2 flex items-center gap-2 text-xs font-mono text-zinc-500">
+                    <span>0{i + 1}</span>
+                    <span className="h-1 w-1 rounded-full bg-zinc-600" />
+                    <span className="text-[11px] text-violet-400 uppercase tracking-wider font-semibold">
+                      Engineering Service
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-white group-hover:text-violet-300 transition">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-400">
+                    {s.text}
+                  </p>
                 </div>
-                <ArrowUpRight className="shrink-0 text-zinc-600 transition group-hover:text-white" />
-              </motion.div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition group-hover:border-white/30 group-hover:bg-white group-hover:text-black shadow-lg">
+                  <ArrowUpRight size={17} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </motion.a>
             ))}
           </div>
         </div>

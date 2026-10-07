@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Download, Printer, Copy, Check, FileText, Files, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowLeft, Download, Printer, Copy, Check, FileText, Files, ShieldCheck } from "lucide-react";
 import ResumeDocument from "@/components/ResumeDocument";
 import { profile, skills, experience, projects, education, keyAchievements } from "@/data/portfolio";
 
@@ -221,14 +221,6 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
       setTimeout(() => setCopied(false), 2500);
     });
   };
-
-  const isDark = mode === "modern";
-  const pdfUrl = layout === "single"
-    ? (isDark ? "/Sonu_Kumar_Resume_Dark.pdf" : "/Sonu_Kumar_Resume.pdf")
-    : (isDark ? "/Sonu_Kumar_Detailed_CV_Dark.pdf" : "/Sonu_Kumar_Detailed_CV.pdf");
-  const pdfFileName = layout === "single"
-    ? "Sonu_Kumar_Resume.pdf"
-    : "Sonu_Kumar_Detailed_CV.pdf";
 
   return (
     <div className="resume-page-wrapper min-h-screen bg-[#070708] py-6 sm:py-10 text-white selection:bg-violet-500/30 selection:text-white print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">

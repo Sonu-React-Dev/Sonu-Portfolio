@@ -1,18 +1,19 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 const steps = [
-  { name: "Discover", desc: "Understand goals, users & constraints." },
-  { name: "Plan",     desc: "Architecture, milestones & priorities." },
-  { name: "Design",   desc: "Wireframes, UI systems & prototypes." },
-  { name: "Build",    desc: "Clean, modular, production-ready code." },
-  { name: "Test",     desc: "QA, accessibility & performance checks." },
-  { name: "Deploy",   desc: "CI/CD, monitoring & post-launch support." },
+  { name: "Discover", desc: "Understand goals, users, constraints & key architecture requirements." },
+  { name: "Plan",     desc: "Milestones, schema design, tech stack selection & sprint roadmaps." },
+  { name: "Design",   desc: "Component systems, atomic UI kits, responsive layout tokens." },
+  { name: "Build",    desc: "Clean, modular, testable, and production-ready code with type safety." },
+  { name: "Test",     desc: "Performance benchmarking, cross-device QA & accessibility compliance." },
+  { name: "Deploy",   desc: "Automated CI/CD pipelines, production monitoring & seamless handoff." },
 ];
 
 export default function Process() {
   return (
-    <section className="section-pad border-y border-white/5 bg-[#070707]">
+    <section id="process" className="section-pad border-y border-white/5 bg-[#070707]">
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,15 +21,33 @@ export default function Process() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300">06 / Process</p>
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl">Clear thinking. Clean execution.</h2>
+          <p className="mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
+            06 / Process
+          </p>
+          <h2 className="text-4xl font-semibold tracking-tight sm:text-6xl text-white">
+            Clear thinking. Clean execution.
+          </h2>
         </motion.div>
-        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-3 lg:grid-cols-6">
+
+        <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-6 shadow-2xl">
           {steps.map((step, i) => (
-            <motion.div key={step.name} whileHover={{ backgroundColor: "rgba(255,255,255,.06)" }} className="bg-[#0a0a0a] p-6">
-              <div className="text-xs text-zinc-600">0{i+1}</div>
-              <div className="mt-10 text-lg font-medium">{step.name}</div>
-              <p className="mt-2 text-xs leading-5 text-zinc-600">{step.desc}</p>
+            <motion.div
+              key={step.name}
+              whileHover={{ backgroundColor: "rgba(255,255,255,.08)" }}
+              className="group bg-[#0a0a0a] p-6 sm:p-7 transition flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between text-xs font-mono text-zinc-500">
+                  <span>0{i + 1}</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-400 opacity-60 group-hover:opacity-100 transition" />
+                </div>
+                <div className="mt-8 text-xl font-bold text-white group-hover:text-violet-300 transition">
+                  {step.name}
+                </div>
+              </div>
+              <p className="mt-4 text-xs leading-5 text-zinc-400">
+                {step.desc}
+              </p>
             </motion.div>
           ))}
         </div>
