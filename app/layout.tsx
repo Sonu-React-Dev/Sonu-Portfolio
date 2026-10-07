@@ -44,7 +44,10 @@ export const metadata: Metadata = {
     title: "Sonu Kumar — Full-Stack Developer & Product Engineer",
     description: "Building production-ready digital products with clean architecture, thoughtful UX, and strong performance.",
     images: ["/og-image.png"]
-  }
+  },
+  verification: {
+    google: "gOcNy3V-OHyaTaGGnN6S9jZXiyKx6VufuQXXCPYFGUk",
+  },
 };
 
 const jsonLd = {
