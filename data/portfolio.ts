@@ -16,7 +16,7 @@ export const profile = {
 };
 
 export const skills = {
-  languages: ["JavaScript", "TypeScript", "C#", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
+  languages: ["JavaScript", "TypeScript", "Java", "C#", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
   frontend: ["React.js", "React Native", "Next.js", "Angular", "Redux Toolkit"],
   backend: ["Node.js", "Express.js", "RESTful APIs", "Third-party API Integration"],
   gameAnd3d: ["Unity 3D / 2D", "C# Scripting", "Game Physics & Collisions", "Cinemachine & URP", "Interactive 3D / WebGL"],
@@ -25,11 +25,43 @@ export const skills = {
   toolsAndConcepts: ["Responsive Design", "Performance Optimization", "Role-Based Authentication", "State Management", "Agile Methodologies"]
 };
 
-export const projects = [
+export type ProjectTag = "commerce" | "platform" | "enterprise";
+
+export const projectCategories: { id: ProjectTag | "all"; label: string }[] = [
+  { id: "all", label: "All Projects" },
+  { id: "commerce", label: "Marketplace & Commerce" },
+  { id: "platform", label: "Platforms & SaaS" },
+  { id: "enterprise", label: "Enterprise, Fintech & Web3" }
+];
+
+export type Project = {
+  number: string;
+  slug: string;
+  title: string;
+  category: string;
+  tags: ProjectTag[];
+  platforms: string[];
+  logo?: string;
+  images?: { desktop: string; mobile?: string };
+  resumeDesc: string;
+  description: string;
+  bullets: string[];
+  stack: string[];
+  result: string;
+  accent: string;
+  url: string;
+};
+
+export const projects: Project[] = [
   {
     number: "01",
+    slug: "pick-a-pro",
     title: "Pick A Pro",
     category: "On-Demand Marketplace Ecosystem",
+    tags: ["commerce", "platform"],
+    platforms: ["Web", "iOS", "Android", "Partner App", "Admin"],
+    logo: "/logos/projects/pickapro.png",
+    images: { desktop: "/projects/pick-a-pro/desktop.webp", mobile: "/projects/pick-a-pro/mobile.webp" },
     resumeDesc: "Built comprehensive full-stack ecosystem (web, React Native apps, partner app, admin dashboard) with Firebase Auth, Google Maps API, and Redux Toolkit.",
     description: "End-to-end on-demand service marketplace connecting verified home service professionals with customers in real-time. Engineered 4 integrated production applications: Customer Web Portal, Cross-Platform Mobile Apps (iOS & Android), Partner Service App, and an Enterprise Admin Operations Dashboard.",
     bullets: [
@@ -46,8 +78,13 @@ export const projects = [
   },
   {
     number: "02",
+    slug: "propertyworks",
     title: "PropertyWorks",
     category: "Real Estate Intelligence & Advisory Platform",
+    tags: ["platform"],
+    platforms: ["Web", "Admin"],
+    logo: "/logos/projects/propertyworks.png",
+    images: { desktop: "/projects/propertyworks/desktop.webp", mobile: "/projects/propertyworks/mobile.webp" },
     resumeDesc: "Developed full-stack real estate advisory platform with dedicated Admin Panel, project directory, OTP-based admin workflows, lead capture, and dynamic blog engine using Next.js, TypeScript, and REST APIs.",
     description: "Full-stack real estate intelligence and advisory platform engineered with a dedicated Admin Panel for managing property projects, listings, leads, blogs, and platform content. Designed scalable frontend and backend architecture, integrated secure REST APIs, and built responsive user experiences.",
     bullets: [
@@ -63,8 +100,12 @@ export const projects = [
   },
   {
     number: "03",
+    slug: "memory-caravan",
     title: "Memory Caravan",
     category: "QR-Based Digital Media & Keepsake Platform",
+    tags: ["platform", "commerce"],
+    platforms: ["Web", "QR"],
+    images: { desktop: "/projects/memory-caravan/desktop.webp", mobile: "/projects/memory-caravan/mobile.webp" },
     resumeDesc: "Architected end-to-end QR keepsake platform with private video streaming via Cloudflare R2, short-lived tokens, HTTP Range requests, and Supabase using Next.js & TypeScript.",
     description: "End-to-end QR-based digital media platform allowing users to scan unique QR codes and securely access personalized photo and video keepsakes. Designed a private video storage and streaming architecture using Cloudflare R2, short-lived playback tokens, and HTTP Range-based streaming without exposing storage objects.",
     bullets: [
@@ -80,8 +121,13 @@ export const projects = [
   },
   {
     number: "04",
+    slug: "grasberg",
     title: "Grasberg International",
     category: "Forex Platform & Role-Based CRM",
+    tags: ["enterprise"],
+    platforms: ["Web", "CRM"],
+    logo: "/logos/projects/grasberg.png",
+    images: { desktop: "/projects/grasberg/desktop.webp", mobile: "/projects/grasberg/mobile.webp" },
     resumeDesc: "Built Next.js frontend combining an informational website with a role-based CRM for User, Partner, and Admin roles, integrating MetaTrader 5 (MT5) APIs.",
     description: "Enterprise forex brokerage platform combining an informational brand portal with a comprehensive role-based CRM. Engineered dedicated modules for User, Partner, Super Admin, and Sub Admin roles, integrating REST APIs and MetaTrader 5 (MT5) backend trading workflows.",
     bullets: [
@@ -97,8 +143,13 @@ export const projects = [
   },
   {
     number: "05",
+    slug: "upbscan",
     title: "UPBScan",
     category: "Blockchain Network Explorer",
+    tags: ["enterprise"],
+    platforms: ["Web", "Web3"],
+    logo: "/logos/projects/upbscan.png",
+    images: { desktop: "/projects/upbscan/desktop.webp", mobile: "/projects/upbscan/mobile.webp" },
     resumeDesc: "Developed real-time blockchain explorer for the UPB network to track live blocks, transactions, tokens (UPB, USDT, UPBP), and validator nodes.",
     description: "High-throughput, real-time decentralized ledger explorer for the UPB blockchain ecosystem. Empowers cryptocurrency traders, developers, and node validators to inspect live block production, verify smart contracts, track wallet balances, and monitor gas price fluctuations.",
     bullets: [
@@ -114,8 +165,13 @@ export const projects = [
   },
   {
     number: "06",
+    slug: "hem-aunty",
     title: "Hem Aunty Publications",
     category: "E-Commerce Publishing Storefront",
+    tags: ["commerce"],
+    platforms: ["Web"],
+    logo: "/logos/projects/hemaunty.png",
+    images: { desktop: "/projects/hem-aunty/desktop.webp", mobile: "/projects/hem-aunty/mobile.webp" },
     resumeDesc: "Built scalable React e-commerce bookstore with product catalog, cart, Firebase Auth, and secure payment processing via REST APIs.",
     description: "Full-featured, high-conversion online bookstore and digital publishing storefront. Built to deliver a seamless shopping experience for educational and regional literature with frictionless checkout, dynamic inventory, and real-time order tracking.",
     bullets: [
@@ -131,8 +187,13 @@ export const projects = [
   },
   {
     number: "07",
+    slug: "radheadda",
     title: "SOCIETY — RADHEADDA",
     category: "Community & Matrimonial Platform",
+    tags: ["platform"],
+    platforms: ["Web"],
+    logo: "/logos/projects/radheadda.png",
+    images: { desktop: "/projects/radheadda/desktop.webp", mobile: "/projects/radheadda/mobile.webp" },
     resumeDesc: "Built full-stack matrimonial platform with verified profiles, private chat, consultations, and events using Angular, ASP.NET Core, and MySQL.",
     description: "Enterprise-grade matrimonial and social community networking portal engineered to connect diverse communities with verified identities, strict privacy safeguards, real-time private communication, and consultation booking.",
     bullets: [
@@ -148,8 +209,11 @@ export const projects = [
   },
   {
     number: "08",
+    slug: "smartclass",
     title: "SmartClass — Educomp",
     category: "Enterprise Educational Software",
+    tags: ["enterprise"],
+    platforms: ["Desktop", "Offline-first"],
     resumeDesc: "Modernized JavaFX classroom software across 10,000+ schools; implemented NEP-2020 competency-based evaluation and interactive grading tools.",
     description: "Mission-critical interactive classroom software platform deployed across a nationwide network of 10,000+ schools, reaching over 2 million students daily. Modernized legacy desktop applications to align with India's National Education Policy (NEP-2020).",
     bullets: [
@@ -165,8 +229,13 @@ export const projects = [
   },
   {
     number: "09",
+    slug: "nutrinest",
     title: "Nutrinest Ventures",
     category: "D2C Brand Commerce Platform",
+    tags: ["commerce"],
+    platforms: ["Web"],
+    logo: "/logos/projects/nutrinest.png",
+    images: { desktop: "/projects/nutrinest/desktop.webp", mobile: "/projects/nutrinest/mobile.webp" },
     resumeDesc: "Developed high-performance brand platform with responsive UI, ingredient transparency explorer, and sub-second page loads.",
     description: "Bespoke, high-performance brand portal and direct-to-consumer digital experience for a premium nutritional health company. Crafted with cutting-edge visual aesthetics, interactive product discovery, and flawless multi-device responsiveness.",
     bullets: [
@@ -179,15 +248,50 @@ export const projects = [
     result: "98/100 PageSpeed · +40% engagement",
     accent: "from-lime-300/10 via-transparent to-emerald-400/10",
     url: "https://www.nutrinestventures.com/"
+  },
+  {
+    number: "10",
+    slug: "spods",
+    title: "SPODS Technologies",
+    category: "Corporate Brand & Services Platform",
+    tags: ["enterprise"],
+    platforms: ["Web"],
+    logo: "/logos/spods.png",
+    images: { desktop: "/projects/spods/desktop.webp", mobile: "/projects/spods/mobile.webp" },
+    resumeDesc: "Engineered the official corporate website for SPODS Technologies highlighting services, capabilities, and company portfolio.",
+    description: "Official corporate website and services platform for SPODS Technologies. Built to serve as the primary digital touchpoint for clients, showcasing enterprise capabilities, core services, and contact channels.",
+    bullets: [
+      "Architected a responsive, modern corporate web presence with optimized performance and accessibility.",
+      "Implemented streamlined navigation to highlight core services like Web/Mobile Development and AI Integration.",
+      "Ensured rapid page loads and high SEO rankings through static generation and optimized media assets."
+    ],
+    stack: ["React.js", "Next.js", "Tailwind CSS", "TypeScript"],
+    result: "Official Brand Portal",
+    accent: "from-zinc-500/15 via-transparent to-zinc-400/10",
+    url: "https://www.spodstechnologies.com/"
   }
 ];
 
-export const experience = [
+export type Experience = {
+  period: string;
+  company: string;
+  location: string;
+  role: string;
+  logo?: string;
+  url?: string;
+  tags: string[];
+  bullets: string[];
+};
+
+export const experience: Experience[] = [
   {
     period: "08/2025 — Present",
     company: "SPODS Technologies",
     location: "Delhi, India",
-    role: "Front-end Developer | React Native | React | Next",
+    role: "Frontend Developer — React, React Native & Next.js",
+    logo: "/logos/spods.png",
+    url: "https://www.spodstechnologies.com/",
+    tags: ["React.js", "React Native", "Next.js", "Redux Toolkit", "Google Maps API", "Firebase Auth & FCM"],
     bullets: [
       "Developing and maintaining the Pick A Pro ecosystem including web platform, mobile application, admin dashboard, and Pick A Pro Partner app.",
       "Implemented role-based login and authorization to manage access for users, partners, and admin modules securely.",
@@ -204,6 +308,9 @@ export const experience = [
     company: "NOYT INDIA",
     location: "Delhi, India",
     role: "Software Developer",
+    logo: "/logos/companies/noyt.png",
+    url: "https://noytindia.com/",
+    tags: ["JavaScript", "REST APIs", "Third-Party Integrations", "Module Architecture"],
     bullets: [
       "Managed independent project modules, overseeing the full development cycle from initial concept to final delivery.",
       "Enhanced application functionality and user experience by integrating third-party APIs."
@@ -214,6 +321,9 @@ export const experience = [
     company: "3FITECH COMMUNICATIONS PVT LTD",
     location: "Delhi, India",
     role: "Software Developer",
+    logo: "/logos/companies/3fitech.png",
+    url: "https://3fitech.com/",
+    tags: ["Software Engineering", "Code Reviews", "Cross-Functional Agile"],
     bullets: [
       "Collaborated with cross-functional teams to define project requirements and deliver solutions that met business needs.",
       "Developed scalable and maintainable code, ensuring long-term stability of the software."
@@ -223,7 +333,9 @@ export const experience = [
     period: "11/2023 — 01/2025",
     company: "EDUMITRAM PVT LTD",
     location: "Delhi, India",
-    role: "Frontend Developer | React | User-Friendly Applications",
+    role: "Frontend Developer (React)",
+    logo: "/logos/edumitram.png",
+    tags: ["React.js", "UI/UX Optimization", "Enterprise Clients", "Educomp", "EbixCash"],
     bullets: [
       "Developed user-friendly web interfaces for clients including Educomp Solutions Limited, EbixCash Pvt Ltd, and Hem Aunty Publications.",
       "Improved user satisfaction through intuitive UI/UX design and efficient API integrations."
@@ -233,7 +345,10 @@ export const experience = [
     period: "04/2021 — 10/2023",
     company: "SLOG Solutions Pvt. Ltd",
     location: "Delhi, India",
-    role: "Frontend Developer | React | User-Friendly Applications",
+    role: "Frontend Developer (React / Angular)",
+    logo: "/logos/companies/slog.png",
+    url: "https://slogsolutions.com/",
+    tags: ["Angular", "React", "Python", "Debugging & Testing", "Performance Tuning"],
     bullets: [
       "Reduced defects by 20% through systematic debugging in Angular/React apps.",
       "Trained students in Python and web development."
@@ -277,6 +392,21 @@ export const achievements = [
   ["20%", "Frontend defect reduction"],
   ["10k+", "Users across shipped products"],
   ["5+", "Years building real products"]
+];
+
+/** Brands & clients delivered for — shown in the logo marquee. */
+export const clients: { name: string; logo?: string }[] = [
+  { name: "Pick A Pro", logo: "/logos/projects/pickapro.png" },
+  { name: "Educomp" },
+  { name: "EbixCash", logo: "/logos/projects/ebixcash.png" },
+  { name: "PropertyWorks", logo: "/logos/projects/propertyworks.png" },
+  { name: "Grasberg", logo: "/logos/projects/grasberg.png" },
+  { name: "Hem Aunty", logo: "/logos/projects/hemaunty.png" },
+  { name: "UPBScan", logo: "/logos/projects/upbscan.png" },
+  { name: "Nutrinest", logo: "/logos/projects/nutrinest.png" },
+  { name: "Radheadda", logo: "/logos/projects/radheadda.png" },
+  { name: "SPODS Tech", logo: "/logos/spods.png" },
+  { name: "Edumitram", logo: "/logos/edumitram.png" }
 ];
 
 export const services = [

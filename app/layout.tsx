@@ -1,13 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
+export const viewport: Viewport = {
+  themeColor: "#050508",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://sonubuilds.github.io"),
   title: "Sonu Kumar — Full-Stack Developer & Product Engineer",
   description: "Portfolio of Sonu Kumar — Full-Stack Developer with 5+ years of experience specializing in React, React Native, Next.js, Node.js, and product engineering.",
+  manifest: "/manifest.json",
   keywords: [
     "Sonu Kumar",
     "Full-Stack Developer",
@@ -55,6 +60,7 @@ const jsonLd = {
         "https://github.com/SonuBuilds",
         "https://linkedin.com/in/sonu-kumar-3b7072237"
       ],
+      "image": "https://sonubuilds.github.io/sonu-profile.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Delhi",

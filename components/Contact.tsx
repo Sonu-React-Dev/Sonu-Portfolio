@@ -25,10 +25,11 @@ export default function Contact() {
   // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [category, setCategory] = useState("Full-Time Role");
+  const [category, setCategory] = useState("Full-Time Engineering Role");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.email).then(() => {
@@ -37,7 +38,7 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) {
       setFormError("Please enter your name.");
@@ -53,15 +54,45 @@ export default function Contact() {
     }
 
     setFormError("");
-    setSubmitted(true);
+    setIsSubmitting(true);
 
-    // Prepare pre-filled email client link
-    const subject = encodeURIComponent(`[Portfolio Inquiry] ${category} from ${name}`);
-    const body = encodeURIComponent(
-      `Hello Sonu,\n\nName: ${name}\nEmail: ${email}\nInquiry Type: ${category}\n\nMessage:\n${message}\n\n---\nSent via sonubuilds.github.io`
-    );
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual key
+          name,
+          email,
+          subject: `[Portfolio Inquiry] ${category} from ${name}`,
+          message: `Inquiry Type: ${category}\n\nMessage:\n${message}\n\n---\nSent via sonubuilds.github.io`,
+        }),
+      });
 
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        throw new Error(result.message || "Failed to send message.");
+      }
+    } catch (err) {
+      console.error(err);
+      // Fallback to mailto if API fails or key is missing
+      const subject = encodeURIComponent(`[Portfolio Inquiry] ${category} from ${name}`);
+      const body = encodeURIComponent(
+        `Hello Sonu,\n\nName: ${name}\nEmail: ${email}\nInquiry Type: ${category}\n\nMessage:\n${message}\n\n---\nSent via sonubuilds.github.io`
+      );
+      window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -212,9 +243,9 @@ export default function Contact() {
                   <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/20 text-emerald-400">
                     <Check size={28} />
                   </div>
-                  <h4 className="text-xl font-bold text-white">Opening Email Client</h4>
+                  <h4 className="text-xl font-bold text-white">Message Sent Successfully!</h4>
                   <p className="mt-2 text-xs text-zinc-400 max-w-sm mx-auto leading-5">
-                    Your inquiry has been formatted. If your email app didn&apos;t open automatically, you can directly email{" "}
+                    Thank you for reaching out. I will get back to you within 24 hours. Alternatively, you can directly email{" "}
                     <span className="text-white font-medium">{profile.email}</span>.
                   </p>
                   <button
@@ -228,10 +259,11 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
+                    <label htmlFor="contact-name" className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
                       Your Name
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -241,10 +273,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
+                    <label htmlFor="contact-email" className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
                       Your Email Address
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -254,10 +287,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
+                    <label htmlFor="contact-category" className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
                       Opportunity / Inquiry Type
                     </label>
                     <select
+                      id="contact-category"
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
                       className="w-full rounded-xl border border-white/15 bg-[#121216] px-4 py-2.5 text-xs text-white outline-none transition focus:border-violet-500"
@@ -270,10 +304,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
+                    <label htmlFor="contact-message" className="block text-xs font-semibold text-zinc-300 mb-1.5 uppercase tracking-wider">
                       Project Details / Message
                     </label>
                     <textarea
+                      id="contact-message"
                       rows={4}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
@@ -288,10 +323,11 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-xs font-bold text-white transition hover:bg-violet-500 shadow-lg shadow-violet-600/30 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-xs font-bold text-white transition hover:bg-violet-500 disabled:bg-violet-600/50 disabled:cursor-not-allowed shadow-lg shadow-violet-600/30 cursor-pointer"
                   >
                     <Send size={14} />
-                    <span>Send Message to Sonu</span>
+                    <span>{isSubmitting ? "Sending..." : "Send Message to Sonu"}</span>
                   </button>
 
                   <p className="text-center text-[11px] text-zinc-400">

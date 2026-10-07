@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import { Layers, Zap, Smartphone, ShieldCheck } from "lucide-react";
 import { achievements, profile } from "@/data/portfolio";
 
@@ -31,6 +31,30 @@ const principles = [
 function StatCard({ value, label }: { value: string; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const match = value.match(/^([0-9.]+)(.*)$/);
+    if (match) {
+      const [, numStr, suffix] = match;
+      const num = parseFloat(numStr);
+      const hasDecimal = numStr.includes(".");
+
+      const controls = animate(0, num, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(latest) {
+          const val = hasDecimal ? latest.toFixed(1) : Math.floor(latest);
+          setDisplayValue(val + suffix);
+        },
+      });
+      return controls.stop;
+    } else {
+      setDisplayValue(value);
+    }
+  }, [isInView, value]);
 
   return (
     <motion.div
@@ -39,7 +63,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
       className="bg-[#0b0b0b] p-4 sm:p-6 transition flex flex-col justify-center"
     >
       <div className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-        {isInView ? value : "0"}
+        {displayValue}
       </div>
       <div className="mt-1.5 sm:mt-2 text-[11px] sm:text-xs uppercase tracking-wider text-zinc-400 font-medium leading-tight">
         {label}

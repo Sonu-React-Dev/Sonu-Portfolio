@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight, FileText, Github, Linkedin, Mail, MapPin, Clock } from "lucide-react";
 import { profile } from "@/data/portfolio";
-import sonuPhoto from "@/public/sonu-profile.png";
+import sonuPhoto from "@/public/sonu-profile.webp";
 
 export default function Hero() {
   const [localTime, setLocalTime] = useState("");
@@ -170,7 +170,7 @@ export default function Hero() {
 
               {/* Concentric aura orbital rings */}
               <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-52 w-52 rounded-full border border-violet-400/15" />
-              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-68 w-68 rounded-full border border-dashed border-cyan-400/10" />
+              <div className="pointer-events-none absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 h-[17rem] w-[17rem] rounded-full border border-dashed border-cyan-400/10" />
 
               {/* Subtle tech background grid pattern */}
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_35%,#000_60%,transparent_100%)]" />
@@ -204,10 +204,6 @@ export default function Hero() {
                       <span className="inline-block h-1.5 w-1.5 rounded-full bg-violet-400" />
                     </div>
                     <p className="truncate text-[11px] sm:text-xs text-zinc-400">Full-Stack Product Engineer</p>
-                  </div>
-                  <div className="flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-1 text-[10px] sm:text-[11px] font-medium text-emerald-300">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Available</span>
                   </div>
                 </div>
               </div>

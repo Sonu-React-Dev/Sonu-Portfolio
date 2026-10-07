@@ -6,15 +6,15 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Menu, X, FileText, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/portfolio";
-import sonuPhoto from "@/public/sonu-profile.png";
+import sonuPhoto from "@/public/sonu-profile.webp";
 
 const links = [
-  { name: "Work", href: "#work" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
+  { name: "Work", href: "#work" },
   { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
   { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {

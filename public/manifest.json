@@ -1,0 +1,16 @@
+{
+  "name": "Sonu Kumar Portfolio",
+  "short_name": "Sonu Kumar",
+  "description": "Portfolio of Sonu Kumar — Full-Stack Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "icons": [
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

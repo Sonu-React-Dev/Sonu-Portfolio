@@ -30,7 +30,7 @@ export default function Services() {
             {services.map((s, i) => (
               <motion.a
                 key={s.title}
-                href={`#contact?service=${encodeURIComponent(s.title)}`}
+                href="#contact"
                 whileHover={{ x: 6 }}
                 className="group flex items-start sm:items-center justify-between gap-4 py-5 sm:py-7 transition cursor-pointer"
                 title={`Discuss ${s.title}`}

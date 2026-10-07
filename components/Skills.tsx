@@ -4,6 +4,18 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { skills } from "@/data/portfolio";
 import { Code2, Server, Database, Box, Cpu } from "lucide-react";
+import { 
+  SiJavascript, SiTypescript, SiHtml5, SiTailwindcss, SiReact, 
+  SiNextdotjs, SiAngular, SiRedux, SiNodedotjs, SiExpress, 
+  SiUnity, SiMongodb, SiMysql, SiSupabase, SiFirebase, 
+  SiCloudflare, SiGooglemaps, SiGithub, SiPostman, SiSwagger, 
+  SiBootstrap 
+} from "react-icons/si";
+import { FaJava, FaCss3Alt } from "react-icons/fa";
+import { TbBrandCSharp, TbBrandVscode, TbApi } from "react-icons/tb";
+import { MdOutlineSpeed, MdOutlineSecurity, MdSync } from "react-icons/md";
+import { BiGitBranch } from "react-icons/bi";
+import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 
 const categoryMeta: Record<
   string,
@@ -28,6 +40,73 @@ const topCoreSkills = new Set([
   "Google Maps API",
   "Cloudflare R2"
 ]);
+
+// Map skill names to icons
+const getIconForSkill = (skill: string) => {
+  const iconProps = { className: "text-lg shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" };
+  
+  switch(skill) {
+    case "JavaScript": return <SiJavascript {...iconProps} className={`${iconProps.className} group-hover:text-[#F7DF1E]`} />;
+    case "TypeScript": return <SiTypescript {...iconProps} className={`${iconProps.className} group-hover:text-[#3178C6]`} />;
+    case "Java": return <FaJava {...iconProps} className={`${iconProps.className} group-hover:text-[#007396]`} />;
+    case "C#": return <TbBrandCSharp {...iconProps} className={`${iconProps.className} group-hover:text-[#239120]`} />;
+    case "HTML5": return <SiHtml5 {...iconProps} className={`${iconProps.className} group-hover:text-[#E34F26]`} />;
+    case "CSS3": return <FaCss3Alt {...iconProps} className={`${iconProps.className} group-hover:text-[#1572B6]`} />;
+    case "Bootstrap": return <SiBootstrap {...iconProps} className={`${iconProps.className} group-hover:text-[#7952B3]`} />;
+    case "Tailwind CSS": return <SiTailwindcss {...iconProps} className={`${iconProps.className} group-hover:text-[#06B6D4]`} />;
+    
+    case "React.js":
+    case "React Native": return <SiReact {...iconProps} className={`${iconProps.className} group-hover:text-[#61DAFB]`} />;
+    case "Next.js": return <SiNextdotjs {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Angular": return <SiAngular {...iconProps} className={`${iconProps.className} group-hover:text-[#DD0031]`} />;
+    case "Redux Toolkit": return <SiRedux {...iconProps} className={`${iconProps.className} group-hover:text-[#764ABC]`} />;
+    
+    case "Node.js": return <SiNodedotjs {...iconProps} className={`${iconProps.className} group-hover:text-[#339933]`} />;
+    case "Express.js": return <SiExpress {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "RESTful APIs": return <TbApi {...iconProps} className={`${iconProps.className} group-hover:text-[#009688]`} />;
+    case "Third-party API Integration": return <BiGitBranch {...iconProps} className={`${iconProps.className} group-hover:text-violet-400`} />;
+    
+    case "Unity 3D / 2D": return <SiUnity {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "C# Scripting": return <TbBrandCSharp {...iconProps} className={`${iconProps.className} group-hover:text-[#239120]`} />;
+    case "Game Physics & Collisions": return <Box {...iconProps} className={`${iconProps.className} group-hover:text-orange-400`} />;
+    case "Cinemachine & URP": return <SiUnity {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Interactive 3D / WebGL": return <Box {...iconProps} className={`${iconProps.className} group-hover:text-blue-400`} />;
+    
+    case "MongoDB": return <SiMongodb {...iconProps} className={`${iconProps.className} group-hover:text-[#47A248]`} />;
+    case "MySQL": return <SiMysql {...iconProps} className={`${iconProps.className} group-hover:text-[#4479A1]`} />;
+    case "Supabase (PostgreSQL)": return <SiSupabase {...iconProps} className={`${iconProps.className} group-hover:text-[#3ECF8E]`} />;
+    
+    case "Firebase Auth":
+    case "Firebase Realtime DB":
+    case "Firebase Cloud Messaging": return <SiFirebase {...iconProps} className={`${iconProps.className} group-hover:text-[#FFCA28]`} />;
+    case "Cloudflare R2": return <SiCloudflare {...iconProps} className={`${iconProps.className} group-hover:text-[#F38020]`} />;
+    case "Google Maps API": return <SiGooglemaps {...iconProps} className={`${iconProps.className} group-hover:text-[#4285F4]`} />;
+    case "Git/GitHub": return <SiGithub {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "VS Code": return <TbBrandVscode {...iconProps} className={`${iconProps.className} group-hover:text-[#007ACC]`} />;
+    case "Postman": return <SiPostman {...iconProps} className={`${iconProps.className} group-hover:text-[#FF6C37]`} />;
+    case "Swagger": return <SiSwagger {...iconProps} className={`${iconProps.className} group-hover:text-[#85EA2D]`} />;
+    
+    case "Responsive Design": return <HiOutlineDevicePhoneMobile {...iconProps} className={`${iconProps.className} group-hover:text-violet-400`} />;
+    case "Performance Optimization": return <MdOutlineSpeed {...iconProps} className={`${iconProps.className} group-hover:text-emerald-400`} />;
+    case "Role-Based Authentication": return <MdOutlineSecurity {...iconProps} className={`${iconProps.className} group-hover:text-blue-400`} />;
+    case "State Management": return <MdSync {...iconProps} className={`${iconProps.className} group-hover:text-amber-400`} />;
+    case "Agile Methodologies": return <BiGitBranch {...iconProps} className={`${iconProps.className} group-hover:text-rose-400`} />;
+    
+    default: return null;
+  }
+};
+
+const marqueeIcons = [
+  { icon: SiReact, color: "text-[#61DAFB]" },
+  { icon: SiNextdotjs, color: "text-white" },
+  { icon: SiTypescript, color: "text-[#3178C6]" },
+  { icon: SiNodedotjs, color: "text-[#339933]" },
+  { icon: SiTailwindcss, color: "text-[#06B6D4]" },
+  { icon: SiFirebase, color: "text-[#FFCA28]" },
+  { icon: SiSupabase, color: "text-[#3ECF8E]" },
+  { icon: SiUnity, color: "text-white" },
+  { icon: SiMongodb, color: "text-[#47A248]" },
+];
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState<string>("all");
@@ -71,8 +150,27 @@ export default function Skills() {
   const groups = filterGroups();
 
   return (
-    <section id="skills" className="section-pad border-y border-white/5 bg-[#070707]">
-      <div className="container-x">
+    <section id="skills" className="relative section-pad border-y border-white/5 bg-[#070707] overflow-hidden">
+      
+      {/* Infinite Tech Marquee Background */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden opacity-5 pointer-events-none py-4 border-b border-white/5">
+        <motion.div
+          className="flex whitespace-nowrap items-center gap-16"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+        >
+          {[...marqueeIcons, ...marqueeIcons, ...marqueeIcons].map((item, idx) => {
+            const Icon = item.icon;
+            return (
+               <div key={idx} className={`shrink-0 ${item.color}`}>
+                  <Icon size={48} />
+               </div>
+            );
+          })}
+        </motion.div>
+      </div>
+
+      <div className="container-x relative z-10 pt-8 sm:pt-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
             <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
@@ -122,7 +220,7 @@ export default function Skills() {
           >
             {groups.map((group) => (
               <div key={group.title} className="rounded-2xl border border-white/5 bg-[#0a0a0a]/70 p-4 sm:p-6 lg:p-7">
-                <div className="mb-3 sm:mb-4 flex items-center justify-between">
+                <div className="mb-4 sm:mb-5 flex items-center justify-between">
                   <h3 className="text-xs uppercase tracking-[.2em] text-zinc-400 font-semibold">
                     {group.title}
                   </h3>
@@ -130,20 +228,22 @@ export default function Skills() {
                     {group.items.length} technologies
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-2 sm:gap-2.5">
+                <div className="flex flex-wrap gap-2.5 sm:gap-3">
                   {group.items.map((skill) => {
                     const isCore = topCoreSkills.has(skill);
+                    const icon = getIconForSkill(skill);
                     return (
                       <motion.span
                         key={skill}
                         whileHover={{ y: -3 }}
-                        className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition flex items-center gap-1.5 ${
+                        className={`group rounded-full px-3.5 py-2 text-xs font-medium transition flex items-center gap-2 cursor-default ${
                           isCore
-                            ? "border border-violet-400/40 bg-violet-500/15 text-violet-200 shadow-sm shadow-violet-500/10"
-                            : "border border-white/10 bg-white/[0.04] text-zinc-300 hover:border-white/20 hover:text-white"
+                            ? "border border-violet-400/40 bg-violet-500/15 text-violet-200 shadow-sm shadow-violet-500/10 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-white"
+                            : "border border-white/10 bg-white/[0.04] text-zinc-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
                         }`}
                       >
-                        {isCore && <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />}
+                        {icon && icon}
+                        {!icon && isCore && <span className="h-1.5 w-1.5 rounded-full bg-violet-400 animate-pulse" />}
                         <span>{skill}</span>
                       </motion.span>
                     );

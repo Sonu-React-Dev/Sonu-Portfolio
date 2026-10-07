@@ -1,16 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Building2, ArrowUpRight } from "lucide-react";
 import { experience } from "@/data/portfolio";
-
-const roleTags: Record<string, string[]> = {
-  "SPODS Technologies": ["React.js", "React Native", "Next.js", "Redux Toolkit", "Google Maps API", "Firebase Auth & FCM"],
-  "NOYT INDIA": ["JavaScript", "REST APIs", "Third-Party Integrations", "Module Architecture"],
-  "3FITECH COMMUNICATIONS PVT LTD": ["Software Engineering", "Code Reviews", "Cross-Functional Agile"],
-  "EDUMITRAM PVT LTD": ["React.js", "UI/UX Optimization", "Enterprise Clients", "Educomp", "EbixCash"],
-  "SLOG Solutions Pvt. Ltd": ["Angular", "React", "Python", "Debugging & Testing", "Performance Tuning"],
-};
+import Image from "next/image";
 
 export default function Experience() {
   return (
@@ -30,52 +23,51 @@ export default function Experience() {
           </h2>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative mt-8 sm:mt-12">
           {/* Animated vertical timeline line */}
           <motion.div
-            className="absolute bottom-0 left-[5px] sm:left-[6px] top-0 w-px bg-white/15 origin-top"
+            className="absolute bottom-0 left-[20px] sm:left-[24px] top-0 w-px bg-white/10 origin-top"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           />
 
-          <div className="space-y-8 sm:space-y-12">
+          <div className="space-y-12 sm:space-y-16">
             {experience.map((item, index) => {
               const isCurrent = item.period.toLowerCase().includes("present");
-              const tags = roleTags[item.company] || [];
 
               return (
                 <motion.article
                   key={item.company}
-                  initial={{ opacity: 0, x: -15 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ delay: index * 0.08, duration: 0.5 }}
-                  className="relative pl-7 sm:pl-10"
+                  className="relative pl-[60px] sm:pl-[80px]"
                 >
-                  {/* Timeline Node */}
-                  <div
-                    className={`absolute left-0 top-1.5 sm:top-2 h-3 sm:h-3.5 w-3 sm:w-3.5 rounded-full border-2 bg-[#070707] transition ${
-                      isCurrent
-                        ? "border-emerald-400 ring-4 ring-emerald-400/20"
-                        : "border-violet-400 ring-2 ring-violet-400/10"
-                    }`}
-                  />
+                  {/* Timeline Avatar / Logo */}
+                  <div className="absolute left-0 top-0 h-[40px] w-[40px] sm:h-[48px] sm:w-[48px] rounded-full bg-[#0a0a0a] border-2 border-[#1a1a1a] flex items-center justify-center overflow-hidden z-10 p-1.5 ring-4 ring-[#070707]">
+                    {item.logo ? (
+                      <Image src={item.logo} alt={item.company} width={32} height={32} className="object-contain" />
+                    ) : (
+                      <Building2 size={20} className="text-zinc-500" />
+                    )}
+                  </div>
 
-                  <div className="grid gap-4 sm:gap-6 lg:grid-cols-[200px_1fr]">
+                  <div className="grid gap-4 sm:gap-6 lg:grid-cols-[220px_1fr]">
                     {/* Period & Location */}
-                    <div>
+                    <div className="pt-1 sm:pt-2">
                       <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-400 uppercase tracking-wider">
                         <Calendar size={13} className="text-violet-400 shrink-0" />
                         <span>{item.period}</span>
                       </div>
-                      <div className="mt-1 flex items-center gap-1.5 text-xs text-zinc-400">
+                      <div className="mt-2 flex items-center gap-1.5 text-xs text-zinc-400">
                         <MapPin size={12} className="shrink-0" />
                         <span>{item.location}</span>
                       </div>
                       {isCurrent && (
-                        <div className="mt-2 sm:mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-medium text-emerald-300">
+                        <div className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-medium text-emerald-300">
                           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                           <span>Current Role</span>
                         </div>
@@ -83,36 +75,45 @@ export default function Experience() {
                     </div>
 
                     {/* Role, Company, Bullets & Tags */}
-                    <div className="rounded-2xl border border-white/5 bg-[#0a0a0a]/80 p-4 sm:p-6 lg:p-7 backdrop-blur-sm">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                          {item.company}
-                        </h3>
-                        <span className="text-xs font-mono text-zinc-400">
+                    <div className="rounded-[1.5rem] border border-white/5 bg-white/[0.02] p-5 sm:p-7 lg:p-8 backdrop-blur-sm shadow-xl transition hover:bg-white/[0.03]">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        {item.url ? (
+                           <a href={item.url} target="_blank" rel="noreferrer" className="group flex items-center gap-2 hover:text-violet-300 transition-colors">
+                              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-violet-300 transition-colors">
+                                {item.company}
+                              </h3>
+                              <ArrowUpRight size={16} className="text-zinc-500 group-hover:text-violet-300 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                           </a>
+                        ) : (
+                           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                             {item.company}
+                           </h3>
+                        )}
+                        <span className="text-xs font-mono text-zinc-500 bg-black/40 px-2 py-0.5 rounded-full border border-white/5">
                           0{experience.length - index}
                         </span>
                       </div>
 
-                      <div className="mt-1 text-xs sm:text-sm font-semibold text-violet-300">
+                      <div className="mb-5 text-sm sm:text-base font-semibold text-violet-300/90">
                         {item.role}
                       </div>
 
-                      <ul className="mt-4 sm:mt-5 space-y-2 sm:space-y-2.5 text-xs sm:text-sm leading-5 sm:leading-6 text-zinc-300">
+                      <ul className="space-y-2.5 sm:space-y-3 text-sm leading-relaxed text-zinc-300">
                         {item.bullets.map((b) => (
-                          <li key={b} className="flex items-start gap-2.5">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" />
+                          <li key={b} className="flex items-start gap-3">
+                            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400/60" />
                             <span>{b}</span>
                           </li>
                         ))}
                       </ul>
 
                       {/* Tech stack badges for role */}
-                      {tags.length > 0 && (
-                        <div className="mt-5 sm:mt-6 flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
-                          {tags.map((tag) => (
+                      {item.tags && item.tags.length > 0 && (
+                        <div className="mt-6 sm:mt-7 flex flex-wrap gap-1.5 pt-5 border-t border-white/5">
+                          {item.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-full border border-white/10 bg-black/40 px-2.5 py-0.5 text-[11px] text-zinc-400"
+                              className="rounded-full border border-white/10 bg-black/40 px-3 py-1 text-[11px] font-medium text-zinc-400"
                             >
                               {tag}
                             </span>
