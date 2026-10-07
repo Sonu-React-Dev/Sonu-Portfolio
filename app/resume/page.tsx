@@ -43,11 +43,15 @@ export default function ResumePage() {
 
   const handleDownload = async () => {
     const isDark = mode === "modern";
-    const targetFileName = layout === "single"
-      ? (isDark ? "Sonu_Kumar_Resume_1Page_Dark.pdf" : "Sonu_Kumar_Resume_1Page.pdf")
-      : (isDark ? "Sonu_Kumar_Resume_Dark.pdf" : "Sonu_Kumar_Resume.pdf");
+    const targetSourcePdf = layout === "single"
+      ? (isDark ? "Sonu_Kumar_Resume_Dark.pdf" : "Sonu_Kumar_Resume.pdf")
+      : (isDark ? "Sonu_Kumar_Detailed_CV_Dark.pdf" : "Sonu_Kumar_Detailed_CV.pdf");
 
-    const pdfUrl = `/${targetFileName}`;
+    const professionalDownloadName = layout === "single"
+      ? "Sonu_Kumar_Resume.pdf"
+      : "Sonu_Kumar_Detailed_CV.pdf";
+
+    const pdfUrl = `/${targetSourcePdf}`;
 
     try {
       setDownloading(true);
@@ -59,7 +63,7 @@ export default function ResumePage() {
       const a = document.createElement("a");
       a.style.display = "none";
       a.href = blobUrl;
-      a.download = targetFileName;
+      a.download = professionalDownloadName;
       document.body.appendChild(a);
       a.click();
       setTimeout(() => {
@@ -220,11 +224,11 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
 
   const isDark = mode === "modern";
   const pdfUrl = layout === "single"
-    ? (isDark ? "/Sonu_Kumar_Resume_1Page_Dark.pdf" : "/Sonu_Kumar_Resume_1Page.pdf")
-    : (isDark ? "/Sonu_Kumar_Resume_Dark.pdf" : "/Sonu_Kumar_Resume.pdf");
+    ? (isDark ? "/Sonu_Kumar_Resume_Dark.pdf" : "/Sonu_Kumar_Resume.pdf")
+    : (isDark ? "/Sonu_Kumar_Detailed_CV_Dark.pdf" : "/Sonu_Kumar_Detailed_CV.pdf");
   const pdfFileName = layout === "single"
-    ? (isDark ? "Sonu_Kumar_Resume_1Page_Dark.pdf" : "Sonu_Kumar_Resume_1Page.pdf")
-    : (isDark ? "Sonu_Kumar_Resume_Dark.pdf" : "Sonu_Kumar_Resume.pdf");
+    ? "Sonu_Kumar_Resume.pdf"
+    : "Sonu_Kumar_Detailed_CV.pdf";
 
   return (
     <div className="resume-page-wrapper min-h-screen bg-[#070708] py-6 sm:py-10 text-white selection:bg-violet-500/30 selection:text-white print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">

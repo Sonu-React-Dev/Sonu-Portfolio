@@ -98,8 +98,6 @@ function getStyles(isDark) {
     .sep { color: ${subText}; opacity: 0.4; }
     section {
       margin-bottom: 4px;
-      break-inside: avoid;
-      page-break-inside: avoid;
     }
     h2 {
       font-size: 9.5pt;
@@ -271,7 +269,8 @@ function buildSinglePageHtml(isDark) {
       <span class="contact-item">${ico.phone} <a href="tel:+919709834056">+91 9709834056</a></span>
       <span class="sep">•</span>
       <span class="contact-item">${ico.email} <a href="mailto:sonugupta6746@gmail.com">sonugupta6746@gmail.com</a></span>
-      <span class="sep">•</span>
+    </div>
+    <div class="contact-row" style="margin-top: 1.5px;">
       <span class="contact-item">${ico.linkedin} <a href="https://linkedin.com/in/sonu-kumar-3b7072237" target="_blank">linkedin.com/in/sonu-kumar-3b7072237</a></span>
       <span class="sep">•</span>
       <span class="contact-item">${ico.github} <a href="https://github.com/SonuBuilds" target="_blank">github.com/SonuBuilds</a></span>
@@ -518,7 +517,8 @@ function buildDetailedHtml(isDark) {
       <span class="contact-item">${ico.phone} <a href="tel:+919709834056">+91 9709834056</a></span>
       <span class="sep">•</span>
       <span class="contact-item">${ico.email} <a href="mailto:sonugupta6746@gmail.com">sonugupta6746@gmail.com</a></span>
-      <span class="sep">•</span>
+    </div>
+    <div class="contact-row" style="margin-top: 1.5px;">
       <span class="contact-item">${ico.linkedin} <a href="https://linkedin.com/in/sonu-kumar-3b7072237" target="_blank">linkedin.com/in/sonu-kumar-3b7072237</a></span>
       <span class="sep">•</span>
       <span class="contact-item">${ico.github} <a href="https://github.com/SonuBuilds" target="_blank">github.com/SonuBuilds</a></span>
@@ -664,7 +664,7 @@ function buildDetailedHtml(isDark) {
   </section>
 
   <!-- PAGE BREAK FOR CLEAN 2-PAGE LAYOUT -->
-  <div class="page-break"></div>
+  
 
   <section>
     <h2>Key Projects (All Production & Live Deployments)</h2>
@@ -868,16 +868,18 @@ function compilePdf(htmlContent, outputFileName) {
 
 console.log('=== Compiling High-Fidelity Executive PDFs ===');
 
-// 1. Strict 1-Page Classic White Resume
-compilePdf(buildSinglePageHtml(false), 'Sonu_Kumar_Resume_1Page.pdf');
+// 1. Strict 1-Page Classic White Resume (Professional Default Resume)
+compilePdf(buildSinglePageHtml(false), 'Sonu_Kumar_Resume.pdf');
+fs.copyFileSync(path.join(publicDir, 'Sonu_Kumar_Resume.pdf'), path.join(publicDir, 'Sonu_Kumar_Resume_1Page.pdf'));
 
 // 2. Comprehensive 2-Page Detailed Classic White CV
-compilePdf(buildDetailedHtml(false), 'Sonu_Kumar_Resume.pdf');
+compilePdf(buildDetailedHtml(false), 'Sonu_Kumar_Detailed_CV.pdf');
 
 // 3. Strict 1-Page Dark Modern Executive Resume
-compilePdf(buildSinglePageHtml(true), 'Sonu_Kumar_Resume_1Page_Dark.pdf');
+compilePdf(buildSinglePageHtml(true), 'Sonu_Kumar_Resume_Dark.pdf');
+fs.copyFileSync(path.join(publicDir, 'Sonu_Kumar_Resume_Dark.pdf'), path.join(publicDir, 'Sonu_Kumar_Resume_1Page_Dark.pdf'));
 
 // 4. Comprehensive 2-Page Detailed Dark Modern CV
-compilePdf(buildDetailedHtml(true), 'Sonu_Kumar_Resume_Dark.pdf');
+compilePdf(buildDetailedHtml(true), 'Sonu_Kumar_Detailed_CV_Dark.pdf');
 
 console.log('=== All PDFs Successfully Compiled! ===');
