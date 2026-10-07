@@ -53,7 +53,8 @@ export default function ResumePage() {
       setDownloading(true);
       const res = await fetch(pdfUrl);
       if (!res.ok) throw new Error("Download request failed");
-      const blob = await res.blob();
+      const buffer = await res.arrayBuffer();
+      const blob = new Blob([buffer], { type: "application/pdf" });
       const blobUrl = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.style.display = "none";
