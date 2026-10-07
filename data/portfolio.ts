@@ -20,8 +20,8 @@ export const skills = {
   frontend: ["React.js", "React Native", "Next.js", "Angular", "Redux Toolkit"],
   backend: ["Node.js", "Express.js", "RESTful APIs", "Third-party API Integration"],
   gameAnd3d: ["Unity 3D / 2D", "C# Scripting", "Game Physics & Collisions", "Cinemachine & URP", "Interactive 3D / WebGL"],
-  databases: ["MongoDB", "MySQL"],
-  other: ["Firebase Auth", "Firebase Realtime DB", "Firebase Cloud Messaging", "Google Maps API", "Git/GitHub", "VS Code", "Postman", "Swagger"],
+  databases: ["MongoDB", "MySQL", "Supabase (PostgreSQL)"],
+  other: ["Firebase Auth", "Firebase Realtime DB", "Firebase Cloud Messaging", "Cloudflare R2", "Google Maps API", "Git/GitHub", "VS Code", "Postman", "Swagger"],
   toolsAndConcepts: ["Responsive Design", "Performance Optimization", "Role-Based Authentication", "State Management", "Agile Methodologies"]
 };
 
@@ -46,6 +46,40 @@ export const projects = [
   },
   {
     number: "02",
+    title: "PropertyWorks",
+    category: "Real Estate Intelligence & Advisory Platform",
+    resumeDesc: "Developed full-stack real estate advisory platform with dedicated Admin Panel, project directory, OTP-based admin workflows, lead capture, and dynamic blog engine using Next.js, TypeScript, and REST APIs.",
+    description: "Full-stack real estate intelligence and advisory platform engineered with a dedicated Admin Panel for managing property projects, listings, leads, blogs, and platform content. Designed scalable frontend and backend architecture, integrated secure REST APIs, and built responsive user experiences.",
+    bullets: [
+      "Developed end-to-end real estate portal and dedicated Admin Panel for managing property projects, listings, leads, and Knowledge Center blogs.",
+      "Built responsive, reusable frontend components using React.js, Next.js, Tailwind CSS, and TypeScript with mobile-first performance.",
+      "Engineered backend REST APIs, database schemas, OTP-based secure admin actions, and automated lead capture pipelines.",
+      "Implemented programmatic SEO optimization, fast project directory filters, and end-to-end production deployment workflows."
+    ],
+    stack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "REST APIs", "Lead Management", "SEO"],
+    result: "Full-Stack Advisory · OTP Admin & Lead Engine",
+    accent: "from-emerald-400/15 via-transparent to-blue-500/10",
+    url: "https://propertyworks.in/"
+  },
+  {
+    number: "03",
+    title: "Memory Caravan",
+    category: "QR-Based Digital Media & Keepsake Platform",
+    resumeDesc: "Architected end-to-end QR keepsake platform with private video streaming via Cloudflare R2, short-lived tokens, HTTP Range requests, and Supabase using Next.js & TypeScript.",
+    description: "End-to-end QR-based digital media platform allowing users to scan unique QR codes and securely access personalized photo and video keepsakes. Designed a private video storage and streaming architecture using Cloudflare R2, short-lived playback tokens, and HTTP Range-based streaming without exposing storage objects.",
+    bullets: [
+      "Engineered end-to-end QR-based media platform with dynamic routing, album previews, and secure media access mapping.",
+      "Designed private video storage and streaming pipeline with Cloudflare R2, short-lived playback tokens, and HTTP Range-based chunk delivery.",
+      "Built backend APIs, database integration, and security controls with Supabase PostgreSQL, Next.js, and TypeScript.",
+      "Delivered fluid mobile-first UI with Tailwind CSS and handled complete storage management, media processing, and production deployment."
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare R2", "Video Streaming", "QR Routing"],
+    result: "End-to-End Platform · Secure R2 Video Streaming",
+    accent: "from-pink-500/15 via-transparent to-purple-500/10",
+    url: "https://memory-caravan.onrender.com/"
+  },
+  {
+    number: "04",
     title: "UPBScan",
     category: "Blockchain Network Explorer",
     resumeDesc: "Developed real-time blockchain explorer for the UPB network to track live blocks, transactions, tokens (UPB, USDT, UPBP), and validator nodes.",
@@ -62,7 +96,7 @@ export const projects = [
     url: "https://upbscan.com/"
   },
   {
-    number: "03",
+    number: "05",
     title: "Hem Aunty Publications",
     category: "E-Commerce Publishing Storefront",
     resumeDesc: "Built scalable React e-commerce bookstore with product catalog, cart, Firebase Auth, and secure payment processing via REST APIs.",
@@ -79,7 +113,7 @@ export const projects = [
     url: "https://hemaunty.org/"
   },
   {
-    number: "04",
+    number: "06",
     title: "SOCIETY — RADHEADDA",
     category: "Community & Matrimonial Platform",
     resumeDesc: "Built full-stack matrimonial platform with verified profiles, private chat, consultations, and events using Angular, ASP.NET Core, and MySQL.",
@@ -96,7 +130,7 @@ export const projects = [
     url: "https://www.radhiadda.com/login"
   },
   {
-    number: "05",
+    number: "07",
     title: "SmartClass — Educomp",
     category: "Enterprise Educational Software",
     resumeDesc: "Modernized JavaFX classroom software across 10,000+ schools; implemented NEP-2020 competency-based evaluation and interactive grading tools.",
@@ -113,7 +147,7 @@ export const projects = [
     url: ""
   },
   {
-    number: "06",
+    number: "08",
     title: "Nutrinest Ventures",
     category: "D2C Brand Commerce Platform",
     resumeDesc: "Developed high-performance brand platform with responsive UI, ingredient transparency explorer, and sub-second page loads.",

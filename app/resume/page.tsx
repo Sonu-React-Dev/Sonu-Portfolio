@@ -129,17 +129,17 @@ SLOG Solutions Pvt. Ltd • Delhi, India (04/2021 — 10/2023)
 ==================================================
 KEY PROJECTS
 ==================================================
-• Pick A Pro (Service Marketplace Ecosystem) - Multi-Surface Product Ecosystem
+• Pick A Pro (On-Demand Marketplace Ecosystem) - 4 production apps · 99.8% crash-free
   Stack: React.js, Next.js, React Native, Redux Toolkit, Node.js, Express, Firebase, Google Maps API
   Summary: Comprehensive service marketplace spanning customer web, mobile apps, admin dashboard, and partner app with real-time updates.
 
-• UPBScan (Blockchain Explorer) - Real-Time Network Visibility
-  Stack: React, REST APIs, Web3 Charts, Blockchain
-  Summary: Real-time blockchain explorer tracking transactions, wallets, tokens, smart contracts, and validators.
+• PropertyWorks (Real Estate Intelligence & Advisory Platform) - Full-Stack Advisory · OTP Admin & Lead Engine
+  Stack: React.js, Next.js, TypeScript, Tailwind CSS, Node.js, REST APIs, Lead Management, SEO
+  Summary: Full-stack real estate advisory platform with dedicated Admin Panel, project directory, OTP-based admin actions, and lead capture.
 
-• Hem Aunty Publications (E-commerce Platform) - Complete Digital Storefront
-  Stack: React, Firebase Auth & Firestore, REST APIs, Tailwind CSS
-  Summary: Bookstore platform featuring product catalog, cart management, authentication, and order processing.
+• Memory Caravan (QR-Based Digital Media & Keepsake Platform) - End-to-End Platform · Secure R2 Video Streaming
+  Stack: Next.js, React, TypeScript, Tailwind CSS, Supabase, Cloudflare R2, Video Streaming, QR Routing
+  Summary: End-to-end QR keepsake platform with private video streaming via Cloudflare R2, short-lived tokens, and Supabase.
 
 ==================================================
 EDUCATION & ACHIEVEMENTS

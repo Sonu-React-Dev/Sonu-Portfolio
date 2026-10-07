@@ -305,7 +305,9 @@ function buildSinglePageHtml(isDark) {
         <div class="skill-tags">
           <span class="skill-pill">MongoDB</span>
           <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">Supabase</span>
           <span class="skill-pill">Firebase Auth</span>
+          <span class="skill-pill">Cloudflare R2</span>
           <span class="skill-pill">Realtime Database</span>
           <span class="skill-pill">Cloud Messaging (FCM)</span>
           <span class="skill-pill">Google Maps API</span>
@@ -402,27 +404,27 @@ function buildSinglePageHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">UPBScan</span>
-          <a class="project-link" href="https://upbscan.com/" target="_blank">[Live Site ↗]</a>
-          <span>– Blockchain Network Explorer</span>
+          <span class="project-title">PropertyWorks</span>
+          <a class="project-link" href="https://propertyworks.in/" target="_blank">[Live Site ↗]</a>
+          <span>– Real Estate Intelligence & Advisory Platform</span>
         </div>
-        <span class="project-outcome">Real-Time Visibility • &lt;80ms</span>
+        <span class="project-outcome">Full-Stack Advisory • OTP Admin</span>
       </div>
-      <p style="font-size: 7.8pt;">Real-time ledger explorer tracking live blocks, transactions, tokens (UPB, USDT, UPBP), and validator consensus with virtualized table rendering across 100k+ rows.</p>
-      <div class="project-stack"><strong>Tech Stack:</strong> React.js, Web3 Integration, REST APIs, Chart.js, Tailwind CSS, WebSockets, TypeScript</div>
+      <p style="font-size: 7.8pt;">Full-stack property advisory platform with dedicated Admin Panel for managing listings, leads, OTP workflows, blogs, and SEO optimization using Next.js & REST APIs.</p>
+      <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Node.js, REST APIs, Lead Management, SEO</div>
     </div>
 
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">Hem Aunty Publications</span>
-          <a class="project-link" href="https://hemaunty.org/" target="_blank">[Live Site ↗]</a>
-          <span>– E-Commerce Publishing Platform</span>
+          <span class="project-title">Memory Caravan</span>
+          <a class="project-link" href="https://memory-caravan.onrender.com/" target="_blank">[Live Site ↗]</a>
+          <span>– QR-Based Digital Media & Keepsake Platform</span>
         </div>
-        <span class="project-outcome">+28% conversion • 1.1s load</span>
+        <span class="project-outcome">End-to-End • Secure R2 Streaming</span>
       </div>
-      <p style="font-size: 7.8pt;">High-conversion online bookstore featuring dynamic catalog filtering, cart, Firebase Auth, and secure payment gateway API order processing.</p>
-      <div class="project-stack"><strong>Tech Stack:</strong> React.js, Firebase Auth, REST APIs, Redux Toolkit, Tailwind CSS, Payment Gateway</div>
+      <p style="font-size: 7.8pt;">QR-based media platform with private video streaming architecture via Cloudflare R2, short-lived tokens, HTTP Range delivery, and Supabase using Next.js & TypeScript.</p>
+      <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Supabase, Cloudflare R2, Video Streaming, QR Routing</div>
     </div>
   </section>
 
@@ -542,8 +544,10 @@ function buildDetailedHtml(isDark) {
         <div class="skill-tags">
           <span class="skill-pill">MongoDB</span>
           <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">Supabase</span>
           <span class="skill-pill">Firebase Auth</span>
           <span class="skill-pill">Firebase Realtime DB</span>
+          <span class="skill-pill">Cloudflare R2</span>
           <span class="skill-pill">Firebase Cloud Messaging (FCM)</span>
           <span class="skill-pill">Google Maps API</span>
           <span class="skill-pill">Git / GitHub</span>
@@ -661,7 +665,39 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">02. UPBScan</span>
+          <span class="project-title">02. PropertyWorks</span>
+          <a class="project-link" href="https://propertyworks.in/" target="_blank">[Live Site ↗]</a>
+          <span>– Real Estate Intelligence & Advisory Platform</span>
+        </div>
+        <span class="project-outcome">Full-Stack Advisory • OTP Admin</span>
+      </div>
+      <ul>
+        <li>Developed full-stack real estate advisory platform and dedicated Admin Panel for managing property projects, listings, leads, and blogs.</li>
+        <li>Built responsive frontend architecture with Next.js, React, TypeScript, and Tailwind CSS; engineered OTP-based admin actions and lead capture pipelines.</li>
+      </ul>
+      <div class="project-stack"><strong>Tech Stack:</strong> React.js, Next.js, TypeScript, Tailwind CSS, Node.js, REST APIs, Lead Management, SEO</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <span class="project-title">03. Memory Caravan</span>
+          <a class="project-link" href="https://memory-caravan.onrender.com/" target="_blank">[Live Site ↗]</a>
+          <span>– QR-Based Digital Media & Keepsake Platform</span>
+        </div>
+        <span class="project-outcome">End-to-End • Secure R2 Streaming</span>
+      </div>
+      <ul>
+        <li>Architected QR-based digital media platform enabling secure access to personalized keepsake photos and video memories via unique QR routing.</li>
+        <li>Designed private video streaming pipeline with Cloudflare R2, short-lived tokens, HTTP Range streaming, and Supabase PostgreSQL.</li>
+      </ul>
+      <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Supabase, Cloudflare R2, Video Streaming, QR Routing</div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <span class="project-title">04. UPBScan</span>
           <a class="project-link" href="https://upbscan.com/" target="_blank">[Live Site ↗]</a>
           <span>– Blockchain Network Explorer</span>
         </div>
@@ -669,8 +705,7 @@ function buildDetailedHtml(isDark) {
       </div>
       <ul>
         <li>Integrated high-frequency REST APIs and WebSocket data streams for sub-second block ingestion and real-time transaction updates.</li>
-        <li>Engineered deep multi-token tracking for native UPB, USDT (Tether), and UPBP assets with detailed smart contract transaction logs.</li>
-        <li>Optimized large-dataset rendering with table virtualization, ensuring silky-smooth navigation across 100,000+ historical transaction rows.</li>
+        <li>Engineered deep multi-token tracking for native UPB, USDT (Tether), and UPBP assets with table virtualization across 100k+ rows.</li>
       </ul>
       <div class="project-stack"><strong>Tech Stack:</strong> React.js, Web3 Integration, RESTful APIs, Chart.js, Tailwind CSS, WebSocket Feeds, TypeScript</div>
     </div>
@@ -678,7 +713,7 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">03. Hem Aunty Publications</span>
+          <span class="project-title">05. Hem Aunty Publications</span>
           <a class="project-link" href="https://hemaunty.org/" target="_blank">[Live Site ↗]</a>
           <span>– E-Commerce Publishing Platform</span>
         </div>
@@ -686,8 +721,6 @@ function buildDetailedHtml(isDark) {
       </div>
       <ul>
         <li>Engineered dynamic catalog with multi-facet search, subject filtering, author collections, and real-time stock inventory synchronization.</li>
-        <li>Designed streamlined shopping cart and multi-step checkout with coupon code validation, automated tax calculation, and payment gateway APIs.</li>
-        <li>Applied advanced asset optimization, lazy loading, and code splitting, achieving a 95+ Google Lighthouse mobile performance score.</li>
       </ul>
       <div class="project-stack"><strong>Tech Stack:</strong> React.js, Firebase Auth, REST APIs, Redux Toolkit, Tailwind CSS, Payment Gateway</div>
     </div>
@@ -695,16 +728,14 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">04. SOCIETY — RADHEADDA</span>
+          <span class="project-title">06. SOCIETY — RADHEADDA</span>
           <a class="project-link" href="https://www.radhiadda.com/login" target="_blank">[Live Site ↗]</a>
           <span>– Community & Matrimonial Platform</span>
         </div>
         <span class="project-outcome">15,000+ members • 99.9% uptime</span>
       </div>
       <ul>
-        <li>Developed multi-criteria matchmaking algorithm filtering candidates by education, profession, location, and lifestyle preferences.</li>
-        <li>Engineered real-time private messaging, video/audio consultation booking, and community announcements using Angular and ASP.NET Core.</li>
-        <li>Implemented JWT token-based authentication and role-based data encryption in ASP.NET Core to ensure total user privacy and data security.</li>
+        <li>Developed multi-criteria matchmaking algorithm, real-time messaging, and JWT authentication using Angular and ASP.NET Core.</li>
       </ul>
       <div class="project-stack"><strong>Tech Stack:</strong> Angular, ASP.NET Core, C#, MySQL, REST APIs, JWT Auth, Bootstrap</div>
     </div>
@@ -712,15 +743,13 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">05. SmartClass — Educomp</span>
+          <span class="project-title">07. SmartClass — Educomp</span>
           <span>– Enterprise Educational Software</span>
         </div>
         <span class="project-outcome">10,000+ schools • 2M+ daily students</span>
       </div>
       <ul>
-        <li>Engineered continuous competency-based evaluation engine adhering to official statutory NEP-2020 guidelines for nationwide schools.</li>
-        <li>Enhanced JavaFX multimedia playback, interactive digital whiteboard tools, and offline-first classroom presentation engines.</li>
-        <li>Engineered robust offline data caching and synchronization protocols, ensuring uninterrupted operation in low-connectivity classrooms.</li>
+        <li>Modernized JavaFX classroom software across 10,000+ schools; implemented NEP-2020 competency evaluation engine and offline sync.</li>
       </ul>
       <div class="project-stack"><strong>Tech Stack:</strong> JavaFX, Java, Desktop Architecture, NEP-2020 Framework, Offline Sync, Multimedia Engine</div>
     </div>
@@ -728,15 +757,14 @@ function buildDetailedHtml(isDark) {
     <div class="project-item">
       <div class="project-header">
         <div>
-          <span class="project-title">06. Nutrinest Ventures</span>
+          <span class="project-title">08. Nutrinest Ventures</span>
           <a class="project-link" href="https://www.nutrinestventures.com/" target="_blank">[Live Site ↗]</a>
           <span>– D2C Brand Commerce Platform</span>
         </div>
         <span class="project-outcome">98/100 PageSpeed • +40% engagement</span>
       </div>
       <ul>
-        <li>Crafted luxury dark-mode visual interface with fluid micro-interactions, smooth scroll storytelling, and mobile-first responsiveness.</li>
-        <li>Achieved 98/100 Google PageSpeed score through responsive WebP/AVIF asset pipelines, critical CSS inlining, and lazy hydration.</li>
+        <li>Crafted luxury dark-mode visual interface with fluid micro-interactions, achieving a 98/100 Google PageSpeed score.</li>
       </ul>
       <div class="project-stack"><strong>Tech Stack:</strong> Next.js, React, TypeScript, Tailwind CSS, Web Performance, SEO & Schema</div>
     </div>
