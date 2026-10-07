@@ -9,6 +9,18 @@ const chromeBinary = '/Applications/Google Chrome.app/Contents/MacOS/Google Chro
 if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
 if (!fs.existsSync(scratchDir)) fs.mkdirSync(scratchDir, { recursive: true });
 
+function getIcons(isDark) {
+  const c = isDark ? '#a78bfa' : '#2563eb';
+  return {
+    location: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    phone: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`,
+    email: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+    linkedin: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="${c}" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>`,
+    github: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="${c}" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>`,
+    globe: `<svg width="10.5" height="10.5" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1px; margin-right:3.5px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`
+  };
+}
+
 function getStyles(isDark) {
   const bg = isDark ? '#0d0e14' : '#ffffff';
   const text = isDark ? '#cbd5e1' : '#1e293b';
@@ -25,7 +37,7 @@ function getStyles(isDark) {
   return `
     @page {
       size: letter portrait;
-      margin: 7mm 10mm 6mm 10mm;
+      margin: 6mm 9mm 5mm 9mm;
     }
     * {
       box-sizing: border-box;
@@ -36,18 +48,18 @@ function getStyles(isDark) {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: ${text};
       background: ${bg};
-      font-size: 8.25pt;
+      font-size: 8.85pt;
       line-height: 1.28;
       -webkit-font-smoothing: antialiased;
     }
     header {
       text-align: center;
-      margin-bottom: 6px;
-      padding-bottom: 5px;
+      margin-bottom: 5px;
+      padding-bottom: 4px;
       border-bottom: 2px solid ${borderHeader};
     }
     h1 {
-      font-size: 19pt;
+      font-size: 20pt;
       font-weight: 800;
       letter-spacing: -0.4px;
       text-transform: uppercase;
@@ -56,34 +68,41 @@ function getStyles(isDark) {
       margin-bottom: 2px;
     }
     .headline {
-      font-size: 8.8pt;
+      font-size: 9.4pt;
       font-weight: 700;
       color: ${accent};
       margin-bottom: 3px;
       letter-spacing: 0.2px;
     }
     .contact-row {
-      font-size: 8pt;
+      font-size: 8.3pt;
       color: ${subText};
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 5px;
+      gap: 7px;
       align-items: center;
+      margin-top: 2px;
     }
-    .contact-row a {
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      color: ${subText};
+      text-decoration: none;
+    }
+    .contact-item a {
       color: ${accent};
       text-decoration: none;
       font-weight: 600;
     }
-    .sep { color: ${subText}; opacity: 0.6; }
+    .sep { color: ${subText}; opacity: 0.4; }
     section {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       break-inside: avoid;
       page-break-inside: avoid;
     }
     h2 {
-      font-size: 8.6pt;
+      font-size: 9.5pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.6px;
@@ -98,12 +117,14 @@ function getStyles(isDark) {
     p {
       text-align: justify;
       color: ${text};
+      font-size: 8.75pt;
+      line-height: 1.25;
     }
     .skills-table {
       display: flex;
       flex-direction: column;
       gap: 1.8px;
-      font-size: 8.1pt;
+      font-size: 8.5pt;
     }
     .skill-row {
       display: flex;
@@ -111,20 +132,21 @@ function getStyles(isDark) {
       align-items: baseline;
     }
     .skill-label {
-      width: 135px;
-      shrink: 0;
+      width: 130px;
+      flex-shrink: 0;
       font-weight: 700;
       color: ${titleColor};
+      font-size: 8.6pt;
     }
     .skill-tags {
       flex: 1;
     }
     .skill-pill {
       display: inline-block;
-      padding: 0px 4px;
+      padding: 0.5px 4.5px;
       margin: 0.5px 1.5px;
       border-radius: 2px;
-      font-size: 7.7pt;
+      font-size: 8pt;
       background: ${tagBg};
       border: 1px solid ${tagBorder};
       color: ${tagText};
@@ -132,26 +154,28 @@ function getStyles(isDark) {
       white-space: nowrap;
     }
     .exp-item {
-      margin-bottom: 4px;
+      margin-bottom: 3.5px;
       break-inside: avoid;
     }
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.4pt;
+      font-size: 9.1pt;
       margin-bottom: 1px;
     }
     .exp-company {
       font-weight: 800;
       color: ${titleColor};
+      font-size: 9.3pt;
     }
     .exp-role {
       font-weight: 600;
       color: ${accent};
+      font-size: 8.9pt;
     }
     .exp-date {
-      font-size: 7.8pt;
+      font-size: 8.2pt;
       font-weight: 600;
       color: ${subText};
       white-space: nowrap;
@@ -163,11 +187,11 @@ function getStyles(isDark) {
     }
     li {
       margin-bottom: 1px;
-      font-size: 8pt;
+      font-size: 8.65pt;
       color: ${text};
       line-height: 1.25;
       position: relative;
-      padding-left: 10px;
+      padding-left: 9px;
     }
     li::before {
       content: '•';
@@ -180,33 +204,34 @@ function getStyles(isDark) {
       color: ${titleColor};
     }
     .project-item {
-      margin-bottom: 3.5px;
+      margin-bottom: 3px;
       break-inside: avoid;
     }
     .project-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.3pt;
+      font-size: 9pt;
     }
     .project-title {
       font-weight: 800;
       color: ${titleColor};
+      font-size: 9.2pt;
     }
     .project-link {
       color: ${accent};
       text-decoration: none;
       font-weight: 700;
-      font-size: 7.8pt;
+      font-size: 8.1pt;
       margin-left: 4px;
     }
     .project-outcome {
-      font-size: 7.8pt;
+      font-size: 8.2pt;
       font-weight: 600;
       color: ${accent};
     }
     .project-stack {
-      font-size: 7.6pt;
+      font-size: 7.9pt;
       color: ${subText};
       margin-top: 0.5px;
     }
@@ -214,7 +239,7 @@ function getStyles(isDark) {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8pt;
+      font-size: 8.6pt;
       margin-bottom: 1px;
     }
     .edu-title {
@@ -228,6 +253,7 @@ function getStyles(isDark) {
 // 1. STRICT 1-PAGE EXECUTIVE RESUME HTML GENERATOR
 // ========================================================
 function buildSinglePageHtml(isDark) {
+  const ico = getIcons(isDark);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -240,17 +266,17 @@ function buildSinglePageHtml(isDark) {
     <h1>Sonu Kumar</h1>
     <div class="headline">Full-Stack Developer • React.js | React Native | Next.js | Node.js | TypeScript</div>
     <div class="contact-row">
-      <span>Delhi, India</span>
+      <span class="contact-item">${ico.location} Delhi, India</span>
       <span class="sep">•</span>
-      <a href="tel:+919709834056">+91 9709834056</a>
+      <span class="contact-item">${ico.phone} <a href="tel:+919709834056">+91 9709834056</a></span>
       <span class="sep">•</span>
-      <a href="mailto:sonugupta6746@gmail.com">sonugupta6746@gmail.com</a>
+      <span class="contact-item">${ico.email} <a href="mailto:sonugupta6746@gmail.com">sonugupta6746@gmail.com</a></span>
       <span class="sep">•</span>
-      <a href="https://linkedin.com/in/sonu-kumar-3b7072237" target="_blank">linkedin.com/in/sonu-kumar-3b7072237</a>
+      <span class="contact-item">${ico.linkedin} <a href="https://linkedin.com/in/sonu-kumar-3b7072237" target="_blank">linkedin.com/in/sonu-kumar-3b7072237</a></span>
       <span class="sep">•</span>
-      <a href="https://github.com/SonuBuilds" target="_blank">github.com/SonuBuilds</a>
+      <span class="contact-item">${ico.github} <a href="https://github.com/SonuBuilds" target="_blank">github.com/SonuBuilds</a></span>
       <span class="sep">•</span>
-      <a href="https://sonubuilds.github.io/" target="_blank">sonubuilds.github.io</a>
+      <span class="contact-item">${ico.globe} <a href="https://sonubuilds.github.io/" target="_blank">sonubuilds.github.io</a></span>
     </div>
   </header>
 
@@ -459,6 +485,7 @@ function buildSinglePageHtml(isDark) {
 // 2. COMPREHENSIVE 2-PAGE DETAILED CV HTML GENERATOR
 // ========================================================
 function buildDetailedHtml(isDark) {
+  const ico = getIcons(isDark);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -486,17 +513,17 @@ function buildDetailedHtml(isDark) {
     <h1>Sonu Kumar</h1>
     <div class="headline">Full-Stack Developer • React.js | React Native | Next.js | Node.js | TypeScript</div>
     <div class="contact-row">
-      <span>Delhi, India</span>
+      <span class="contact-item">${ico.location} Delhi, India</span>
       <span class="sep">•</span>
-      <a href="tel:+919709834056">+91 9709834056</a>
+      <span class="contact-item">${ico.phone} <a href="tel:+919709834056">+91 9709834056</a></span>
       <span class="sep">•</span>
-      <a href="mailto:sonugupta6746@gmail.com">sonugupta6746@gmail.com</a>
+      <span class="contact-item">${ico.email} <a href="mailto:sonugupta6746@gmail.com">sonugupta6746@gmail.com</a></span>
       <span class="sep">•</span>
-      <a href="https://linkedin.com/in/sonu-kumar-3b7072237" target="_blank">linkedin.com/in/sonu-kumar-3b7072237</a>
+      <span class="contact-item">${ico.linkedin} <a href="https://linkedin.com/in/sonu-kumar-3b7072237" target="_blank">linkedin.com/in/sonu-kumar-3b7072237</a></span>
       <span class="sep">•</span>
-      <a href="https://github.com/SonuBuilds" target="_blank">github.com/SonuBuilds</a>
+      <span class="contact-item">${ico.github} <a href="https://github.com/SonuBuilds" target="_blank">github.com/SonuBuilds</a></span>
       <span class="sep">•</span>
-      <a href="https://sonubuilds.github.io/" target="_blank">sonubuilds.github.io</a>
+      <span class="contact-item">${ico.globe} <a href="https://sonubuilds.github.io/" target="_blank">sonubuilds.github.io</a></span>
     </div>
   </header>
 

@@ -1,5 +1,5 @@
 import { profile, skills, experience, projects, education, keyAchievements } from "@/data/portfolio";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Globe } from "lucide-react";
 
 interface ResumeDocumentProps {
   mode?: "ats" | "modern";
@@ -108,37 +108,45 @@ export default function ResumeDocument({ mode = "ats", layout = "single", fontFa
             </div>
           </div>
           
-          <div className="flex flex-col gap-[2.5px] text-[10.5px] items-end">
-            <span className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300" : "text-slate-800"}`}>
-              <MapPin className={`w-3 h-3 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
-              {profile.location}
-            </span>
-            <a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-              <Phone className={`w-3 h-3 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
-              {profile.phone}
-            </a>
-            <a href={`mailto:${profile.email}`} className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-              <Mail className={`w-3 h-3 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
-              {profile.email}
-            </a>
-            <a href={`https://linkedin.com/in/${profile.social.linkedin}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-              <Linkedin className={`w-3 h-3 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
-              linkedin.com/in/{profile.social.linkedin}
-            </a>
-            <a href={`https://github.com/${profile.social.github}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
-              <Github className={`w-3 h-3 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
-              github.com/{profile.social.github}
-            </a>
+          <div className="flex flex-col gap-[3px] text-[11px] items-end">
+            <div className="flex items-center gap-3 flex-wrap justify-end">
+              <span className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300" : "text-slate-800"}`}>
+                <MapPin className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+                {profile.location}
+              </span>
+              <a href={`tel:${profile.phone.replace(/\s+/g, "")}`} className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
+                <Phone className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+                {profile.phone}
+              </a>
+              <a href={`mailto:${profile.email}`} className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
+                <Mail className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+                {profile.email}
+              </a>
+            </div>
+            <div className="flex items-center gap-3 flex-wrap justify-end">
+              <a href={`https://linkedin.com/in/${profile.social.linkedin}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
+                <Linkedin className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+                linkedin.com/in/{profile.social.linkedin}
+              </a>
+              <a href={`https://github.com/${profile.social.github}`} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
+                <Github className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+                github.com/{profile.social.github}
+              </a>
+              <a href="https://sonubuilds.github.io/" target="_blank" rel="noreferrer" className={`inline-flex items-center gap-1.5 ${isModern ? "text-zinc-300 hover:text-violet-400" : "text-slate-800 hover:text-blue-700"} hover:underline`}>
+                <Globe className={`w-3.5 h-3.5 ${isModern ? "text-violet-400" : "text-blue-700"} shrink-0`} />
+                sonubuilds.github.io
+              </a>
+            </div>
           </div>
         </header>
 
         {/* PROFILE SUMMARY */}
         <section className={isSingle ? "mb-1.5" : "mb-2.5"}>
-          <h2 className={`${isSingle ? "text-[11.5px] pb-[1px] mb-1" : "text-[12px] pb-[2px] mb-1.5"} font-extrabold uppercase tracking-[1.1px] ${isModern ? "text-zinc-100 border-zinc-800" : "text-slate-900 border-slate-200"} border-b-[1.5px]`}>
+          <h2 className={`${isSingle ? "text-[12px] pb-[1px] mb-1" : "text-[12.5px] pb-[2px] mb-1.5"} font-extrabold uppercase tracking-[1.1px] ${isModern ? "text-zinc-100 border-zinc-800" : "text-slate-900 border-slate-200"} border-b-[1.5px]`}>
             Profile Summary
           </h2>
           <p 
-            className={`text-[10.8px] ${isModern ? "text-zinc-300" : "text-slate-700"} text-justify leading-[1.42]`}
+            className={`text-[11.8px] ${isModern ? "text-zinc-300" : "text-slate-700"} text-justify leading-[1.42]`}
             dangerouslySetInnerHTML={{ __html: highlightTech(profile.summary) }}
           />
         </section>
