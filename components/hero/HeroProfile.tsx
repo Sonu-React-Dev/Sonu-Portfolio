@@ -63,7 +63,7 @@ export function HeroProfile() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2.5, delay: 0.3 }}
-        className="absolute w-[50%] h-[50%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/5 rounded-full blur-[40px] md:blur-[80px] pointer-events-none mix-blend-screen"
+        className="absolute w-[50%] h-[50%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-foreground-primary/5 rounded-full blur-[40px] md:blur-[80px] pointer-events-none mix-blend-screen"
       />
 
       {/* 3. Decorative Technical Elements */}

@@ -42,13 +42,13 @@ export default function Navbar() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50">
       <nav className="container-x mt-3 sm:mt-4">
-        <div className="glass flex h-14 items-center justify-between rounded-full px-4 md:px-5 shadow-lg shadow-black/40">
+        <div className="glass flex h-14 items-center justify-between rounded-full px-4 md:px-5 shadow-lg shadow-black/5 dark:shadow-black/40">
           {/* Brand & Sonu Photo */}
           <Link
             href="/#top"
-            className="flex items-center gap-2.5 font-bold tracking-tight text-white group"
+            className="flex items-center gap-2.5 font-bold tracking-tight text-foreground-primary group"
           >
-            <div className="relative h-7 w-7 overflow-hidden rounded-full ring-1 ring-violet-400/40 bg-zinc-800 transition group-hover:ring-violet-400">
+            <div className="relative h-7 w-7 overflow-hidden rounded-full ring-1 ring-accent-primary/40 bg-background-secondary transition group-hover:ring-accent-primary">
               <Image
                 src={sonuPhoto}
                 alt="Sonu Kumar"
@@ -56,7 +56,7 @@ export default function Navbar() {
               />
             </div>
             <span className="text-sm tracking-wider">
-              SONU<span className="text-violet-400">.</span>
+              SONU<span className="text-accent-primary">.</span>
             </span>
           </Link>
 
@@ -69,14 +69,14 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={`relative py-1 transition font-medium ${
-                    isActive ? "text-white font-semibold" : "text-zinc-400 hover:text-white"
+                    isActive ? "text-foreground-primary font-semibold" : "text-foreground-muted hover:text-foreground-primary"
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-violet-400"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-accent-primary"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -88,17 +88,17 @@ export default function Navbar() {
           {/* Right Action Buttons */}
           <div className="hidden items-center gap-3 md:flex">
             <ThemeToggle />
-            <div className="w-px h-4 bg-white/20 mx-1" />
+            <div className="w-px h-4 bg-border-subtle mx-1" />
             <Link
               href="/resume"
-              className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-zinc-300 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+              className="flex items-center gap-1.5 rounded-full border border-border-subtle bg-background-secondary px-3.5 py-1.5 text-xs text-foreground-secondary transition hover:border-accent-primary/30 hover:text-foreground-primary"
             >
-              <FileText size={13} className="text-violet-300" />
+              <FileText size={13} className="text-accent-primary/80" />
               <span>Resume</span>
             </Link>
             <Link
               href="/#contact"
-              className="flex items-center gap-1 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-sm shadow-white/10 cursor-pointer"
+              className="flex items-center gap-1 rounded-full bg-foreground-primary px-4 py-1.5 text-xs font-semibold text-background-primary transition hover:opacity-90 shadow-sm cursor-pointer"
             >
               <span>Let&apos;s talk</span>
               <ArrowUpRight size={14} />
@@ -110,7 +110,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               aria-label="Toggle mobile menu"
-              className="p-1 text-zinc-300 hover:text-white cursor-pointer"
+              className="p-1 text-foreground-secondary hover:text-foreground-primary cursor-pointer"
               onClick={() => setOpen(!open)}
             >
               {open ? <X size={22} /> : <Menu size={22} />}
@@ -126,7 +126,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className="glass mt-2.5 max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-3xl p-5 sm:p-6 md:hidden shadow-2xl border border-white/15"
+              className="glass mt-2.5 max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-3xl p-5 sm:p-6 md:hidden shadow-2xl border border-border-subtle"
             >
               <div className="flex flex-col space-y-2.5 sm:space-y-3">
                 {links.map((link) => (
@@ -134,17 +134,17 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between border-b border-white/5 py-2.5 text-base font-medium text-zinc-200 hover:text-white"
+                    className="flex items-center justify-between border-b border-border-subtle py-2.5 text-base font-medium text-foreground-secondary hover:text-foreground-primary"
                   >
                     <span>{link.name}</span>
-                    <ArrowUpRight size={15} className="text-zinc-500" />
+                    <ArrowUpRight size={15} className="text-foreground-muted" />
                   </Link>
                 ))}
 
                 <Link
                   href="/resume"
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-between py-2.5 text-base font-semibold text-violet-300"
+                  className="flex items-center justify-between py-2.5 text-base font-semibold text-accent-primary"
                 >
                   <span className="flex items-center gap-2">
                     <FileText size={16} /> View Resume / CV
@@ -152,13 +152,13 @@ export default function Navbar() {
                   <ArrowUpRight size={15} />
                 </Link>
 
-                <div className="pt-4 mt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+                <div className="pt-4 mt-2 border-t border-border-subtle flex flex-wrap items-center justify-between gap-3 text-xs text-foreground-muted">
                   <div className="flex items-center gap-2.5">
                     <a
                       href={`https://github.com/${profile.social.github}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-2 rounded-full border border-white/10 hover:text-white"
+                      className="p-2 rounded-full border border-border-subtle hover:text-foreground-primary hover:bg-background-secondary"
                       title="GitHub"
                     >
                       <Github size={15} />
@@ -167,14 +167,14 @@ export default function Navbar() {
                       href={`https://linkedin.com/in/${profile.social.linkedin}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-2 rounded-full border border-white/10 hover:text-white"
+                      className="p-2 rounded-full border border-border-subtle hover:text-foreground-primary hover:bg-background-secondary"
                       title="LinkedIn"
                     >
                       <Linkedin size={15} />
                     </a>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="p-2 rounded-full border border-white/10 hover:text-white"
+                      className="p-2 rounded-full border border-border-subtle hover:text-foreground-primary hover:bg-background-secondary"
                       title="Email"
                     >
                       <Mail size={15} />
@@ -183,7 +183,7 @@ export default function Navbar() {
                   <Link
                     href="/#contact"
                     onClick={() => setOpen(false)}
-                    className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black"
+                    className="rounded-full bg-foreground-primary px-4 py-2 text-xs font-semibold text-background-primary"
                   >
                     Let&apos;s talk
                   </Link>

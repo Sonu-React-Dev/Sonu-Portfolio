@@ -62,10 +62,10 @@ function StatCard({ value, label }: { value: string; label: string }) {
       whileHover={{ backgroundColor: "rgba(255,255,255,.06)" }}
       className="bg-[#0b0b0b] p-4 sm:p-6 transition flex flex-col justify-center"
     >
-      <div className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+      <div className="text-2xl font-bold tracking-tight text-foreground-primary sm:text-3xl lg:text-4xl">
         {displayValue}
       </div>
-      <div className="mt-1.5 sm:mt-2 text-[11px] sm:text-xs uppercase tracking-wider text-zinc-400 font-medium leading-tight">
+      <div className="mt-1.5 sm:mt-2 text-[11px] sm:text-xs uppercase tracking-wider text-foreground-muted font-medium leading-tight">
         {label}
       </div>
     </motion.div>
@@ -87,30 +87,30 @@ export default function About() {
               <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
                 01 / About
               </p>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-white">
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
                 Engineer with a product mindset.
               </h2>
             </motion.div>
           </div>
 
           <div>
-            <p className="max-w-3xl text-base sm:text-xl leading-7 sm:leading-9 text-zinc-200">
+            <p className="max-w-3xl text-base sm:text-xl leading-7 sm:leading-9 text-foreground-secondary">
               {profile.summary}
             </p>
-            <p className="mt-4 sm:mt-6 max-w-3xl text-sm sm:text-base leading-6 sm:leading-8 text-zinc-400">
+            <p className="mt-4 sm:mt-6 max-w-3xl text-sm sm:text-base leading-6 sm:leading-8 text-foreground-muted">
               My engineering philosophy centers on building maintainable digital products that combine intuitive UX with rock-solid reliability. From complex multi-tenant admin dashboards and high-throughput blockchain explorers to on-demand service ecosystems and mobile apps, I focus on every layer of the user journey.
             </p>
 
             {/* Metric counters */}
-            <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-4 shadow-xl">
+            <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl sm:rounded-3xl border border-border-subtle bg-foreground-primary/10 sm:grid-cols-4 shadow-xl">
               {achievements.map(([value, label]) => (
                 <StatCard key={label} value={value} label={label} />
               ))}
             </div>
 
             {/* Core Engineering Principles Grid */}
-            <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t border-white/10">
-              <p className="text-xs uppercase tracking-[.22em] text-zinc-400 mb-5 sm:mb-6 font-semibold">
+            <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t border-border-subtle">
+              <p className="text-xs uppercase tracking-[.22em] text-foreground-muted mb-5 sm:mb-6 font-semibold">
                 How I Build • Engineering Principles
               </p>
               <div className="grid gap-3.5 sm:gap-4 sm:grid-cols-2">
@@ -123,17 +123,17 @@ export default function About() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1, duration: 0.5 }}
-                      className="rounded-2xl border border-white/10 bg-zinc-950/60 p-4 sm:p-5 backdrop-blur-sm hover:border-violet-500/30 transition group"
+                      className="rounded-2xl border border-border-subtle bg-background-primary/60 p-4 sm:p-5 backdrop-blur-sm hover:border-violet-500/30 transition group"
                     >
                       <div className="flex items-center gap-3 mb-2 sm:mb-2.5">
                         <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl border border-violet-500/30 bg-violet-500/10 text-violet-300 group-hover:scale-105 transition shrink-0">
                           <Icon size={17} />
                         </div>
-                        <h3 className="text-xs sm:text-sm font-semibold text-white tracking-wide">
+                        <h3 className="text-xs sm:text-sm font-semibold text-foreground-primary tracking-wide">
                           {p.title}
                         </h3>
                       </div>
-                      <p className="text-xs leading-5 text-zinc-400">{p.desc}</p>
+                      <p className="text-xs leading-5 text-foreground-muted">{p.desc}</p>
                     </motion.div>
                   );
                 })}

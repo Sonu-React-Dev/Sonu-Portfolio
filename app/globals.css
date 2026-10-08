@@ -21,6 +21,10 @@
     --text-muted: #71717a;
     --border-subtle: #e4e4e7;
     --accent-primary: #6366f1;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --card-bg: #ffffff;
+    --ambient-purple: rgba(99, 102, 241, 0.05);
+    --ambient-blue: rgba(56, 189, 248, 0.04);
   }
 
   .dark {
@@ -41,6 +45,10 @@
     --text-muted: #71717a;
     --border-subtle: #1f1f22;
     --accent-primary: #7c5cff;
+    --glass-bg: rgba(11, 11, 11, 0.62);
+    --card-bg: #0a0a0a;
+    --ambient-purple: rgba(124, 92, 255, 0.12);
+    --ambient-blue: rgba(0, 198, 255, 0.05);
   }
 }
 
@@ -49,10 +57,10 @@ html { scroll-behavior: auto; background: var(--bg); overflow-x: hidden; }
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 72% 8%, rgba(124,92,255,.12), transparent 25rem),
-    radial-gradient(circle at 15% 35%, rgba(0,198,255,.05), transparent 22rem),
-    var(--bg);
-  color: var(--text);
+    radial-gradient(circle at 72% 8%, var(--ambient-purple), transparent 25rem),
+    radial-gradient(circle at 15% 35%, var(--ambient-blue), transparent 22rem),
+    var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-geist), Inter, system-ui, sans-serif;
   overflow-x: hidden;
 }
@@ -81,8 +89,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .section-pad { padding-block: 120px; }
 
 .glass {
-  background: rgba(11,11,11,.62);
-  border: 1px solid var(--line);
+  background: var(--glass-bg);
+  border: 1px solid var(--border-subtle);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }

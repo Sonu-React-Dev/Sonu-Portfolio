@@ -37,18 +37,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-5 sm:mb-6 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs uppercase tracking-[.22em] text-zinc-400"
+              className="mb-5 sm:mb-6 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs uppercase tracking-[.22em] text-foreground-muted"
             >
               <span className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-300 text-[11px] sm:text-xs">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
                 Available for opportunities
               </span>
-              <span className="inline-flex items-center gap-1.5 text-zinc-400 text-[11px] sm:text-xs">
+              <span className="inline-flex items-center gap-1.5 text-foreground-muted text-[11px] sm:text-xs">
                 <MapPin size={13} className="text-violet-400" /> Delhi, India
               </span>
               {localTime && (
-                <span className="hidden sm:inline-flex items-center gap-1.5 text-zinc-500 text-[11px] sm:text-xs">
-                  <Clock size={13} className="text-zinc-500" /> {localTime} IST
+                <span className="hidden sm:inline-flex items-center gap-1.5 text-foreground-muted/80 text-[11px] sm:text-xs">
+                  <Clock size={13} className="text-foreground-muted/80" /> {localTime} IST
                 </span>
               )}
             </motion.div>
@@ -79,7 +79,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-zinc-300"
+              className="mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-foreground-secondary"
             >
               {profile.subline}
             </motion.p>
@@ -103,14 +103,14 @@ export default function Hero() {
               </a>
               <a
                 href="/resume"
-                className="glass flex items-center gap-2 rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-white transition hover:bg-white/10"
+                className="glass flex items-center gap-2 rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-foreground-primary transition hover:bg-foreground-primary/10"
               >
                 <FileText size={16} className="text-violet-300" />
                 <span>Resume / CV</span>
               </a>
               <a
                 href="#contact"
-                className="glass flex items-center gap-2 rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-zinc-200 transition hover:bg-white/10 hover:text-white"
+                className="glass flex items-center gap-2 rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-medium text-foreground-secondary transition hover:bg-foreground-primary/10 hover:text-foreground-primary"
               >
                 Let&apos;s talk <ArrowUpRight size={16} />
               </a>
@@ -121,14 +121,14 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-7 sm:mt-8 flex flex-wrap items-center gap-4 sm:gap-5 pt-4 text-xs text-zinc-400 border-t border-white/5"
+              className="mt-7 sm:mt-8 flex flex-wrap items-center gap-4 sm:gap-5 pt-4 text-xs text-foreground-muted border-t border-border-subtle"
             >
-              <span className="uppercase tracking-widest text-[11px] text-zinc-400 font-medium">Connect:</span>
+              <span className="uppercase tracking-widest text-[11px] text-foreground-muted font-medium">Connect:</span>
               <a
                 href={`https://github.com/${profile.social.github}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 transition hover:text-white"
+                className="flex items-center gap-1.5 transition hover:text-foreground-primary"
                 title="GitHub profile"
               >
                 <Github size={15} /> <span>GitHub</span>
@@ -137,14 +137,14 @@ export default function Hero() {
                 href={`https://linkedin.com/in/${profile.social.linkedin}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 transition hover:text-white"
+                className="flex items-center gap-1.5 transition hover:text-foreground-primary"
                 title="LinkedIn profile"
               >
                 <Linkedin size={15} /> <span>LinkedIn</span>
               </a>
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-1.5 transition hover:text-white truncate max-w-[220px] sm:max-w-none"
+                className="flex items-center gap-1.5 transition hover:text-foreground-primary truncate max-w-[220px] sm:max-w-none"
                 title="Email Sonu"
               >
                 <Mail size={15} className="shrink-0" /> <span className="truncate">{profile.email}</span>
@@ -200,10 +200,10 @@ export default function Hero() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
-                      <p className="truncate text-xs sm:text-sm font-bold tracking-wide text-white">Sonu Kumar</p>
+                      <p className="truncate text-xs sm:text-sm font-bold tracking-wide text-foreground-primary">Sonu Kumar</p>
                       <span className="inline-block h-1.5 w-1.5 rounded-full bg-violet-400" />
                     </div>
-                    <p className="truncate text-[11px] sm:text-xs text-zinc-400">Full-Stack Product Engineer</p>
+                    <p className="truncate text-[11px] sm:text-xs text-foreground-muted">Full-Stack Product Engineer</p>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function Hero() {
       </div>
       <a
         href="#about"
-        className="absolute bottom-4 sm:bottom-7 left-1/2 -translate-x-1/2 text-zinc-500 transition hover:text-white hidden sm:block"
+        className="absolute bottom-4 sm:bottom-7 left-1/2 -translate-x-1/2 text-foreground-muted/80 transition hover:text-foreground-primary hidden sm:block"
         aria-label="Scroll down to About section"
       >
         <ArrowDownRight className="animate-bounce" />

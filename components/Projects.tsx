@@ -32,17 +32,17 @@ export default function Projects() {
             <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
               03 / Selected work
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-white">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
               Products, not just screens.
             </h2>
           </div>
-          <p className="max-w-sm text-xs sm:text-sm leading-5 sm:leading-6 text-zinc-400">
+          <p className="max-w-sm text-xs sm:text-sm leading-5 sm:leading-6 text-foreground-muted">
             A curated showcase of shipped marketplace ecosystems, real estate platforms, Web3 explorers, and cloud media systems.
           </p>
         </motion.div>
 
         {/* Filter Toolbar & View Mode Switcher */}
-        <div className="mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5">
+        <div className="mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border-subtle pb-5">
           {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             {projectCategories.map((cat) => {
@@ -56,14 +56,14 @@ export default function Projects() {
                   onClick={() => setFilter(cat.id as ProjectTag | "all")}
                   className={`flex items-center gap-1.5 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-medium transition cursor-pointer ${
                     isActive
-                      ? "bg-white text-black font-semibold shadow-md shadow-white/10"
-                      : "glass text-zinc-400 hover:text-white hover:bg-white/10"
+                      ? "bg-foreground-primary text-background-primary font-semibold shadow-md shadow-white/10"
+                      : "glass text-foreground-muted hover:text-foreground-primary hover:bg-foreground-primary/10"
                   }`}
                 >
                   <span>{cat.label}</span>
                   <span
                     className={`rounded-full px-1.5 py-[2px] text-[10px] ${
-                      isActive ? "bg-black/15 text-black font-bold" : "bg-white/10 text-zinc-400"
+                      isActive ? "bg-black/15 text-background-primary font-bold" : "bg-foreground-primary/10 text-foreground-muted"
                     }`}
                   >
                     {count}
@@ -74,15 +74,15 @@ export default function Projects() {
           </div>
 
           {/* View Mode Toggle: Spotlight vs Grid */}
-          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-black/40 p-1 self-start sm:self-auto">
+          <div className="flex items-center gap-1 rounded-full border border-border-subtle bg-background-secondary/40 p-1 self-start sm:self-auto">
             <button
                type="button"
                onClick={() => setViewMode("spotlight")}
                title="Spotlight Case Studies"
                className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs transition cursor-pointer ${
                  viewMode === "spotlight"
-                   ? "bg-violet-600 text-white font-semibold shadow-sm"
-                   : "text-zinc-400 hover:text-white"
+                   ? "bg-violet-600 text-foreground-primary font-semibold shadow-sm"
+                   : "text-foreground-muted hover:text-foreground-primary"
                }`}
             >
                <Layers size={13} />
@@ -94,8 +94,8 @@ export default function Projects() {
                title="Compact Grid Archive"
                className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs transition cursor-pointer ${
                  viewMode === "grid"
-                   ? "bg-violet-600 text-white font-semibold shadow-sm"
-                   : "text-zinc-400 hover:text-white"
+                   ? "bg-violet-600 text-foreground-primary font-semibold shadow-sm"
+                   : "text-foreground-muted hover:text-foreground-primary"
                }`}
             >
                <LayoutGrid size={13} />
@@ -120,7 +120,7 @@ export default function Projects() {
                 <motion.article
                   key={project.number}
                   whileHover={{ y: -3 }}
-                  className="group relative overflow-hidden rounded-2xl sm:rounded-[2.2rem] border border-white/10 bg-[#0a0a0a] shadow-2xl transition duration-500"
+                  className="group relative overflow-hidden rounded-2xl sm:rounded-[2.2rem] border border-border-subtle bg-background-secondary shadow-2xl transition duration-500"
                 >
                   {/* Accent ambient backlight glow */}
                   <div
@@ -128,15 +128,15 @@ export default function Projects() {
                   />
 
                   {/* Visual Frame */}
-                  <div className="relative border-b border-white/10 bg-black/30 overflow-hidden pt-8 px-6 sm:pt-12 sm:px-12 md:pt-16 md:px-16 pb-0 flex justify-center items-end h-[280px] sm:h-[400px] md:h-[500px]">
+                  <div className="relative border-b border-border-subtle bg-background-primary/30 overflow-hidden pt-8 px-6 sm:pt-12 sm:px-12 md:pt-16 md:px-16 pb-0 flex justify-center items-end h-[280px] sm:h-[400px] md:h-[500px]">
                      {project.images?.desktop ? (
-                        <div className="relative w-full max-w-4xl rounded-t-xl border border-white/20 border-b-0 shadow-2xl overflow-hidden group-hover:-translate-y-2 transition-transform duration-700 ease-out z-10 flex flex-col h-full bg-zinc-900">
+                        <div className="relative w-full max-w-4xl rounded-t-xl border border-border-subtle border-b-0 shadow-2xl overflow-hidden group-hover:-translate-y-2 transition-transform duration-700 ease-out z-10 flex flex-col h-full bg-background-secondary">
                             {/* Browser Top Bar */}
-                            <div className="flex items-center gap-1.5 px-3 py-2 bg-zinc-800/80 border-b border-white/10 shrink-0">
+                            <div className="flex items-center gap-1.5 px-3 py-2 bg-background-secondary/80 border-b border-border-subtle shrink-0">
                                 <span className="h-2 w-2 rounded-full bg-red-500/80" />
                                 <span className="h-2 w-2 rounded-full bg-amber-500/80" />
                                 <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
-                                <span className="ml-2 font-mono text-[9px] text-zinc-400 truncate flex-1 opacity-70">
+                                <span className="ml-2 font-mono text-[9px] text-foreground-muted truncate flex-1 opacity-70">
                                    {project.url ? project.url.replace(/^https?:\/\//, "").replace(/\/$/, "") : "enterprise-system"}
                                 </span>
                             </div>
@@ -148,7 +148,7 @@ export default function Projects() {
                             </div>
                         </div>
                      ) : (
-                        <div className="w-full h-full bg-zinc-900/50 flex flex-col items-center justify-center text-zinc-600 rounded-t-xl border border-white/10 border-b-0">
+                        <div className="w-full h-full bg-background-secondary/50 flex flex-col items-center justify-center text-foreground-muted/60 rounded-t-xl border border-border-subtle border-b-0">
                             <Layers size={32} className="mb-2 opacity-50" />
                             <span className="text-xs uppercase tracking-widest">No visual provided</span>
                         </div>
@@ -156,7 +156,7 @@ export default function Projects() {
 
                      {/* Mobile Mockup Overlay */}
                      {project.images?.mobile && (
-                        <div className="absolute right-[5%] sm:right-[10%] bottom-[-20px] w-[90px] sm:w-[130px] md:w-[160px] h-[195px] sm:h-[280px] md:h-[340px] rounded-[1.2rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] border-zinc-800 bg-black shadow-2xl overflow-hidden transform group-hover:-translate-y-4 group-hover:-rotate-2 transition-all duration-700 ease-out z-20 hidden xs:block">
+                        <div className="absolute right-[5%] sm:right-[10%] bottom-[-20px] w-[90px] sm:w-[130px] md:w-[160px] h-[195px] sm:h-[280px] md:h-[340px] rounded-[1.2rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] border-border-subtle bg-black shadow-2xl overflow-hidden transform group-hover:-translate-y-4 group-hover:-rotate-2 transition-all duration-700 ease-out z-20 hidden xs:block">
                             <div className="absolute inset-0 w-full h-[400%] transition-transform duration-[10s] ease-linear group-hover:-translate-y-[75%]">
                                 <Image src={project.images.mobile} alt={`${project.title} Mobile`} fill className="object-top object-cover" sizes="(max-width: 768px) 160px, 160px" />
                             </div>
@@ -168,11 +168,11 @@ export default function Projects() {
                   {/* CARD BODY CONTENT */}
                   <div className="relative grid gap-6 sm:gap-8 p-5 sm:p-8 lg:grid-cols-[0.35fr_1fr] lg:p-12">
                     {/* Left Column: Number, Category, Outcome Tag */}
-                    <div className="flex flex-col justify-between border-b border-white/10 pb-5 lg:border-b-0 lg:border-r lg:border-white/10 lg:pb-0 lg:pr-8">
+                    <div className="flex flex-col justify-between border-b border-border-subtle pb-5 lg:border-b-0 lg:border-r lg:border-border-subtle lg:pb-0 lg:pr-8">
                       <div>
                         <div className="flex items-center gap-3 mb-3">
                            {project.logo && (
-                               <div className="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center p-1.5 shrink-0">
+                               <div className="w-10 h-10 rounded bg-foreground-primary/5 border border-border-subtle flex items-center justify-center p-1.5 shrink-0">
                                   <Image src={project.logo} alt={project.title} width={40} height={40} className="object-contain" />
                                </div>
                            )}
@@ -180,7 +180,7 @@ export default function Projects() {
                               <div className="text-[10px] uppercase tracking-[.2em] text-violet-300 font-bold mb-0.5">
                                 {project.category}
                               </div>
-                              <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                              <h3 className="text-2xl font-bold tracking-tight text-foreground-primary sm:text-3xl">
                                 {project.title}
                               </h3>
                            </div>
@@ -188,7 +188,7 @@ export default function Projects() {
                       </div>
 
                       <div className="mt-5 lg:mt-0">
-                        <div className="mb-1.5 text-xs uppercase tracking-[.18em] text-zinc-400 font-medium">
+                        <div className="mb-1.5 text-xs uppercase tracking-[.18em] text-foreground-muted font-medium">
                           Measurable Outcome
                         </div>
                         <div className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-xs font-semibold text-emerald-300">
@@ -201,21 +201,21 @@ export default function Projects() {
                     {/* Right Column: Overview, Bullets, Stack, Actions */}
                     <div className="flex flex-col justify-between">
                       <div>
-                        <p className="text-sm sm:text-base leading-6 sm:leading-7 text-zinc-200">
+                        <p className="text-sm sm:text-base leading-6 sm:leading-7 text-foreground-secondary">
                           {project.description}
                         </p>
 
                         {/* Deliverables & Technical Highlights */}
                         {project.bullets && project.bullets.length > 0 && (
-                          <div className="mt-5 sm:mt-6 border-t border-white/10 pt-4 sm:pt-5">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2.5 sm:mb-3">
+                          <div className="mt-5 sm:mt-6 border-t border-border-subtle pt-4 sm:pt-5">
+                            <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-2.5 sm:mb-3">
                               Key Technical Engineering & Deliverables
                             </p>
                             <ul className="grid gap-2 sm:gap-2.5 sm:grid-cols-2">
                               {project.bullets.map((bullet, i) => (
                                 <li
                                   key={i}
-                                  className="flex items-start gap-2 text-xs leading-5 text-zinc-300"
+                                  className="flex items-start gap-2 text-xs leading-5 text-foreground-secondary"
                                 >
                                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" />
                                   <span>{bullet}</span>
@@ -227,12 +227,12 @@ export default function Projects() {
                       </div>
 
                       {/* Footer: Tech Stack Badges + Action Buttons */}
-                      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-5 border-t border-white/10 pt-4 sm:pt-5">
+                      <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-5 border-t border-border-subtle pt-4 sm:pt-5">
                         <div className="flex max-w-xl flex-wrap gap-1.5 sm:gap-2">
                           {project.stack.map((tech) => (
                             <span
                               key={tech}
-                              className="rounded-full border border-white/10 bg-black/40 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs text-zinc-300 font-medium whitespace-nowrap"
+                              className="rounded-full border border-border-subtle bg-background-secondary/40 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs text-foreground-secondary font-medium whitespace-nowrap"
                             >
                               {tech}
                             </span>
@@ -244,7 +244,7 @@ export default function Projects() {
                             href={project.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="group/btn inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-black transition hover:bg-zinc-200 hover:scale-[1.02] shadow-lg shadow-white/10 cursor-pointer w-full sm:w-auto"
+                            className="group/btn inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-foreground-primary px-5 py-2.5 text-xs font-semibold text-background-primary transition hover:opacity-90 hover:scale-[1.02] shadow-lg shadow-white/10 cursor-pointer w-full sm:w-auto"
                             title={`Visit ${project.title} live platform`}
                           >
                             <span>Visit Live Site</span>
@@ -254,7 +254,7 @@ export default function Projects() {
                             />
                           </a>
                         ) : (
-                          <div className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-400 cursor-default w-full sm:w-auto">
+                          <div className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-border-subtle bg-foreground-primary/5 px-4 py-2 text-xs text-foreground-muted cursor-default w-full sm:w-auto">
                             <span>Desktop App</span>
                           </div>
                         )}
@@ -278,14 +278,14 @@ export default function Projects() {
                 <motion.article
                   key={project.number}
                   whileHover={{ y: -4 }}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#0a0a0a] shadow-xl transition"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-border-subtle bg-background-secondary shadow-xl transition"
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-30 transition duration-500 group-hover:opacity-70 pointer-events-none z-0`}
                   />
 
                   {/* Thumbnail */}
-                  <div className="relative h-48 w-full border-b border-white/10 bg-black overflow-hidden z-10">
+                  <div className="relative h-48 w-full border-b border-border-subtle bg-black overflow-hidden z-10">
                      {project.images?.desktop ? (
                          <Image src={project.images.desktop} alt={project.title} fill className="object-cover object-top opacity-80 group-hover:opacity-100 transition duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                      ) : (
@@ -295,7 +295,7 @@ export default function Projects() {
                      )}
                      <div className="absolute top-3 right-3 z-20">
                          {project.logo && (
-                             <div className="w-8 h-8 rounded bg-black/60 backdrop-blur-sm border border-white/20 p-1">
+                             <div className="w-8 h-8 rounded bg-black/60 backdrop-blur-sm border border-border-subtle p-1">
                                 <Image src={project.logo} alt={project.title} width={32} height={32} className="object-contain" />
                              </div>
                          )}
@@ -305,7 +305,7 @@ export default function Projects() {
                   <div className="relative z-10 p-6 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between text-xs mb-3">
-                          <span className="font-mono text-zinc-400 font-semibold">{project.number}</span>
+                          <span className="font-mono text-foreground-muted font-semibold">{project.number}</span>
                           <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-300">
                             {project.result}
                           </span>
@@ -314,10 +314,10 @@ export default function Projects() {
                         <p className="text-[11px] uppercase tracking-wider text-violet-300 font-semibold line-clamp-1">
                           {project.category}
                         </p>
-                        <h3 className="mt-1 text-2xl font-bold text-white tracking-tight">
+                        <h3 className="mt-1 text-2xl font-bold text-foreground-primary tracking-tight">
                           {project.title}
                         </h3>
-                        <p className="mt-3 text-xs leading-5 text-zinc-300 line-clamp-3">
+                        <p className="mt-3 text-xs leading-5 text-foreground-secondary line-clamp-3">
                           {project.description}
                         </p>
 
@@ -325,21 +325,21 @@ export default function Projects() {
                           {project.stack.slice(0, 4).map((tech) => (
                             <span
                               key={tech}
-                              className="rounded-full border border-white/10 bg-black/40 px-2.5 py-0.5 text-[10px] text-zinc-300"
+                              className="rounded-full border border-border-subtle bg-background-secondary/40 px-2.5 py-0.5 text-[10px] text-foreground-secondary"
                             >
                               {tech}
                             </span>
                           ))}
                           {project.stack.length > 4 && (
-                            <span className="rounded-full border border-white/5 bg-white/5 px-2 py-0.5 text-[10px] text-zinc-400">
+                            <span className="rounded-full border border-border-subtle bg-foreground-primary/5 px-2 py-0.5 text-[10px] text-foreground-muted">
                               +{project.stack.length - 4}
                             </span>
                           )}
                         </div>
                       </div>
 
-                      <div className="relative mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span className="text-[11px] text-zinc-400">
+                      <div className="relative mt-6 pt-4 border-t border-border-subtle flex items-center justify-between">
+                        <span className="text-[11px] text-foreground-muted">
                           {project.url ? "Live platform" : "Internal platform"}
                         </span>
                         {project.url ? (
@@ -347,13 +347,13 @@ export default function Projects() {
                             href={project.url}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-1 text-xs font-semibold text-white hover:text-violet-300 transition"
+                            className="flex items-center gap-1 text-xs font-semibold text-foreground-primary hover:text-violet-300 transition"
                           >
                             <span>Visit Site</span>
                             <ArrowUpRight size={13} />
                           </a>
                         ) : (
-                          <span className="text-xs text-zinc-400">Desktop App</span>
+                          <span className="text-xs text-foreground-muted">Desktop App</span>
                         )}
                       </div>
                   </div>

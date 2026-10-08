@@ -157,7 +157,7 @@ export function Contact() {
                   
                   {formError && <p className="text-xs text-rose-500 font-medium">{formError}</p>}
 
-                  <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-primary px-5 py-3 text-sm font-bold text-white transition hover:opacity-90 disabled:opacity-50">
+                  <button type="submit" disabled={isSubmitting} className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-primary px-5 py-3 text-sm font-bold text-foreground-primary transition hover:opacity-90 disabled:opacity-50">
                     <Send size={16} /> <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                   </button>
                   <p className="text-center text-xs text-foreground-muted mt-4">

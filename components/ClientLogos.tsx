@@ -9,7 +9,7 @@ export default function ClientLogos() {
   const marqueeClients = [...clients, ...clients];
 
   return (
-    <section className="py-12 sm:py-16 border-y border-white/5 bg-[#0a0a0a] overflow-hidden">
+    <section className="py-12 sm:py-16 border-y border-border-subtle bg-background-secondary overflow-hidden">
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -18,7 +18,7 @@ export default function ClientLogos() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <p className="text-[10px] sm:text-xs uppercase tracking-[.25em] text-zinc-500 font-semibold">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[.25em] text-foreground-muted/80 font-semibold">
             Delivered for brands & clients
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export default function ClientLogos() {
                   className="object-contain h-8 sm:h-10 w-auto"
                 />
               ) : (
-                <span className="text-xl sm:text-2xl font-bold tracking-tight text-white/80">
+                <span className="text-xl sm:text-2xl font-bold tracking-tight text-foreground-primary/80">
                   {client.name}
                 </span>
               )}

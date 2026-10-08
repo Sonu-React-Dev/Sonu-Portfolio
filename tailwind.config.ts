@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: 'class',
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./data/**/*.{ts,tsx}"],
   theme: {
     extend: {
@@ -8,6 +9,8 @@ const config: Config = {
         background: {
           primary: "var(--bg-primary)",
           secondary: "var(--bg-secondary)",
+          card: "var(--card-bg)",
+          glass: "var(--glass-bg)",
         },
         foreground: {
           primary: "var(--text-primary)",

@@ -22,7 +22,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[80] hidden h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white md:block" />
+      <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[80] hidden h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground-primary md:block" />
       <div ref={ring} className="pointer-events-none fixed left-0 top-0 z-[79] hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30 md:block" />
     </>
   );

@@ -57,19 +57,19 @@ const getIconForSkill = (skill: string) => {
     
     case "React.js":
     case "React Native": return <SiReact {...iconProps} className={`${iconProps.className} group-hover:text-[#61DAFB]`} />;
-    case "Next.js": return <SiNextdotjs {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Next.js": return <SiNextdotjs {...iconProps} className={`${iconProps.className} group-hover:text-foreground-primary`} />;
     case "Angular": return <SiAngular {...iconProps} className={`${iconProps.className} group-hover:text-[#DD0031]`} />;
     case "Redux Toolkit": return <SiRedux {...iconProps} className={`${iconProps.className} group-hover:text-[#764ABC]`} />;
     
     case "Node.js": return <SiNodedotjs {...iconProps} className={`${iconProps.className} group-hover:text-[#339933]`} />;
-    case "Express.js": return <SiExpress {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Express.js": return <SiExpress {...iconProps} className={`${iconProps.className} group-hover:text-foreground-primary`} />;
     case "RESTful APIs": return <TbApi {...iconProps} className={`${iconProps.className} group-hover:text-[#009688]`} />;
     case "Third-party API Integration": return <BiGitBranch {...iconProps} className={`${iconProps.className} group-hover:text-violet-400`} />;
     
-    case "Unity 3D / 2D": return <SiUnity {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Unity 3D / 2D": return <SiUnity {...iconProps} className={`${iconProps.className} group-hover:text-foreground-primary`} />;
     case "C# Scripting": return <TbBrandCSharp {...iconProps} className={`${iconProps.className} group-hover:text-[#239120]`} />;
     case "Game Physics & Collisions": return <Box {...iconProps} className={`${iconProps.className} group-hover:text-orange-400`} />;
-    case "Cinemachine & URP": return <SiUnity {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Cinemachine & URP": return <SiUnity {...iconProps} className={`${iconProps.className} group-hover:text-foreground-primary`} />;
     case "Interactive 3D / WebGL": return <Box {...iconProps} className={`${iconProps.className} group-hover:text-blue-400`} />;
     
     case "MongoDB": return <SiMongodb {...iconProps} className={`${iconProps.className} group-hover:text-[#47A248]`} />;
@@ -81,7 +81,7 @@ const getIconForSkill = (skill: string) => {
     case "Firebase Cloud Messaging": return <SiFirebase {...iconProps} className={`${iconProps.className} group-hover:text-[#FFCA28]`} />;
     case "Cloudflare R2": return <SiCloudflare {...iconProps} className={`${iconProps.className} group-hover:text-[#F38020]`} />;
     case "Google Maps API": return <SiGooglemaps {...iconProps} className={`${iconProps.className} group-hover:text-[#4285F4]`} />;
-    case "Git/GitHub": return <SiGithub {...iconProps} className={`${iconProps.className} group-hover:text-white`} />;
+    case "Git/GitHub": return <SiGithub {...iconProps} className={`${iconProps.className} group-hover:text-foreground-primary`} />;
     case "VS Code": return <TbBrandVscode {...iconProps} className={`${iconProps.className} group-hover:text-[#007ACC]`} />;
     case "Postman": return <SiPostman {...iconProps} className={`${iconProps.className} group-hover:text-[#FF6C37]`} />;
     case "Swagger": return <SiSwagger {...iconProps} className={`${iconProps.className} group-hover:text-[#85EA2D]`} />;
@@ -98,13 +98,13 @@ const getIconForSkill = (skill: string) => {
 
 const marqueeIcons = [
   { icon: SiReact, color: "text-[#61DAFB]" },
-  { icon: SiNextdotjs, color: "text-white" },
+  { icon: SiNextdotjs, color: "text-foreground-primary" },
   { icon: SiTypescript, color: "text-[#3178C6]" },
   { icon: SiNodedotjs, color: "text-[#339933]" },
   { icon: SiTailwindcss, color: "text-[#06B6D4]" },
   { icon: SiFirebase, color: "text-[#FFCA28]" },
   { icon: SiSupabase, color: "text-[#3ECF8E]" },
-  { icon: SiUnity, color: "text-white" },
+  { icon: SiUnity, color: "text-foreground-primary" },
   { icon: SiMongodb, color: "text-[#47A248]" },
 ];
 
@@ -150,10 +150,10 @@ export default function Skills() {
   const groups = filterGroups();
 
   return (
-    <section id="skills" className="relative section-pad border-y border-white/5 bg-[#070707] overflow-hidden">
+    <section id="skills" className="relative section-pad border-y border-border-subtle bg-[#070707] overflow-hidden">
       
       {/* Infinite Tech Marquee Background */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden opacity-5 pointer-events-none py-4 border-b border-white/5">
+      <div className="absolute top-0 left-0 w-full overflow-hidden opacity-5 pointer-events-none py-4 border-b border-border-subtle">
         <motion.div
           className="flex whitespace-nowrap items-center gap-16"
           animate={{ x: ["0%", "-50%"] }}
@@ -176,17 +176,17 @@ export default function Skills() {
             <p className="mb-2 sm:mb-3 text-xs uppercase tracking-[.24em] text-violet-300 font-semibold">
               02 / Technology Stack
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-white">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl text-foreground-primary">
               Tools I use to turn ideas into products.
             </h2>
           </div>
-          <p className="max-w-md text-xs sm:text-sm leading-5 sm:leading-6 text-zinc-400">
+          <p className="max-w-md text-xs sm:text-sm leading-5 sm:leading-6 text-foreground-muted">
             A battle-tested stack centered on modern JavaScript ecosystems, high-performance UI frameworks, type safety, and production APIs.
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-7 sm:mb-10 pb-4 border-b border-white/10">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-7 sm:mb-10 pb-4 border-b border-border-subtle">
           {Object.entries(categoryMeta).map(([catKey, meta]) => {
             const Icon = meta.icon;
             const isActive = activeTab === catKey;
@@ -197,11 +197,11 @@ export default function Skills() {
                 onClick={() => setActiveTab(catKey)}
                 className={`flex items-center gap-1.5 sm:gap-2 rounded-full px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-medium transition cursor-pointer ${
                   isActive
-                    ? "bg-white text-black font-semibold shadow-md shadow-white/10"
-                    : "glass text-zinc-400 hover:text-white hover:bg-white/10"
+                    ? "bg-foreground-primary text-background-primary font-semibold shadow-md shadow-white/10"
+                    : "glass text-foreground-muted hover:text-foreground-primary hover:bg-foreground-primary/10"
                 }`}
               >
-                <Icon size={14} className={isActive ? "text-violet-600" : "text-zinc-400"} />
+                <Icon size={14} className={isActive ? "text-violet-600" : "text-foreground-muted"} />
                 <span>{meta.label}</span>
               </button>
             );
@@ -219,12 +219,12 @@ export default function Skills() {
             className="space-y-6 sm:space-y-8"
           >
             {groups.map((group) => (
-              <div key={group.title} className="rounded-2xl border border-white/5 bg-[#0a0a0a]/70 p-4 sm:p-6 lg:p-7">
+              <div key={group.title} className="rounded-2xl border border-border-subtle bg-background-secondary/70 p-4 sm:p-6 lg:p-7">
                 <div className="mb-4 sm:mb-5 flex items-center justify-between">
-                  <h3 className="text-xs uppercase tracking-[.2em] text-zinc-400 font-semibold">
+                  <h3 className="text-xs uppercase tracking-[.2em] text-foreground-muted font-semibold">
                     {group.title}
                   </h3>
-                  <span className="text-[11px] text-zinc-400 font-medium">
+                  <span className="text-[11px] text-foreground-muted font-medium">
                     {group.items.length} technologies
                   </span>
                 </div>
@@ -238,8 +238,8 @@ export default function Skills() {
                         whileHover={{ y: -3 }}
                         className={`group rounded-full px-3.5 py-2 text-xs font-medium transition flex items-center gap-2 cursor-default ${
                           isCore
-                            ? "border border-violet-400/40 bg-violet-500/15 text-violet-200 shadow-sm shadow-violet-500/10 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-white"
-                            : "border border-white/10 bg-white/[0.04] text-zinc-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                            ? "border border-violet-400/40 bg-violet-500/15 text-violet-200 shadow-sm shadow-violet-500/10 hover:border-violet-400/80 hover:bg-violet-500/25 hover:text-foreground-primary"
+                            : "border border-border-subtle bg-foreground-primary/[0.04] text-foreground-secondary hover:border-border-subtle hover:bg-foreground-primary/[0.08] hover:text-foreground-primary"
                         }`}
                       >
                         {icon && icon}

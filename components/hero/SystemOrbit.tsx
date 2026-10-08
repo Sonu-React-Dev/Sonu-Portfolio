@@ -101,7 +101,7 @@ export function SystemOrbit() {
 
         {/* Core Node */}
         <div className="absolute left-1/2 top-1/2 z-20 h-16 w-16 md:h-20 md:w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-primary flex items-center justify-center shadow-[0_0_30px_rgba(var(--accent-primary),0.4)] [transform:translateZ(40px)_rotateX(-60deg)]">
-          <span className="text-white font-bold text-lg md:text-xl">SK</span>
+          <span className="text-foreground-primary font-bold text-lg md:text-xl">SK</span>
         </div>
 
       </motion.div>
