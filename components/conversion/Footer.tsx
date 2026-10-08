@@ -2,6 +2,7 @@
 
 import { profile } from "@/data/portfolio";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function Footer() {
   const [time, setTime] = useState("");
@@ -36,9 +37,9 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-3">
               <span className="text-[10px] font-bold uppercase tracking-widest text-foreground-muted">Menu</span>
-              <a href="/#work" className="text-sm font-medium text-foreground-primary hover:text-accent-primary transition-colors">Work</a>
-              <a href="/#about" className="text-sm font-medium text-foreground-primary hover:text-accent-primary transition-colors">About</a>
-              <a href="/resume" className="text-sm font-medium text-foreground-primary hover:text-accent-primary transition-colors">Resume</a>
+              <Link href="/#work" className="text-sm font-medium text-foreground-primary hover:text-accent-primary transition-colors">Work</Link>
+              <Link href="/#about" className="text-sm font-medium text-foreground-primary hover:text-accent-primary transition-colors">About</Link>
+              <Link href="/resume" className="text-sm font-medium text-foreground-primary hover:text-accent-primary transition-colors">Resume</Link>
             </div>
           </div>
         </div>

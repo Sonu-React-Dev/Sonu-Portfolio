@@ -43,7 +43,7 @@ export default function Navbar() {
       <nav className="container-x mt-3 sm:mt-4">
         <div className="glass flex h-14 items-center justify-between rounded-full px-4 md:px-5 shadow-lg shadow-black/40">
           {/* Brand & Sonu Photo */}
-          <a
+          <Link
             href="/#top"
             className="flex items-center gap-2.5 font-bold tracking-tight text-white group"
           >
@@ -57,14 +57,14 @@ export default function Navbar() {
             <span className="text-sm tracking-wider">
               SONU<span className="text-violet-400">.</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden items-center gap-6 text-xs lg:text-sm md:flex">
             {links.map((link) => {
               const isActive = active === link.name.toLowerCase();
               return (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className={`relative py-1 transition font-medium ${
@@ -79,7 +79,7 @@ export default function Navbar() {
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -93,13 +93,13 @@ export default function Navbar() {
               <FileText size={13} className="text-violet-300" />
               <span>Resume</span>
             </Link>
-            <a
+            <Link
               href="/#contact"
               className="flex items-center gap-1 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-sm shadow-white/10 cursor-pointer"
             >
               <span>Let&apos;s talk</span>
               <ArrowUpRight size={14} />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,7 +124,7 @@ export default function Navbar() {
             >
               <div className="flex flex-col space-y-2.5 sm:space-y-3">
                 {links.map((link) => (
-                  <a
+                  <Link
                     key={link.name}
                     href={link.href}
                     onClick={() => setOpen(false)}
@@ -132,7 +132,7 @@ export default function Navbar() {
                   >
                     <span>{link.name}</span>
                     <ArrowUpRight size={15} className="text-zinc-500" />
-                  </a>
+                  </Link>
                 ))}
 
                 <Link
@@ -174,13 +174,13 @@ export default function Navbar() {
                       <Mail size={15} />
                     </a>
                   </div>
-                  <a
+                  <Link
                     href="/#contact"
                     onClick={() => setOpen(false)}
                     className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black"
                   >
                     Let&apos;s talk
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

@@ -7,6 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/cn";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Work", href: "/#work" },
@@ -47,26 +48,26 @@ export function Navbar() {
         )}
       >
         <div className="container-x flex items-center justify-between">
-          <a href="/#top" className="font-bold text-foreground-primary tracking-wide text-lg">
+          <Link href="/#top" className="font-bold text-foreground-primary tracking-wide text-lg">
             SONU
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-foreground-secondary hover:text-foreground-primary transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href="/resume"
               className="text-sm font-medium text-accent-primary hover:text-accent-primary/80 transition-colors ml-2"
             >
               Resume
-            </a>
+            </Link>
             <div className="w-px h-4 bg-border-subtle mx-1" />
             <ThemeToggle />
           </nav>

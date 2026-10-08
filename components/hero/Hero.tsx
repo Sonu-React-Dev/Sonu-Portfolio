@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import Link from "next/link";
 
 import { MagneticButton } from "../ui/MagneticButton";
 import { ArrowLink } from "../ui/ArrowLink";
@@ -62,17 +63,17 @@ export function Hero() {
 
             <Reveal delay={0.75}>
               <div className="flex flex-wrap items-center gap-4">
-                <a href="/#work" className="block">
+                <Link href="/#work" className="block">
                   <MagneticButton className="rounded-full bg-foreground-primary shadow-xl shadow-foreground-primary/10 hover:scale-105 px-6 py-3.5 flex items-center gap-2 text-sm font-semibold text-background-primary">
                     View selected work
                     <ArrowDownRight size={16} />
                   </MagneticButton>
-                </a>
-                <a href="/#contact" className="block">
+                </Link>
+                <Link href="/#contact" className="block">
                   <MagneticButton className="rounded-full border border-border-subtle bg-background-secondary/50 backdrop-blur-sm hover:bg-background-secondary px-6 py-3.5 flex items-center gap-2 text-sm font-medium text-foreground-primary">
                     Let&apos;s build something
                   </MagneticButton>
-                </a>
+                </Link>
               </div>
             </Reveal>
 

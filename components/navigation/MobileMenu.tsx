@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect } from "react";
 import { profile } from "@/data/portfolio";
+import Link from "next/link";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -37,9 +38,9 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
         >
           <div className="container-x flex h-full flex-col py-6">
             <div className="flex items-center justify-between">
-              <a href="/#top" onClick={onClose} className="font-bold text-foreground-primary tracking-wide text-lg">
+              <Link href="/#top" onClick={onClose} className="font-bold text-foreground-primary tracking-wide text-lg">
                 SONU
-              </a>
+              </Link>
               <button onClick={onClose} aria-label="Close menu" className="p-2 -mr-2 text-foreground-primary">
                 <X size={24} />
               </button>
