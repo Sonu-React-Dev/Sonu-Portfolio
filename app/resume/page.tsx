@@ -223,7 +223,7 @@ ${keyAchievements.map((k) => `• ${k}`).join("\n")}
   };
 
   return (
-    <div className="resume-page-wrapper min-h-screen bg-[#070708] py-6 sm:py-10 text-white selection:bg-violet-500/30 selection:text-white print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">
+    <div className="resume-page-wrapper min-h-screen bg-[#070708] pt-24 pb-6 sm:pt-28 sm:pb-10 text-white selection:bg-violet-500/30 selection:text-white print:bg-white print:py-0 print:m-0 print:p-0 print:min-h-0 print:text-black">
       {/* CONTROL TOOLBAR (HIDDEN IN PRINT) */}
       <div className="no-print container-x max-w-[900px] mb-6 sm:mb-8">
         <div className="glass rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 flex flex-col gap-3.5 sm:gap-4">
