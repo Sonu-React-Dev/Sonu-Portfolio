@@ -1,7 +1,7 @@
 "use client";
 
 import { profile } from "@/data/portfolio";
-import { SmartImage } from "../ui/SmartImage";
+import { HeroProfile } from "../hero/HeroProfile";
 import { MagneticButton } from "../ui/MagneticButton";
 import { Reveal } from "../ui/Reveal";
 
@@ -50,16 +50,7 @@ export function About() {
 
           <div className="order-1 lg:order-2">
             <Reveal delay={0.2}>
-              <div className="relative aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden bg-background-primary border border-border-subtle group md:-rotate-3 hover:rotate-0 transition-transform duration-500 ease-out origin-bottom">
-                <SmartImage 
-                  src="/sonu-profile.webp"
-                  fallback="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMmQyZDJkIi8+PC9zdmc+"
-                  alt="Sonu Kumar"
-                  fill
-                  className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-accent-primary mix-blend-overlay opacity-20 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
-              </div>
+              <HeroProfile />
             </Reveal>
           </div>
 

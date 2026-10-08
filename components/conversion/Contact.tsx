@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { profile } from "@/data/portfolio";
 import { MagneticButton } from "../ui/MagneticButton";
-import { ArrowUpRight, X, Send, Check, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, X, Send, Check, ShieldCheck, Mail, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Contact() {
@@ -75,9 +75,22 @@ export function Contact() {
                 Start a conversation <ArrowUpRight size={18} />
               </MagneticButton>
             </div>
-            <div className="text-sm font-medium text-foreground-muted">
-              or connect on <a href={`https://linkedin.com/in/${profile.social.linkedin}`} className="text-foreground-primary hover:text-accent-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium text-foreground-muted">
+            <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-foreground-primary transition-colors">
+              <Mail size={16} />
+              {profile.email}
+            </a>
+            <span className="hidden sm:block text-border-subtle">•</span>
+            <a href={`tel:${profile.phone.replace(/\\s+/g, '')}`} className="flex items-center gap-2 hover:text-foreground-primary transition-colors">
+              <Phone size={16} />
+              {profile.phone}
+            </a>
+            <span className="hidden sm:block text-border-subtle">•</span>
+            <a href={`https://linkedin.com/in/${profile.social.linkedin}`} className="hover:text-foreground-primary transition-colors underline underline-offset-4" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
           </div>
         </div>
       </section>
