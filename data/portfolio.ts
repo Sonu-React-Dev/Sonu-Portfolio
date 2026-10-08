@@ -214,6 +214,7 @@ export const projects: Project[] = [
     category: "Enterprise Educational Software",
     tags: ["enterprise"],
     platforms: ["Desktop", "Offline-first"],
+    images: { desktop: "/projects/smartclass/desktop.webp", mobile: "/projects/smartclass/mobile.webp" },
     resumeDesc: "Modernized JavaFX classroom software across 10,000+ schools; implemented NEP-2020 competency-based evaluation and interactive grading tools.",
     description: "Mission-critical interactive classroom software platform deployed across a nationwide network of 10,000+ schools, reaching over 2 million students daily. Modernized legacy desktop applications to align with India's National Education Policy (NEP-2020).",
     bullets: [
