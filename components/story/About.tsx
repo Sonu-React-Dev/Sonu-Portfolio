@@ -48,10 +48,8 @@ export function About() {
             </Reveal>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <Reveal delay={0.2}>
-              <HeroProfile />
-            </Reveal>
+          <div className="order-1 lg:order-2 flex items-center justify-center">
+            <HeroProfile />
           </div>
 
         </div>
