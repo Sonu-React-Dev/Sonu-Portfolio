@@ -1,31 +1,26 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import ClientLogos from "@/components/ClientLogos";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
-import Education from "@/components/Education";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
+import { Hero } from "@/components/hero/Hero";
+import { ClientStrip } from "@/components/projects/ClientStrip";
+import { FeaturedWork } from "@/components/projects/FeaturedWork";
+import { MoreWork } from "@/components/projects/MoreWork";
+import { About } from "@/components/story/About";
+import { Skills } from "@/components/story/Skills";
+import { Experience } from "@/components/story/Experience";
+import { Education } from "@/components/story/Education";
+import { Services } from "@/components/story/Services";
+import { Process } from "@/components/story/Process";
+import { Contact } from "@/components/conversion/Contact";
+import { Footer } from "@/components/conversion/Footer";
 
 export default function Home() {
   return (
     <>
-      <SmoothScroll />
-      <CustomCursor />
-      <div className="noise" />
-      <Navbar />
       <main>
         <Hero />
-        <ClientLogos />
+        <ClientStrip />
+        <FeaturedWork />
+        <MoreWork />
         <About />
         <Skills />
-        <Projects />
         <Experience />
         <Education />
         <Services />

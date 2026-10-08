@@ -9,12 +9,12 @@ import { profile } from "@/data/portfolio";
 import sonuPhoto from "@/public/sonu-profile.webp";
 
 const links = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Work", href: "#work" },
-  { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
-  { name: "Services", href: "#services" },
+  { name: "About", href: "/#about" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Work", href: "/#work" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Education", href: "/#education" },
+  { name: "Services", href: "/#services" },
 ];
 
 export default function Navbar() {
@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="glass flex h-14 items-center justify-between rounded-full px-4 md:px-5 shadow-lg shadow-black/40">
           {/* Brand & Sonu Photo */}
           <a
-            href="#top"
+            href="/#top"
             className="flex items-center gap-2.5 font-bold tracking-tight text-white group"
           >
             <div className="relative h-7 w-7 overflow-hidden rounded-full ring-1 ring-violet-400/40 bg-zinc-800 transition group-hover:ring-violet-400">
@@ -94,7 +94,7 @@ export default function Navbar() {
               <span>Resume</span>
             </Link>
             <a
-              href="#contact"
+              href="/#contact"
               className="flex items-center gap-1 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition hover:bg-zinc-200 shadow-sm shadow-white/10 cursor-pointer"
             >
               <span>Let&apos;s talk</span>
@@ -175,7 +175,7 @@ export default function Navbar() {
                     </a>
                   </div>
                   <a
-                    href="#contact"
+                    href="/#contact"
                     onClick={() => setOpen(false)}
                     className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black"
                   >

@@ -16,7 +16,7 @@ export const profile = {
 };
 
 export const skills = {
-  languages: ["JavaScript", "TypeScript", "Java", "C#", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
+  languages: ["JavaScript", "TypeScript", "Python", "Java", "C#", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
   frontend: ["React.js", "React Native", "Next.js", "Angular", "Redux Toolkit"],
   backend: ["Node.js", "Express.js", "RESTful APIs", "Third-party API Integration"],
   gameAnd3d: ["Unity 3D / 2D", "C# Scripting", "Game Physics & Collisions", "Cinemachine & URP", "Interactive 3D / WebGL"],
@@ -50,12 +50,31 @@ export type Project = {
   result: string;
   accent: string;
   url: string;
+  
+  // New fields for 2026 redesign (optional to avoid breaking existing code)
+  featured?: boolean;
+  order?: number;
+  role?: string;
+  year?: string;
+  visual?: "ecosystem" | "data" | "commerce" | "community" | "desktop" | "brand";
+  caseStudy?: {
+    draft: boolean;
+    overview: string;
+    problem: string;
+    roleDetail: string[];
+    architecture: { layer: string; items: string[] }[];
+    challenges: string[];
+    solution: string[];
+    results: string[];
+  };
 };
 
 export const projects: Project[] = [
   {
     number: "01",
     slug: "pick-a-pro",
+    featured: true,
+    order: 1,
     title: "Pick A Pro",
     category: "On-Demand Marketplace Ecosystem",
     tags: ["commerce", "platform"],
@@ -77,8 +96,10 @@ export const projects: Project[] = [
     url: "https://pickapro.co.nz/"
   },
   {
-    number: "02",
+    number: "05",
     slug: "propertyworks",
+    featured: true,
+    order: 5,
     title: "PropertyWorks",
     category: "Real Estate Intelligence & Advisory Platform",
     tags: ["platform"],
@@ -99,8 +120,10 @@ export const projects: Project[] = [
     url: "https://propertyworks.in/"
   },
   {
-    number: "03",
+    number: "04",
     slug: "memory-caravan",
+    featured: true,
+    order: 4,
     title: "Memory Caravan",
     category: "QR-Based Digital Media & Keepsake Platform",
     tags: ["platform", "commerce"],
@@ -120,8 +143,10 @@ export const projects: Project[] = [
     url: "https://memory-caravan.onrender.com/"
   },
   {
-    number: "04",
+    number: "02",
     slug: "grasberg",
+    featured: true,
+    order: 2,
     title: "Grasberg International",
     category: "Forex Platform & Role-Based CRM",
     tags: ["enterprise"],
@@ -142,8 +167,10 @@ export const projects: Project[] = [
     url: "https://grasberginternational.com/"
   },
   {
-    number: "05",
+    number: "10",
     slug: "upbscan",
+    featured: true,
+    order: 10,
     title: "UPBScan",
     category: "Blockchain Network Explorer",
     tags: ["enterprise"],
@@ -164,8 +191,10 @@ export const projects: Project[] = [
     url: "https://upbscan.com/"
   },
   {
-    number: "06",
+    number: "07",
     slug: "hem-aunty",
+    featured: true,
+    order: 7,
     title: "Hem Aunty Publications",
     category: "E-Commerce Publishing Storefront",
     tags: ["commerce"],
@@ -186,8 +215,10 @@ export const projects: Project[] = [
     url: "https://hemaunty.org/"
   },
   {
-    number: "07",
+    number: "08",
     slug: "radheadda",
+    featured: true,
+    order: 8,
     title: "SOCIETY — RADHEADDA",
     category: "Community & Matrimonial Platform",
     tags: ["platform"],
@@ -208,8 +239,10 @@ export const projects: Project[] = [
     url: "https://www.radhiadda.com/login"
   },
   {
-    number: "08",
+    number: "09",
     slug: "smartclass",
+    featured: true,
+    order: 9,
     title: "SmartClass — Educomp",
     category: "Enterprise Educational Software",
     tags: ["enterprise"],
@@ -229,8 +262,10 @@ export const projects: Project[] = [
     url: ""
   },
   {
-    number: "09",
+    number: "06",
     slug: "nutrinest",
+    featured: true,
+    order: 6,
     title: "Nutrinest Ventures",
     category: "D2C Brand Commerce Platform",
     tags: ["commerce"],
@@ -251,8 +286,10 @@ export const projects: Project[] = [
     url: "https://www.nutrinestventures.com/"
   },
   {
-    number: "10",
+    number: "03",
     slug: "spods",
+    featured: true,
+    order: 3,
     title: "SPODS Technologies",
     category: "Corporate Brand & Services Platform",
     tags: ["enterprise"],

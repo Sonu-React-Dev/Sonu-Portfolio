@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { SiteChrome } from "@/components/layout/SiteChrome";
+
+import { CommandPalette } from "@/components/conversion/CommandPalette";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const viewport: Viewport = {
   themeColor: "#050508",
@@ -96,14 +101,21 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={geist.variable}>{children}</body>
+      <body className={`${geist.variable} ${geistMono.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <SiteChrome>
+            {children}
+          </SiteChrome>
+          <CommandPalette />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -1,10 +1,18 @@
 import type { MetadataRoute } from "next";
+import { projects } from "@/data/portfolio";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://sonubuilds.github.io";
   const now = new Date();
+
+  const projectUrls = projects.map((project) => ({
+    url: `${baseUrl}/work/${project.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -19,5 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...projectUrls,
   ];
 }

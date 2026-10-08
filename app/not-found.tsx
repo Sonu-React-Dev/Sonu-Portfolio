@@ -1,29 +1,21 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
-      <div className="glass rounded-3xl p-8 sm:p-12 max-w-md w-full border border-white/10">
-        <p className="text-sm font-semibold tracking-widest text-violet-400 uppercase">404 Error</p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-white">Page Not Found</h1>
-        <p className="mt-4 text-sm text-zinc-400">
-          The page you are looking for doesn&apos;t exist or has been moved.
+    <div className="min-h-[100dvh] bg-background-primary flex flex-col items-center justify-center text-center p-4 relative overflow-hidden">
+      <h1 className="text-[12rem] md:text-[20rem] font-bold tracking-tighter text-foreground-primary/5 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        404
+      </h1>
+      <div className="relative z-10 flex flex-col items-center">
+        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground-primary mb-4">
+          Page not found
+        </h2>
+        <p className="text-lg text-foreground-secondary mb-10 max-w-md">
+          The page you are looking for doesn&apos;t exist, has been moved, or is temporarily unavailable.
         </p>
-        <div className="mt-8 flex justify-center gap-3">
-          <Link
-            href="/"
-            className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-zinc-200"
-          >
-            <ArrowLeft size={16} /> Return Home
-          </Link>
-          <Link
-            href="/resume"
-            className="glass flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
-          >
-            View Resume
-          </Link>
-        </div>
+        <ArrowLink href="/">
+          Return Home
+        </ArrowLink>
       </div>
     </div>
   );
