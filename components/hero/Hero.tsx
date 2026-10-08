@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import Link from "next/link";
 
@@ -21,41 +21,38 @@ export function Hero() {
           
           <div className="flex flex-col max-w-3xl">
             <Reveal delay={0.1}>
-              <div className="flex flex-wrap items-center gap-4 mb-6">
-                <span className="inline-flex items-center gap-2 text-[11px] md:text-xs font-semibold text-foreground-secondary uppercase tracking-widest">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
-                  </span>
-                  Available for opportunities
+              <div className="flex items-center gap-2.5 text-[10px] sm:text-[11px] font-bold text-foreground-primary uppercase tracking-[0.15em] mb-6">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
                 </span>
-                <span className="hidden sm:inline text-border-subtle">•</span>
-                <span className="text-[11px] md:text-xs font-semibold text-foreground-muted tracking-widest uppercase">
-                  {profile.location}
-                </span>
+                AVAILABLE FOR OPPORTUNITIES <span className="text-foreground-muted">·</span> DELHI, INDIA
               </div>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <h2 className="text-[11px] md:text-xs font-bold tracking-[0.25em] text-accent-primary uppercase mb-5">
+              <h2 className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-accent-primary uppercase mb-5">
                 Full-Stack Developer · Web · Mobile · AI
               </h2>
             </Reveal>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.08] tracking-tight text-foreground-primary mb-6 max-w-[850px]">
+            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.08] tracking-tight text-foreground-primary mb-6 max-w-[850px] [text-wrap:balance] lg:[text-wrap:auto]">
               <SplitText text="I build digital" delayOffset={3} />
-              <br />
+              <br className="hidden lg:block" />
+              <span className="lg:hidden"> </span>
               <SplitText text="products that feel" delayOffset={4} />
-              <br />
+              <br className="hidden lg:block" />
+              <span className="lg:hidden"> </span>
               <SplitText text="as good as they" delayOffset={5} />
-              <br />
+              <br className="hidden lg:block" />
+              <span className="lg:hidden"> </span>
               <span className="text-foreground-muted italic pr-2">
                 <SplitText text="perform." delayOffset={6} />
               </span>
             </h1>
 
             <Reveal delay={0.65}>
-              <p className="text-sm md:text-base text-foreground-secondary/90 leading-relaxed max-w-[420px] mb-10 font-medium">
+              <p className="text-sm md:text-base text-foreground-secondary/90 leading-relaxed max-w-[420px] mb-10 font-medium [text-wrap:balance]">
                 {profile.subline}
               </p>
             </Reveal>
@@ -78,7 +75,7 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={0.85}>
-              <div className="mt-14 flex flex-wrap gap-4 text-[10px] sm:text-[11px] font-bold text-foreground-muted/60 uppercase tracking-[0.2em] items-center">
+              <div className="mt-14 flex flex-wrap gap-3 sm:gap-4 text-[9px] sm:text-[10px] font-bold text-foreground-muted/60 uppercase tracking-[0.25em] items-center">
                 <span className="hover:text-foreground-muted transition-colors cursor-default">React Native</span>
                 <span>·</span>
                 <span className="hover:text-foreground-muted transition-colors cursor-default">React</span>
@@ -94,18 +91,20 @@ export function Hero() {
             </Reveal>
           </div>
 
-          <div className="relative w-full h-[350px] md:h-[450px] lg:h-[550px] flex items-center justify-center lg:justify-end">
+          <div className="relative w-full h-[380px] sm:h-[450px] lg:h-[600px] flex items-center justify-center lg:justify-end">
             <HeroProfile />
           </div>
-          
           
         </div>
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-foreground-muted">Scroll to explore</span>
-        <div className="w-[1px] h-8 bg-gradient-to-b from-foreground-muted to-transparent" />
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40 hidden md:flex">
+        <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-foreground-muted text-center">
+          Scroll to explore
+        </span>
+        <ArrowDown size={12} className="text-foreground-muted" />
+        <div className="w-[1px] h-12 bg-gradient-to-b from-foreground-muted/50 to-transparent" />
       </div>
     </section>
   );
