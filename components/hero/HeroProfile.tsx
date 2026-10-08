@@ -104,6 +104,8 @@ export function HeroProfile() {
             className="w-full h-full object-contain object-bottom"
             style={{
               filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.3)) drop-shadow(0 0 20px rgba(124,92,255,0.15))",
+              WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)"
             }}
           />
         </div>
