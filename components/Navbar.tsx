@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Menu, X, FileText, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import sonuPhoto from "@/public/sonu-profile.webp";
+import { ThemeToggle } from "./navigation/ThemeToggle";
 
 const links = [
   { name: "About", href: "/#about" },
@@ -86,6 +87,8 @@ export default function Navbar() {
 
           {/* Right Action Buttons */}
           <div className="hidden items-center gap-3 md:flex">
+            <ThemeToggle />
+            <div className="w-px h-4 bg-white/20 mx-1" />
             <Link
               href="/resume"
               className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-zinc-300 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
@@ -103,13 +106,16 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            aria-label="Toggle mobile menu"
-            className="p-1 text-zinc-300 hover:text-white md:hidden cursor-pointer"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+            <button
+              aria-label="Toggle mobile menu"
+              className="p-1 text-zinc-300 hover:text-white cursor-pointer"
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Drawer */}
