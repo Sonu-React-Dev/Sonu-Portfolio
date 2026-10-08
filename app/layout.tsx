@@ -63,7 +63,7 @@ const jsonLd = {
         "https://github.com/SonuBuilds",
         "https://linkedin.com/in/sonu-kumar-3b7072237"
       ],
-      "image": "https://sonubuilds.github.io/sonu-profile.png",
+      "image": "https://sonubuilds.github.io/sonu-profile.webp",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Delhi",
