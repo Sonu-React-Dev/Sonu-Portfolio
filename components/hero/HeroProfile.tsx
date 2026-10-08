@@ -36,9 +36,9 @@ export function HeroProfile() {
       mouseY.set(e.clientY / innerHeight - 0.5);
     };
     
-    // Only enable parallax if user doesn't prefer reduced motion
+    // Only enable parallax if user doesn't prefer reduced motion and is on desktop
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!prefersReducedMotion) {
+    if (!prefersReducedMotion && window.innerWidth > 768) {
       window.addEventListener("mousemove", handleMouseMove);
     }
     
@@ -54,7 +54,7 @@ export function HeroProfile() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute w-[70%] h-[70%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-primary/15 dark:bg-accent-primary/15 rounded-full blur-[60px] md:blur-[100px] pointer-events-none transition-all duration-1000 group-hover:bg-accent-primary/25 group-hover:blur-[120px]"
+        className="absolute w-[70%] h-[70%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-primary/10 dark:bg-accent-primary/10 rounded-full blur-[60px] md:blur-[100px] pointer-events-none transition-all duration-1000 group-hover:bg-accent-primary/20 group-hover:blur-[120px]"
       />
 
       {/* 2. Soft Atmospheric Light */}
@@ -74,15 +74,23 @@ export function HeroProfile() {
         transition={{ duration: 1.5, delay: 0.8 }}
         className="absolute inset-0 pointer-events-none hidden md:block"
       >
-        {/* Subtle grid/crosshairs */}
-        <div className="absolute top-[15%] left-[10%] w-4 h-4 border-t border-l border-foreground-muted/20" />
-        <div className="absolute bottom-[15%] right-[10%] w-4 h-4 border-b border-r border-foreground-muted/20" />
+        {/* Subtle framing brackets */}
+        <div className="absolute top-[10%] left-[5%] w-3 h-3 border-t border-l border-foreground-muted/30 opacity-50" />
+        <div className="absolute bottom-[10%] right-[5%] w-3 h-3 border-b border-r border-foreground-muted/30 opacity-50" />
         
-        {/* Floating dots */}
-        <div className="absolute top-[25%] right-[15%] w-1 h-1 rounded-full bg-accent-primary/40 animate-pulse" style={{ animationDuration: '3s' }} />
-        <div className="absolute bottom-[35%] left-[12%] w-1.5 h-1.5 rounded-full bg-foreground-muted/30" />
-        <div className="absolute top-[60%] right-[8%] w-1 h-1 rounded-full bg-foreground-muted/20" />
+        {/* Tiny metadata */}
+        <div className="absolute top-[15%] right-[8%] text-[8px] font-mono text-foreground-muted/40 tracking-[0.3em] uppercase rotate-90 origin-right">
+          SYS.RDY // 2026
+        </div>
+        
+        {/* Subtle orbit/dot */}
+        <div className="absolute top-[45%] left-[8%] flex items-center justify-center">
+          <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-foreground-muted/20 to-transparent absolute" />
+          <div className="w-1.5 h-1.5 rounded-full bg-accent-primary/50 shadow-[0_0_10px_rgba(124,92,255,0.4)]" />
+        </div>
 
+        {/* Minimal geometric lines */}
+        <div className="absolute bottom-[20%] left-[10%] w-8 h-[1px] bg-foreground-muted/20" />
       </motion.div>
 
       {/* 4. Portrait Layer */}

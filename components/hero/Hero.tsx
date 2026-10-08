@@ -1,12 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import Link from "next/link";
 
 import { MagneticButton } from "../ui/MagneticButton";
-import { ArrowLink } from "../ui/ArrowLink";
 import { SplitText } from "../ui/SplitText";
 import { Reveal } from "../ui/Reveal";
 import { HeroProfile } from "./HeroProfile";
@@ -23,40 +21,41 @@ export function Hero() {
           
           <div className="flex flex-col max-w-3xl">
             <Reveal delay={0.1}>
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-xs font-medium text-green-600 dark:text-green-400">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+              <div className="flex flex-wrap items-center gap-4 mb-6">
+                <span className="inline-flex items-center gap-2 text-[11px] md:text-xs font-semibold text-foreground-secondary uppercase tracking-widest">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
                   </span>
                   Available for opportunities
                 </span>
-                <span className="text-xs font-medium text-foreground-muted tracking-wide uppercase">
+                <span className="hidden sm:inline text-border-subtle">•</span>
+                <span className="text-[11px] md:text-xs font-semibold text-foreground-muted tracking-widest uppercase">
                   {profile.location}
                 </span>
               </div>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <h2 className="text-xs font-bold tracking-[0.2em] text-accent-primary uppercase mb-4">
-                Full-Stack Product Engineer
+              <h2 className="text-[11px] md:text-xs font-bold tracking-[0.25em] text-accent-primary uppercase mb-5">
+                Full-Stack Developer · Web · Mobile · AI
               </h2>
             </Reveal>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.05] tracking-tight text-foreground-primary mb-6 max-w-[900px]">
+            <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.08] tracking-tight text-foreground-primary mb-6 max-w-[850px]">
               <SplitText text="I build digital" delayOffset={3} />
               <br />
-              <SplitText text="products that" delayOffset={4} />
+              <SplitText text="products that feel" delayOffset={4} />
               <br />
-              <SplitText text="feel as good as" delayOffset={5} />
+              <SplitText text="as good as they" delayOffset={5} />
               <br />
-              <span className="text-foreground-muted italic">
-                <SplitText text="they perform." delayOffset={6} />
+              <span className="text-foreground-muted italic pr-2">
+                <SplitText text="perform." delayOffset={6} />
               </span>
             </h1>
 
             <Reveal delay={0.65}>
-              <p className="text-base md:text-lg text-foreground-secondary leading-relaxed max-w-lg mb-10">
+              <p className="text-sm md:text-base text-foreground-secondary/90 leading-relaxed max-w-[420px] mb-10 font-medium">
                 {profile.subline}
               </p>
             </Reveal>
@@ -64,32 +63,33 @@ export function Hero() {
             <Reveal delay={0.75}>
               <div className="flex flex-wrap items-center gap-4">
                 <Link href="/#work" className="block">
-                  <MagneticButton className="rounded-full bg-foreground-primary shadow-xl shadow-foreground-primary/10 hover:scale-105 px-6 py-3.5 flex items-center gap-2 text-sm font-semibold text-background-primary">
-                    View selected work
-                    <ArrowDownRight size={16} />
+                  <MagneticButton className="rounded-full bg-foreground-primary shadow-2xl shadow-foreground-primary/10 hover:scale-[1.02] transition-transform px-7 py-3.5 flex items-center gap-2.5 text-sm font-semibold text-background-primary group">
+                    View my work
+                    <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </MagneticButton>
                 </Link>
                 <Link href="/#contact" className="block">
-                  <MagneticButton className="rounded-full border border-border-subtle bg-background-secondary/50 backdrop-blur-sm hover:bg-background-secondary px-6 py-3.5 flex items-center gap-2 text-sm font-medium text-foreground-primary">
-                    Let&apos;s build something
+                  <MagneticButton className="rounded-full border border-border-subtle bg-background-secondary/40 backdrop-blur-md hover:bg-background-secondary hover:border-border-muted transition-colors px-7 py-3.5 flex items-center gap-2.5 text-sm font-medium text-foreground-primary group">
+                    Let&apos;s work together
+                    <ArrowUpRight size={16} className="opacity-70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </MagneticButton>
                 </Link>
               </div>
             </Reveal>
 
             <Reveal delay={0.85}>
-              <div className="mt-12 flex flex-wrap gap-4 text-xs font-medium text-foreground-muted uppercase tracking-widest border-t border-border-subtle pt-6">
-                <span>React Native</span>
+              <div className="mt-14 flex flex-wrap gap-4 text-[10px] sm:text-[11px] font-bold text-foreground-muted/60 uppercase tracking-[0.2em] items-center">
+                <span className="hover:text-foreground-muted transition-colors cursor-default">React Native</span>
                 <span>·</span>
-                <span>React</span>
+                <span className="hover:text-foreground-muted transition-colors cursor-default">React</span>
                 <span>·</span>
-                <span>Next.js</span>
+                <span className="hover:text-foreground-muted transition-colors cursor-default">Next.js</span>
                 <span>·</span>
-                <span>Node.js</span>
+                <span className="hover:text-foreground-muted transition-colors cursor-default">Node.js</span>
                 <span>·</span>
-                <span>TypeScript</span>
+                <span className="hover:text-foreground-muted transition-colors cursor-default">TypeScript</span>
                 <span>·</span>
-                <span>AI</span>
+                <span className="hover:text-foreground-muted transition-colors cursor-default">AI</span>
               </div>
             </Reveal>
           </div>
@@ -98,7 +98,14 @@ export function Hero() {
             <HeroProfile />
           </div>
           
+          
         </div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-foreground-muted">Scroll to explore</span>
+        <div className="w-[1px] h-8 bg-gradient-to-b from-foreground-muted to-transparent" />
       </div>
     </section>
   );
